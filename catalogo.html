@@ -1,543 +1,524 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalogo T-Shirt Express</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 85px; background-color: #f0f0f0; color: #333; }
-        .page { width: 100%; max-width: 800px; margin: 0 auto 10px auto; padding: 6px; box-sizing: border-box; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-        .item { display: flex; flex-direction: column; align-items: center; justify-content: space-between; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; background: #fff; box-sizing: border-box; }
-        .item img { width: 100%; height: auto; max-height: 125px; object-fit: contain; cursor: pointer; border-radius: 4px; }
-        .info-box { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 3px; margin-top: 4px; background: #f8f8f8; padding: 2px 4px; border-radius: 4px; box-sizing: border-box; }
-        .code { font-size: 9px; font-weight: bold; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 60%; }
-        .btn-seleziona { background-color: #ff4757; color: white; border: none; padding: 2px 6px; font-size: 9px; font-weight: bold; border-radius: 3px; cursor: pointer; white-space: nowrap; }
-        .btn-seleziona.selezionato { background-color: #2ed573; }
-        .floating-bar { position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%); width: 92%; max-width: 450px; background: #1e1e1e; color: white; padding: 8px 14px; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); z-index: 1000; font-size: 13px; }
-        .floating-bar button { background: #25d366; color: white; border: none; padding: 6px 14px; border-radius: 20px; font-weight: bold; font-size: 12px; cursor: pointer; }
-        .modal-carrello { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; justify-content: center; align-items: flex-end; }
-        .modal-content { background: white; width: 100%; max-width: 500px; max-height: 80vh; border-radius: 16px 16px 0 0; padding: 15px; box-sizing: border-box; display: flex; flex-direction: column; }
-        .modal-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 8px; margin-bottom: 10px; }
-        .cart-items-list { overflow-y: auto; flex-grow: 1; display: flex; flex-direction: column; gap: 8px; max-height: 50vh; margin-bottom: 12px; }
-        .cart-item { display: flex; align-items: center; gap: 8px; background: #f9f9f9; padding: 6px; border-radius: 6px; border: 1px solid #eee; }
-        .cart-item img { width: 40px; height: 40px; object-fit: contain; background: white; border-radius: 4px; }
-        .cart-item-info { flex-grow: 1; font-size: 11px; font-weight: bold; }
-        .cart-item-remove { background: #ff4757; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 10px; }
-        .lightbox-modal { display: none; position: fixed; z-index: 3000; top: 0; left: 0; width: 100%; height: 100%; justify-content: center; align-items: center; padding: 15px; box-sizing: border-box; cursor: pointer; }
-        .lightbox-modal img { max-width: 95%; max-height: 90vh; border-radius: 8px; object-fit: contain; display: block; margin: auto; }
-        @media (max-width: 480px) { .page { grid-template-columns: repeat(3, 1fr); gap: 4px; padding: 4px; } .item img { max-height: 105px; } .code { font-size: 8px; } .btn-seleziona { padding: 2px 4px; font-size: 8px; } }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catalogo T-Shirt Express</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 85px; background-color: #f0f0f0; color: #333; }
+.page { width: 100%; max-width: 800px; margin: 0 auto 10px auto; padding: 6px; box-sizing: border-box; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.item { display: flex; flex-direction: column; align-items: center; justify-content: space-between; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; background: #fff; box-sizing: border-box; }
+.item img { width: 100%; height: auto; max-height: 125px; object-fit: contain; cursor: pointer; border-radius: 4px; }
+.info-box { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 3px; margin-top: 4px; background: #f8f8f8; padding: 2px 4px; border-radius: 4px; box-sizing: border-box; }
+.code { font-size: 9px; font-weight: bold; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 60%; }
+.btn-seleziona { background-color: #ff4757; color: white; border: none; padding: 2px 6px; font-size: 9px; font-weight: bold; border-radius: 3px; cursor: pointer; white-space: nowrap; }
+.btn-seleziona.selezionato { background-color: #2ed573; }
+.floating-bar { position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%); width: 92%; max-width: 450px; background: #1e1e1e; color: white; padding: 8px 14px; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); z-index: 1000; font-size: 13px; }
+.floating-bar button { background: #25d366; color: white; border: none; padding: 6px 14px; border-radius: 20px; font-weight: bold; font-size: 12px; cursor: pointer; }
+.modal-carrello { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; justify-content: center; align-items: flex-end; }
+.modal-content { background: white; width: 100%; max-width: 500px; max-height: 80vh; border-radius: 16px 16px 0 0; padding: 15px; box-sizing: border-box; display: flex; flex-direction: column; }
+.modal-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 8px; margin-bottom: 10px; }
+.cart-items-list { overflow-y: auto; flex-grow: 1; display: flex; flex-direction: column; gap: 8px; max-height: 50vh; margin-bottom: 12px; }
+.cart-item { display: flex; align-items: center; gap: 8px; background: #f9f9f9; padding: 6px; border-radius: 6px; border: 1px solid #eee; }
+.cart-item img { width: 40px; height: 40px; object-fit: contain; background: white; border-radius: 4px; }
+.cart-item-info { flex-grow: 1; font-size: 11px; font-weight: bold; }
+.cart-item-remove { background: #ff4757; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 10px; }
+.lightbox-modal { display: none; position: fixed; z-index: 3000; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(245, 245, 245, 0.95); justify-content: center; align-items: center; padding: 15px; box-sizing: border-box; cursor: pointer; }
+.lightbox-modal img { max-width: 95%; max-height: 90vh; border-radius: 8px; object-fit: contain; display: block; margin: auto; }
+@media (max-width: 480px) { .page { grid-template-columns: repeat(3, 1fr); gap: 4px; padding: 4px; } .item img { max-height: 105px; } .code { font-size: 8px; } .btn-seleziona { padding: 2px 4px; font-size: 8px; } }
+</style>
 </head>
 <body>
-    <div class="page">
-                <div class="item" data-codice="MNG-001" data-nome="4 robot nero.jpg" data-thumb="immagini_web/4 robot nero_ts.jpg" data-zoom="immagini_web/4 robot nero.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/4%20robot%20nero.jpg">
-            <img src="immagini_web/4 robot nero_ts.jpg" loading="lazy" alt="MNG-001" onclick="apriZoom('immagini_web/4 robot nero.jpg', '4 robot nero.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-001">MNG-001</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-002" data-nome="4 robot.jpg" data-thumb="immagini_web/4 robot_ts.jpg" data-zoom="immagini_web/4 robot.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/4%20robot.jpg">
-            <img src="immagini_web/4 robot_ts.jpg" loading="lazy" alt="MNG-002" onclick="apriZoom('immagini_web/4 robot.jpg', '4 robot.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-002">MNG-002</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-003" data-nome="Chainsaw Rosso.jpg" data-thumb="immagini_web/Chainsaw Rosso_ts.jpg" data-zoom="immagini_web/Chainsaw Rosso.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/Chainsaw%20Rosso.jpg">
-            <img src="immagini_web/Chainsaw Rosso_ts.jpg" loading="lazy" alt="MNG-003" onclick="apriZoom('immagini_web/Chainsaw Rosso.jpg', 'Chainsaw Rosso.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-003">MNG-003</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-004" data-nome="Chainsaw verde.jpg" data-thumb="immagini_web/Chainsaw verde_ts.jpg" data-zoom="immagini_web/Chainsaw verde.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/Chainsaw%20verde.jpg">
-            <img src="immagini_web/Chainsaw verde_ts.jpg" loading="lazy" alt="MNG-004" onclick="apriZoom('immagini_web/Chainsaw verde.jpg', 'Chainsaw verde.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-004">MNG-004</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-005" data-nome="death note.png" data-thumb="immagini_web/death note_ts.jpg" data-zoom="immagini_web/death note.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/death%20note.jpg">
-            <img src="immagini_web/death note_ts.jpg" loading="lazy" alt="MNG-005" onclick="apriZoom('immagini_web/death note.jpg', 'death note.png')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-005">MNG-005</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-006" data-nome="dragonball blt.jpg" data-thumb="immagini_web/dragonball blt_ts.jpg" data-zoom="immagini_web/dragonball blt.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/dragonball%20blt.jpg">
-            <img src="immagini_web/dragonball blt_ts.jpg" loading="lazy" alt="MNG-006" onclick="apriZoom('immagini_web/dragonball blt.jpg', 'dragonball blt.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-006">MNG-006</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-007" data-nome="Dragonball Drago.jpg" data-thumb="immagini_web/Dragonball Drago_ts.jpg" data-zoom="immagini_web/Dragonball Drago.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/Dragonball%20Drago.jpg">
-            <img src="immagini_web/Dragonball Drago_ts.jpg" loading="lazy" alt="MNG-007" onclick="apriZoom('immagini_web/Dragonball Drago.jpg', 'Dragonball Drago.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-007">MNG-007</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-008" data-nome="dragonball fiamme.png" data-thumb="immagini_web/dragonball fiamme_ts.jpg" data-zoom="immagini_web/dragonball fiamme.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/dragonball%20fiamme.jpg">
-            <img src="immagini_web/dragonball fiamme_ts.jpg" loading="lazy" alt="MNG-008" onclick="apriZoom('immagini_web/dragonball fiamme.jpg', 'dragonball fiamme.png')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-008">MNG-008</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-009" data-nome="Dragonball fumetti grigio.jpg" data-thumb="immagini_web/Dragonball fumetti grigio_ts.jpg" data-zoom="immagini_web/Dragonball fumetti grigio.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/Dragonball%20fumetti%20grigio.jpg">
-            <img src="immagini_web/Dragonball fumetti grigio_ts.jpg" loading="lazy" alt="MNG-009" onclick="apriZoom('immagini_web/Dragonball fumetti grigio.jpg', 'Dragonball fumetti grigio.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-009">MNG-009</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-010" data-nome="dragonball genio.jpg" data-thumb="immagini_web/dragonball genio_ts.jpg" data-zoom="immagini_web/dragonball genio.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/dragonball%20genio.jpg">
-            <img src="immagini_web/dragonball genio_ts.jpg" loading="lazy" alt="MNG-010" onclick="apriZoom('immagini_web/dragonball genio.jpg', 'dragonball genio.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-010">MNG-010</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-011" data-nome="dragonball goku sfera.jpg" data-thumb="immagini_web/dragonball goku sfera_ts.jpg" data-zoom="immagini_web/dragonball goku sfera.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/dragonball%20goku%20sfera.jpg">
-            <img src="immagini_web/dragonball goku sfera_ts.jpg" loading="lazy" alt="MNG-011" onclick="apriZoom('immagini_web/dragonball goku sfera.jpg', 'dragonball goku sfera.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-011">MNG-011</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-012" data-nome="dragonball scimmia.jpg" data-thumb="immagini_web/dragonball scimmia_ts.jpg" data-zoom="immagini_web/dragonball scimmia.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/dragonball%20scimmia.jpg">
-            <img src="immagini_web/dragonball scimmia_ts.jpg" loading="lazy" alt="MNG-012" onclick="apriZoom('immagini_web/dragonball scimmia.jpg', 'dragonball scimmia.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-012">MNG-012</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-    </div>
-    <div class="page">
-        <div class="item" data-codice="MNG-013" data-nome="Dragonball SonGoku Bianco.jpg" data-thumb="immagini_web/Dragonball SonGoku Bianco_ts.jpg" data-zoom="immagini_web/Dragonball SonGoku Bianco.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/Dragonball%20SonGoku%20Bianco.jpg">
-            <img src="immagini_web/Dragonball SonGoku Bianco_ts.jpg" loading="lazy" alt="MNG-013" onclick="apriZoom('immagini_web/Dragonball SonGoku Bianco.jpg', 'Dragonball SonGoku Bianco.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-013">MNG-013</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-014" data-nome="dragonball vintage sfera.jpg" data-thumb="immagini_web/dragonball vintage sfera_ts.jpg" data-zoom="immagini_web/dragonball vintage sfera.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/dragonball%20vintage%20sfera.jpg">
-            <img src="immagini_web/dragonball vintage sfera_ts.jpg" loading="lazy" alt="MNG-014" onclick="apriZoom('immagini_web/dragonball vintage sfera.jpg', 'dragonball vintage sfera.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-014">MNG-014</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-015" data-nome="dragonball_nero.jpg" data-thumb="immagini_web/dragonball_nero_ts.jpg" data-zoom="immagini_web/dragonball_nero.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/dragonball_nero.jpg">
-            <img src="immagini_web/dragonball_nero_ts.jpg" loading="lazy" alt="MNG-015" onclick="apriZoom('immagini_web/dragonball_nero.jpg', 'dragonball_nero.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-015">MNG-015</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-016" data-nome="Drsgonball fumetto colorato.jpg" data-thumb="immagini_web/Drsgonball fumetto colorato_ts.jpg" data-zoom="immagini_web/Drsgonball fumetto colorato.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/Drsgonball%20fumetto%20colorato.jpg">
-            <img src="immagini_web/Drsgonball fumetto colorato_ts.jpg" loading="lazy" alt="MNG-016" onclick="apriZoom('immagini_web/Drsgonball fumetto colorato.jpg', 'Drsgonball fumetto colorato.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-016">MNG-016</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-017" data-nome="goku vintage di spalle.jpg" data-thumb="immagini_web/goku vintage di spalle_ts.jpg" data-zoom="immagini_web/goku vintage di spalle.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/goku%20vintage%20di%20spalle.jpg">
-            <img src="immagini_web/goku vintage di spalle_ts.jpg" loading="lazy" alt="MNG-017" onclick="apriZoom('immagini_web/goku vintage di spalle.jpg', 'goku vintage di spalle.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-017">MNG-017</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-018" data-nome="goldrake personaggio.png" data-thumb="immagini_web/goldrake personaggio_ts.jpg" data-zoom="immagini_web/goldrake personaggio.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/goldrake%20personaggio.jpg">
-            <img src="immagini_web/goldrake personaggio_ts.jpg" loading="lazy" alt="MNG-018" onclick="apriZoom('immagini_web/goldrake personaggio.jpg', 'goldrake personaggio.png')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-018">MNG-018</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-019" data-nome="hatsune.jpg" data-thumb="immagini_web/hatsune_ts.jpg" data-zoom="immagini_web/hatsune.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/hatsune.jpg">
-            <img src="immagini_web/hatsune_ts.jpg" loading="lazy" alt="MNG-019" onclick="apriZoom('immagini_web/hatsune.jpg', 'hatsune.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-019">MNG-019</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-020" data-nome="inuhasha.jpg" data-thumb="immagini_web/inuhasha_ts.jpg" data-zoom="immagini_web/inuhasha.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/inuhasha.jpg">
-            <img src="immagini_web/inuhasha_ts.jpg" loading="lazy" alt="MNG-020" onclick="apriZoom('immagini_web/inuhasha.jpg', 'inuhasha.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-020">MNG-020</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-021" data-nome="jojo.png" data-thumb="immagini_web/jojo_ts.jpg" data-zoom="immagini_web/jojo.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/jojo.jpg">
-            <img src="immagini_web/jojo_ts.jpg" loading="lazy" alt="MNG-021" onclick="apriZoom('immagini_web/jojo.jpg', 'jojo.png')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-021">MNG-021</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-022" data-nome="juju gruppo_bianco.png" data-thumb="immagini_web/juju gruppo_bianco_ts.jpg" data-zoom="immagini_web/juju gruppo_bianco.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/juju%20gruppo_bianco.jpg">
-            <img src="immagini_web/juju gruppo_bianco_ts.jpg" loading="lazy" alt="MNG-022" onclick="apriZoom('immagini_web/juju gruppo_bianco.jpg', 'juju gruppo_bianco.png')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-022">MNG-022</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-023" data-nome="juju gruppo_nero.jpg" data-thumb="immagini_web/juju gruppo_nero_ts.jpg" data-zoom="immagini_web/juju gruppo_nero.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/juju%20gruppo_nero.jpg">
-            <img src="immagini_web/juju gruppo_nero_ts.jpg" loading="lazy" alt="MNG-023" onclick="apriZoom('immagini_web/juju gruppo_nero.jpg', 'juju gruppo_nero.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-023">MNG-023</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-024" data-nome="juju personaggio_nero.jpg" data-thumb="immagini_web/juju personaggio_nero_ts.jpg" data-zoom="immagini_web/juju personaggio_nero.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/juju%20personaggio_nero.jpg">
-            <img src="immagini_web/juju personaggio_nero_ts.jpg" loading="lazy" alt="MNG-024" onclick="apriZoom('immagini_web/juju personaggio_nero.jpg', 'juju personaggio_nero.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-024">MNG-024</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-    </div>
-    <div class="page">
-        <div class="item" data-codice="MNG-025" data-nome="Kakashi.jpg" data-thumb="immagini_web/Kakashi_ts.jpg" data-zoom="immagini_web/Kakashi.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/Kakashi.jpg">
-            <img src="immagini_web/Kakashi_ts.jpg" loading="lazy" alt="MNG-025" onclick="apriZoom('immagini_web/Kakashi.jpg', 'Kakashi.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-025">MNG-025</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-026" data-nome="Ken gruppo x nero.jpg" data-thumb="immagini_web/Ken gruppo x nero_ts.jpg" data-zoom="immagini_web/Ken gruppo x nero.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/Ken%20gruppo%20x%20nero.jpg">
-            <img src="immagini_web/Ken gruppo x nero_ts.jpg" loading="lazy" alt="MNG-026" onclick="apriZoom('immagini_web/Ken gruppo x nero.jpg', 'Ken gruppo x nero.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-026">MNG-026</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-027" data-nome="Ken rettangolo x nero.jpg" data-thumb="immagini_web/Ken rettangolo x nero_ts.jpg" data-zoom="immagini_web/Ken rettangolo x nero.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/Ken%20rettangolo%20x%20nero.jpg">
-            <img src="immagini_web/Ken rettangolo x nero_ts.jpg" loading="lazy" alt="MNG-027" onclick="apriZoom('immagini_web/Ken rettangolo x nero.jpg', 'Ken rettangolo x nero.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-027">MNG-027</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-028" data-nome="KEN SHIRO RETTANGOLO bia.jpg" data-thumb="immagini_web/KEN SHIRO RETTANGOLO bia_ts.jpg" data-zoom="immagini_web/KEN SHIRO RETTANGOLO bia.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/KEN%20SHIRO%20RETTANGOLO%20bia.jpg">
-            <img src="immagini_web/KEN SHIRO RETTANGOLO bia_ts.jpg" loading="lazy" alt="MNG-028" onclick="apriZoom('immagini_web/KEN SHIRO RETTANGOLO bia.jpg', 'KEN SHIRO RETTANGOLO bia.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-028">MNG-028</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-029" data-nome="my hero academia gruppo x nero.jpg" data-thumb="immagini_web/my hero academia gruppo x nero_ts.jpg" data-zoom="immagini_web/my hero academia gruppo x nero.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/my%20hero%20academia%20gruppo%20x%20nero.jpg">
-            <img src="immagini_web/my hero academia gruppo x nero_ts.jpg" loading="lazy" alt="MNG-029" onclick="apriZoom('immagini_web/my hero academia gruppo x nero.jpg', 'my hero academia gruppo x nero.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-029">MNG-029</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-030" data-nome="naruto 3 occhi.jpg" data-thumb="immagini_web/naruto 3 occhi_ts.jpg" data-zoom="immagini_web/naruto 3 occhi.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/naruto%203%20occhi.jpg">
-            <img src="immagini_web/naruto 3 occhi_ts.jpg" loading="lazy" alt="MNG-030" onclick="apriZoom('immagini_web/naruto 3 occhi.jpg', 'naruto 3 occhi.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-030">MNG-030</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-031" data-nome="naruto gruppo rettangoli.jpg" data-thumb="immagini_web/naruto gruppo rettangoli_ts.jpg" data-zoom="immagini_web/naruto gruppo rettangoli.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/naruto%20gruppo%20rettangoli.jpg">
-            <img src="immagini_web/naruto gruppo rettangoli_ts.jpg" loading="lazy" alt="MNG-031" onclick="apriZoom('immagini_web/naruto gruppo rettangoli.jpg', 'naruto gruppo rettangoli.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-031">MNG-031</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-032" data-nome="Naruto rettangoli bianchi x nero.jpg" data-thumb="immagini_web/Naruto rettangoli bianchi x nero_ts.jpg" data-zoom="immagini_web/Naruto rettangoli bianchi x nero.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/Naruto%20rettangoli%20bianchi%20x%20nero.jpg">
-            <img src="immagini_web/Naruto rettangoli bianchi x nero_ts.jpg" loading="lazy" alt="MNG-032" onclick="apriZoom('immagini_web/Naruto rettangoli bianchi x nero.jpg', 'Naruto rettangoli bianchi x nero.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-032">MNG-032</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-033" data-nome="naruto scritta_bianco.jpg" data-thumb="immagini_web/naruto scritta_bianco_ts.jpg" data-zoom="immagini_web/naruto scritta_bianco.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/naruto%20scritta_bianco.jpg">
-            <img src="immagini_web/naruto scritta_bianco_ts.jpg" loading="lazy" alt="MNG-033" onclick="apriZoom('immagini_web/naruto scritta_bianco.jpg', 'naruto scritta_bianco.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-033">MNG-033</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-034" data-nome="naruto scritta_nero.jpg" data-thumb="immagini_web/naruto scritta_nero_ts.jpg" data-zoom="immagini_web/naruto scritta_nero.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/naruto%20scritta_nero.jpg">
-            <img src="immagini_web/naruto scritta_nero_ts.jpg" loading="lazy" alt="MNG-034" onclick="apriZoom('immagini_web/naruto scritta_nero.jpg', 'naruto scritta_nero.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-034">MNG-034</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-035" data-nome="one piece 3 personaggi.jpg" data-thumb="immagini_web/one piece 3 personaggi_ts.jpg" data-zoom="immagini_web/one piece 3 personaggi.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%203%20personaggi.jpg">
-            <img src="immagini_web/one piece 3 personaggi_ts.jpg" loading="lazy" alt="MNG-035" onclick="apriZoom('immagini_web/one piece 3 personaggi.jpg', 'one piece 3 personaggi.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-035">MNG-035</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-036" data-nome="one piece braccio.jpg" data-thumb="immagini_web/one piece braccio_ts.jpg" data-zoom="immagini_web/one piece braccio.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20braccio.jpg">
-            <img src="immagini_web/one piece braccio_ts.jpg" loading="lazy" alt="MNG-036" onclick="apriZoom('immagini_web/one piece braccio.jpg', 'one piece braccio.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-036">MNG-036</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-    </div>
-    <div class="page">
-        <div class="item" data-codice="MNG-037" data-nome="one piece bussola.jpg" data-thumb="immagini_web/one piece bussola_ts.jpg" data-zoom="immagini_web/one piece bussola.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20bussola.jpg">
-            <img src="immagini_web/one piece bussola_ts.jpg" loading="lazy" alt="MNG-037" onclick="apriZoom('immagini_web/one piece bussola.jpg', 'one piece bussola.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-037">MNG-037</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-038" data-nome="one piece colorato.jpg" data-thumb="immagini_web/one piece colorato_ts.jpg" data-zoom="immagini_web/one piece colorato.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20colorato.jpg">
-            <img src="immagini_web/one piece colorato_ts.jpg" loading="lazy" alt="MNG-038" onclick="apriZoom('immagini_web/one piece colorato.jpg', 'one piece colorato.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-038">MNG-038</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-039" data-nome="one piece fiamme viola x bianco.jpg" data-thumb="immagini_web/one piece fiamme viola x bianco_ts.jpg" data-zoom="immagini_web/one piece fiamme viola x bianco.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20fiamme%20viola%20x%20bianco.jpg">
-            <img src="immagini_web/one piece fiamme viola x bianco_ts.jpg" loading="lazy" alt="MNG-039" onclick="apriZoom('immagini_web/one piece fiamme viola x bianco.jpg', 'one piece fiamme viola x bianco.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-039">MNG-039</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-040" data-nome="one piece fiamme viola x nero.jpg" data-thumb="immagini_web/one piece fiamme viola x nero_ts.jpg" data-zoom="immagini_web/one piece fiamme viola x nero.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20fiamme%20viola%20x%20nero.jpg">
-            <img src="immagini_web/one piece fiamme viola x nero_ts.jpg" loading="lazy" alt="MNG-040" onclick="apriZoom('immagini_web/one piece fiamme viola x nero.jpg', 'one piece fiamme viola x nero.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-040">MNG-040</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-041" data-nome="one piece gear 5 scritta gialla_nero.jpg" data-thumb="immagini_web/one piece gear 5 scritta gialla_nero_ts.jpg" data-zoom="immagini_web/one piece gear 5 scritta gialla_nero.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20gear%205%20scritta%20gialla_nero.jpg">
-            <img src="immagini_web/one piece gear 5 scritta gialla_nero_ts.jpg" loading="lazy" alt="MNG-041" onclick="apriZoom('immagini_web/one piece gear 5 scritta gialla_nero.jpg', 'one piece gear 5 scritta gialla_nero.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-041">MNG-041</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-042" data-nome="One piece giornali.jpg" data-thumb="immagini_web/One piece giornali_ts.jpg" data-zoom="immagini_web/One piece giornali.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/One%20piece%20giornali.jpg">
-            <img src="immagini_web/One piece giornali_ts.jpg" loading="lazy" alt="MNG-042" onclick="apriZoom('immagini_web/One piece giornali.jpg', 'One piece giornali.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-042">MNG-042</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-043" data-nome="one piece logo piu scritta.jpg" data-thumb="immagini_web/one piece logo piu scritta_ts.jpg" data-zoom="immagini_web/one piece logo piu scritta.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20logo%20piu%20scritta.jpg">
-            <img src="immagini_web/one piece logo piu scritta_ts.jpg" loading="lazy" alt="MNG-043" onclick="apriZoom('immagini_web/one piece logo piu scritta.jpg', 'one piece logo piu scritta.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-043">MNG-043</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-044" data-nome="One piece luffy_nero.jpg" data-thumb="immagini_web/One piece luffy_nero_ts.jpg" data-zoom="immagini_web/One piece luffy_nero.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/One%20piece%20luffy_nero.jpg">
-            <img src="immagini_web/One piece luffy_nero_ts.jpg" loading="lazy" alt="MNG-044" onclick="apriZoom('immagini_web/One piece luffy_nero.jpg', 'One piece luffy_nero.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-044">MNG-044</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-045" data-nome="one piece molti occhi.jpg" data-thumb="immagini_web/one piece molti occhi_ts.jpg" data-zoom="immagini_web/one piece molti occhi.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20molti%20occhi.jpg">
-            <img src="immagini_web/one piece molti occhi_ts.jpg" loading="lazy" alt="MNG-045" onclick="apriZoom('immagini_web/one piece molti occhi.jpg', 'one piece molti occhi.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-045">MNG-045</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-046" data-nome="one piece nave dietro.jpg" data-thumb="immagini_web/one piece nave dietro_ts.jpg" data-zoom="immagini_web/one piece nave dietro.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20nave%20dietro.jpg">
-            <img src="immagini_web/one piece nave dietro_ts.jpg" loading="lazy" alt="MNG-046" onclick="apriZoom('immagini_web/one piece nave dietro.jpg', 'one piece nave dietro.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-046">MNG-046</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-047" data-nome="One piece sagom teschio.jpg" data-thumb="immagini_web/One piece sagom teschio_ts.jpg" data-zoom="immagini_web/One piece sagom teschio.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/One%20piece%20sagom%20teschio.jpg">
-            <img src="immagini_web/One piece sagom teschio_ts.jpg" loading="lazy" alt="MNG-047" onclick="apriZoom('immagini_web/One piece sagom teschio.jpg', 'One piece sagom teschio.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-047">MNG-047</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-048" data-nome="one piece sagona personaggio.jpg" data-thumb="immagini_web/one piece sagona personaggio_ts.jpg" data-zoom="immagini_web/one piece sagona personaggio.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20sagona%20personaggio.jpg">
-            <img src="immagini_web/one piece sagona personaggio_ts.jpg" loading="lazy" alt="MNG-048" onclick="apriZoom('immagini_web/one piece sagona personaggio.jpg', 'one piece sagona personaggio.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-048">MNG-048</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-    </div>
-    <div class="page">
-        <div class="item" data-codice="MNG-049" data-nome="one piece sul grigio.jpg" data-thumb="immagini_web/one piece sul grigio_ts.jpg" data-zoom="immagini_web/one piece sul grigio.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20sul%20grigio.jpg">
-            <img src="immagini_web/one piece sul grigio_ts.jpg" loading="lazy" alt="MNG-049" onclick="apriZoom('immagini_web/one piece sul grigio.jpg', 'one piece sul grigio.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-049">MNG-049</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-050" data-nome="one piece tescio logo.jpg" data-thumb="immagini_web/one piece tescio logo_ts.jpg" data-zoom="immagini_web/one piece tescio logo.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20tescio%20logo.jpg">
-            <img src="immagini_web/one piece tescio logo_ts.jpg" loading="lazy" alt="MNG-050" onclick="apriZoom('immagini_web/one piece tescio logo.jpg', 'one piece tescio logo.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-050">MNG-050</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-051" data-nome="one piece wanted luffy.jpg" data-thumb="immagini_web/one piece wanted luffy_ts.jpg" data-zoom="immagini_web/one piece wanted luffy.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20wanted%20luffy.jpg">
-            <img src="immagini_web/one piece wanted luffy_ts.jpg" loading="lazy" alt="MNG-051" onclick="apriZoom('immagini_web/one piece wanted luffy.jpg', 'one piece wanted luffy.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-051">MNG-051</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-052" data-nome="one piece zoro wanted.jpg" data-thumb="immagini_web/one piece zoro wanted_ts.jpg" data-zoom="immagini_web/one piece zoro wanted.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20zoro%20wanted.jpg">
-            <img src="immagini_web/one piece zoro wanted_ts.jpg" loading="lazy" alt="MNG-052" onclick="apriZoom('immagini_web/one piece zoro wanted.jpg', 'one piece zoro wanted.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-052">MNG-052</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-053" data-nome="one piece zoro wnted x nero.jpg" data-thumb="immagini_web/one piece zoro wnted x nero_ts.jpg" data-zoom="immagini_web/one piece zoro wnted x nero.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20zoro%20wnted%20x%20nero.jpg">
-            <img src="immagini_web/one piece zoro wnted x nero_ts.jpg" loading="lazy" alt="MNG-053" onclick="apriZoom('immagini_web/one piece zoro wnted x nero.jpg', 'one piece zoro wnted x nero.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-053">MNG-053</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-054" data-nome="slam dunk.jpg" data-thumb="immagini_web/slam dunk_ts.jpg" data-zoom="immagini_web/slam dunk.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/slam%20dunk.jpg">
-            <img src="immagini_web/slam dunk_ts.jpg" loading="lazy" alt="MNG-054" onclick="apriZoom('immagini_web/slam dunk.jpg', 'slam dunk.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-054">MNG-054</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-055" data-nome="spy x family bianco.jpg" data-thumb="immagini_web/spy x family bianco_ts.jpg" data-zoom="immagini_web/spy x family bianco.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/spy%20x%20family%20bianco.jpg">
-            <img src="immagini_web/spy x family bianco_ts.jpg" loading="lazy" alt="MNG-055" onclick="apriZoom('immagini_web/spy x family bianco.jpg', 'spy x family bianco.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-055">MNG-055</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-056" data-nome="YATTAMAN.jpg" data-thumb="immagini_web/YATTAMAN_ts.jpg" data-zoom="immagini_web/YATTAMAN.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/YATTAMAN.jpg">
-            <img src="immagini_web/YATTAMAN_ts.jpg" loading="lazy" alt="MNG-056" onclick="apriZoom('immagini_web/YATTAMAN.jpg', 'YATTAMAN.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-056">MNG-056</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
-        <div class="item" data-codice="MNG-057" data-nome="Zeniztu luce.jpg" data-thumb="immagini_web/Zeniztu luce_ts.jpg" data-zoom="immagini_web/Zeniztu luce.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/Zeniztu%20luce.jpg">
-            <img src="immagini_web/Zeniztu luce_ts.jpg" loading="lazy" alt="MNG-057" onclick="apriZoom('immagini_web/Zeniztu luce.jpg', 'Zeniztu luce.jpg')" title="Clicca per vedere in grande">
-            <div class="info-box">
-                <span class="code" title="MNG-057">MNG-057</span>
-                <button class="btn-seleziona" onclick="toggleSeleziona(this)">⭐ Scegli</button>
-            </div>
-        </div>
+<div class="page">
+<div class="item" data-codice="MNG-001" data-nome="4 robot nero.jpg" data-thumb="immagini_web/4 robot nero_ts.jpg" data-zoom="immagini_web/4 robot nero.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/4%20robot%20nero.jpg">
+<img src="immagini_web/4 robot nero_ts.jpg" loading="lazy" alt="MNG-001" onclick="apriZoom('immagini_web/4 robot nero.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-001">MNG-001</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-002" data-nome="4 robot.jpg" data-thumb="immagini_web/4 robot_ts.jpg" data-zoom="immagini_web/4 robot.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/4%20robot.jpg">
+<img src="immagini_web/4 robot_ts.jpg" loading="lazy" alt="MNG-002" onclick="apriZoom('immagini_web/4 robot.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-002">MNG-002</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-003" data-nome="Chainsaw Rosso.jpg" data-thumb="immagini_web/Chainsaw Rosso_ts.jpg" data-zoom="immagini_web/Chainsaw Rosso.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/Chainsaw%20Rosso.jpg">
+<img src="immagini_web/Chainsaw Rosso_ts.jpg" loading="lazy" alt="MNG-003" onclick="apriZoom('immagini_web/Chainsaw Rosso.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-003">MNG-003</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-004" data-nome="Chainsaw verde.jpg" data-thumb="immagini_web/Chainsaw verde_ts.jpg" data-zoom="immagini_web/Chainsaw verde.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/Chainsaw%20verde.jpg">
+<img src="immagini_web/Chainsaw verde_ts.jpg" loading="lazy" alt="MNG-004" onclick="apriZoom('immagini_web/Chainsaw verde.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-004">MNG-004</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-005" data-nome="death note.png" data-thumb="immagini_web/death note_ts.jpg" data-zoom="immagini_web/death note.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/death%20note.jpg">
+<img src="immagini_web/death note_ts.jpg" loading="lazy" alt="MNG-005" onclick="apriZoom('immagini_web/death note.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-005">MNG-005</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-006" data-nome="dragonball blt.jpg" data-thumb="immagini_web/dragonball blt_ts.jpg" data-zoom="immagini_web/dragonball blt.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/dragonball%20blt.jpg">
+<img src="immagini_web/dragonball blt_ts.jpg" loading="lazy" alt="MNG-006" onclick="apriZoom('immagini_web/dragonball blt.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-006">MNG-006</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-007" data-nome="Dragonball Drago.jpg" data-thumb="immagini_web/Dragonball Drago_ts.jpg" data-zoom="immagini_web/Dragonball Drago.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/Dragonball%20Drago.jpg">
+<img src="immagini_web/Dragonball Drago_ts.jpg" loading="lazy" alt="MNG-007" onclick="apriZoom('immagini_web/Dragonball Drago.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-007">MNG-007</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-008" data-nome="dragonball fiamme.png" data-thumb="immagini_web/dragonball fiamme_ts.jpg" data-zoom="immagini_web/dragonball fiamme.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/dragonball%20fiamme.jpg">
+<img src="immagini_web/dragonball fiamme_ts.jpg" loading="lazy" alt="MNG-008" onclick="apriZoom('immagini_web/dragonball fiamme.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-008">MNG-008</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-009" data-nome="Dragonball fumetti grigio.jpg" data-thumb="immagini_web/Dragonball fumetti grigio_ts.jpg" data-zoom="immagini_web/Dragonball fumetti grigio.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/Dragonball%20fumetti%20grigio.jpg">
+<img src="immagini_web/Dragonball fumetti grigio_ts.jpg" loading="lazy" alt="MNG-009" onclick="apriZoom('immagini_web/Dragonball fumetti grigio.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-009">MNG-009</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-010" data-nome="dragonball genio.jpg" data-thumb="immagini_web/dragonball genio_ts.jpg" data-zoom="immagini_web/dragonball genio.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/dragonball%20genio.jpg">
+<img src="immagini_web/dragonball genio_ts.jpg" loading="lazy" alt="MNG-010" onclick="apriZoom('immagini_web/dragonball genio.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-010">MNG-010</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-011" data-nome="dragonball goku sfera.jpg" data-thumb="immagini_web/dragonball goku sfera_ts.jpg" data-zoom="immagini_web/dragonball goku sfera.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/dragonball%20goku%20sfera.jpg">
+<img src="immagini_web/dragonball goku sfera_ts.jpg" loading="lazy" alt="MNG-011" onclick="apriZoom('immagini_web/dragonball goku sfera.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-011">MNG-011</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-012" data-nome="dragonball scimmia.jpg" data-thumb="immagini_web/dragonball scimmia_ts.jpg" data-zoom="immagini_web/dragonball scimmia.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/dragonball%20scimmia.jpg">
+<img src="immagini_web/dragonball scimmia_ts.jpg" loading="lazy" alt="MNG-012" onclick="apriZoom('immagini_web/dragonball scimmia.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-012">MNG-012</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+</div>
+<div class="page">
+<div class="item" data-codice="MNG-013" data-nome="Dragonball SonGoku Bianco.jpg" data-thumb="immagini_web/Dragonball SonGoku Bianco_ts.jpg" data-zoom="immagini_web/Dragonball SonGoku Bianco.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/Dragonball%20SonGoku%20Bianco.jpg">
+<img src="immagini_web/Dragonball SonGoku Bianco_ts.jpg" loading="lazy" alt="MNG-013" onclick="apriZoom('immagini_web/Dragonball SonGoku Bianco.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-013">MNG-013</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-014" data-nome="dragonball vintage sfera.jpg" data-thumb="immagini_web/dragonball vintage sfera_ts.jpg" data-zoom="immagini_web/dragonball vintage sfera.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/dragonball%20vintage%20sfera.jpg">
+<img src="immagini_web/dragonball vintage sfera_ts.jpg" loading="lazy" alt="MNG-014" onclick="apriZoom('immagini_web/dragonball vintage sfera.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-014">MNG-014</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-015" data-nome="dragonball_nero.jpg" data-thumb="immagini_web/dragonball_nero_ts.jpg" data-zoom="immagini_web/dragonball_nero.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/dragonball_nero.jpg">
+<img src="immagini_web/dragonball_nero_ts.jpg" loading="lazy" alt="MNG-015" onclick="apriZoom('immagini_web/dragonball_nero.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-015">MNG-015</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-016" data-nome="Drsgonball fumetto colorato.jpg" data-thumb="immagini_web/Drsgonball fumetto colorato_ts.jpg" data-zoom="immagini_web/Drsgonball fumetto colorato.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/Drsgonball%20fumetto%20colorato.jpg">
+<img src="immagini_web/Drsgonball fumetto colorato_ts.jpg" loading="lazy" alt="MNG-016" onclick="apriZoom('immagini_web/Drsgonball fumetto colorato.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-016">MNG-016</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-017" data-nome="goku vintage di spalle.jpg" data-thumb="immagini_web/goku vintage di spalle_ts.jpg" data-zoom="immagini_web/goku vintage di spalle.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/goku%20vintage%20di%20spalle.jpg">
+<img src="immagini_web/goku vintage di spalle_ts.jpg" loading="lazy" alt="MNG-017" onclick="apriZoom('immagini_web/goku vintage di spalle.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-017">MNG-017</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-018" data-nome="goldrake personaggio.png" data-thumb="immagini_web/goldrake personaggio_ts.jpg" data-zoom="immagini_web/goldrake personaggio.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/goldrake%20personaggio.jpg">
+<img src="immagini_web/goldrake personaggio_ts.jpg" loading="lazy" alt="MNG-018" onclick="apriZoom('immagini_web/goldrake personaggio.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-018">MNG-018</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-019" data-nome="hatsune.jpg" data-thumb="immagini_web/hatsune_ts.jpg" data-zoom="immagini_web/hatsune.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/hatsune.jpg">
+<img src="immagini_web/hatsune_ts.jpg" loading="lazy" alt="MNG-019" onclick="apriZoom('immagini_web/hatsune.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-019">MNG-019</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-020" data-nome="inuhasha.jpg" data-thumb="immagini_web/inuhasha_ts.jpg" data-zoom="immagini_web/inuhasha.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/inuhasha.jpg">
+<img src="immagini_web/inuhasha_ts.jpg" loading="lazy" alt="MNG-020" onclick="apriZoom('immagini_web/inuhasha.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-020">MNG-020</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-021" data-nome="jojo.png" data-thumb="immagini_web/jojo_ts.jpg" data-zoom="immagini_web/jojo.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/jojo.jpg">
+<img src="immagini_web/jojo_ts.jpg" loading="lazy" alt="MNG-021" onclick="apriZoom('immagini_web/jojo.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-021">MNG-021</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-022" data-nome="juju gruppo_bianco.png" data-thumb="immagini_web/juju gruppo_bianco_ts.jpg" data-zoom="immagini_web/juju gruppo_bianco.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/juju%20gruppo_bianco.jpg">
+<img src="immagini_web/juju gruppo_bianco_ts.jpg" loading="lazy" alt="MNG-022" onclick="apriZoom('immagini_web/juju gruppo_bianco.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-022">MNG-022</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-023" data-nome="juju gruppo_nero.jpg" data-thumb="immagini_web/juju gruppo_nero_ts.jpg" data-zoom="immagini_web/juju gruppo_nero.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/juju%20gruppo_nero.jpg">
+<img src="immagini_web/juju gruppo_nero_ts.jpg" loading="lazy" alt="MNG-023" onclick="apriZoom('immagini_web/juju gruppo_nero.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-023">MNG-023</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-024" data-nome="juju personaggio_nero.jpg" data-thumb="immagini_web/juju personaggio_nero_ts.jpg" data-zoom="immagini_web/juju personaggio_nero.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/juju%20personaggio_nero.jpg">
+<img src="immagini_web/juju personaggio_nero_ts.jpg" loading="lazy" alt="MNG-024" onclick="apriZoom('immagini_web/juju personaggio_nero.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-024">MNG-024</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+</div>
+<div class="page">
+<div class="item" data-codice="MNG-025" data-nome="Kakashi.jpg" data-thumb="immagini_web/Kakashi_ts.jpg" data-zoom="immagini_web/Kakashi.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/Kakashi.jpg">
+<img src="immagini_web/Kakashi_ts.jpg" loading="lazy" alt="MNG-025" onclick="apriZoom('immagini_web/Kakashi.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-025">MNG-025</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-026" data-nome="Ken gruppo x nero.jpg" data-thumb="immagini_web/Ken gruppo x nero_ts.jpg" data-zoom="immagini_web/Ken gruppo x nero.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/Ken%20gruppo%20x%20nero.jpg">
+<img src="immagini_web/Ken gruppo x nero_ts.jpg" loading="lazy" alt="MNG-026" onclick="apriZoom('immagini_web/Ken gruppo x nero.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-026">MNG-026</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-027" data-nome="Ken rettangolo x nero.jpg" data-thumb="immagini_web/Ken rettangolo x nero_ts.jpg" data-zoom="immagini_web/Ken rettangolo x nero.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/Ken%20rettangolo%20x%20nero.jpg">
+<img src="immagini_web/Ken rettangolo x nero_ts.jpg" loading="lazy" alt="MNG-027" onclick="apriZoom('immagini_web/Ken rettangolo x nero.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-027">MNG-027</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-028" data-nome="KEN SHIRO RETTANGOLO bia.jpg" data-thumb="immagini_web/KEN SHIRO RETTANGOLO bia_ts.jpg" data-zoom="immagini_web/KEN SHIRO RETTANGOLO bia.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/KEN%20SHIRO%20RETTANGOLO%20bia.jpg">
+<img src="immagini_web/KEN SHIRO RETTANGOLO bia_ts.jpg" loading="lazy" alt="MNG-028" onclick="apriZoom('immagini_web/KEN SHIRO RETTANGOLO bia.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-028">MNG-028</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-029" data-nome="my hero academia gruppo x nero.jpg" data-thumb="immagini_web/my hero academia gruppo x nero_ts.jpg" data-zoom="immagini_web/my hero academia gruppo x nero.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/my%20hero%20academia%20gruppo%20x%20nero.jpg">
+<img src="immagini_web/my hero academia gruppo x nero_ts.jpg" loading="lazy" alt="MNG-029" onclick="apriZoom('immagini_web/my hero academia gruppo x nero.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-029">MNG-029</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-030" data-nome="naruto 3 occhi.jpg" data-thumb="immagini_web/naruto 3 occhi_ts.jpg" data-zoom="immagini_web/naruto 3 occhi.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/naruto%203%20occhi.jpg">
+<img src="immagini_web/naruto 3 occhi_ts.jpg" loading="lazy" alt="MNG-030" onclick="apriZoom('immagini_web/naruto 3 occhi.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-030">MNG-030</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-031" data-nome="naruto gruppo rettangoli.jpg" data-thumb="immagini_web/naruto gruppo rettangoli_ts.jpg" data-zoom="immagini_web/naruto gruppo rettangoli.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/naruto%20gruppo%20rettangoli.jpg">
+<img src="immagini_web/naruto gruppo rettangoli_ts.jpg" loading="lazy" alt="MNG-031" onclick="apriZoom('immagini_web/naruto gruppo rettangoli.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-031">MNG-031</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-032" data-nome="Naruto rettangoli bianchi x nero.jpg" data-thumb="immagini_web/Naruto rettangoli bianchi x nero_ts.jpg" data-zoom="immagini_web/Naruto rettangoli bianchi x nero.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/Naruto%20rettangoli%20bianchi%20x%20nero.jpg">
+<img src="immagini_web/Naruto rettangoli bianchi x nero_ts.jpg" loading="lazy" alt="MNG-032" onclick="apriZoom('immagini_web/Naruto rettangoli bianchi x nero.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-032">MNG-032</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-033" data-nome="naruto scritta_bianco.jpg" data-thumb="immagini_web/naruto scritta_bianco_ts.jpg" data-zoom="immagini_web/naruto scritta_bianco.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/naruto%20scritta_bianco.jpg">
+<img src="immagini_web/naruto scritta_bianco_ts.jpg" loading="lazy" alt="MNG-033" onclick="apriZoom('immagini_web/naruto scritta_bianco.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-033">MNG-033</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-034" data-nome="naruto scritta_nero.jpg" data-thumb="immagini_web/naruto scritta_nero_ts.jpg" data-zoom="immagini_web/naruto scritta_nero.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/naruto%20scritta_nero.jpg">
+<img src="immagini_web/naruto scritta_nero_ts.jpg" loading="lazy" alt="MNG-034" onclick="apriZoom('immagini_web/naruto scritta_nero.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-034">MNG-034</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-035" data-nome="one piece 3 personaggi.jpg" data-thumb="immagini_web/one piece 3 personaggi_ts.jpg" data-zoom="immagini_web/one piece 3 personaggi.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%203%20personaggi.jpg">
+<img src="immagini_web/one piece 3 personaggi_ts.jpg" loading="lazy" alt="MNG-035" onclick="apriZoom('immagini_web/one piece 3 personaggi.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-035">MNG-035</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-036" data-nome="one piece braccio.jpg" data-thumb="immagini_web/one piece braccio_ts.jpg" data-zoom="immagini_web/one piece braccio.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20braccio.jpg">
+<img src="immagini_web/one piece braccio_ts.jpg" loading="lazy" alt="MNG-036" onclick="apriZoom('immagini_web/one piece braccio.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-036">MNG-036</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+</div>
+<div class="page">
+<div class="item" data-codice="MNG-037" data-nome="one piece bussola.jpg" data-thumb="immagini_web/one piece bussola_ts.jpg" data-zoom="immagini_web/one piece bussola.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20bussola.jpg">
+<img src="immagini_web/one piece bussola_ts.jpg" loading="lazy" alt="MNG-037" onclick="apriZoom('immagini_web/one piece bussola.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-037">MNG-037</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-038" data-nome="one piece colorato.jpg" data-thumb="immagini_web/one piece colorato_ts.jpg" data-zoom="immagini_web/one piece colorato.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20colorato.jpg">
+<img src="immagini_web/one piece colorato_ts.jpg" loading="lazy" alt="MNG-038" onclick="apriZoom('immagini_web/one piece colorato.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-038">MNG-038</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-039" data-nome="one piece fiamme viola x bianco.jpg" data-thumb="immagini_web/one piece fiamme viola x bianco_ts.jpg" data-zoom="immagini_web/one piece fiamme viola x bianco.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20fiamme%20viola%20x%20bianco.jpg">
+<img src="immagini_web/one piece fiamme viola x bianco_ts.jpg" loading="lazy" alt="MNG-039" onclick="apriZoom('immagini_web/one piece fiamme viola x bianco.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-039">MNG-039</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-040" data-nome="one piece fiamme viola x nero.jpg" data-thumb="immagini_web/one piece fiamme viola x nero_ts.jpg" data-zoom="immagini_web/one piece fiamme viola x nero.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20fiamme%20viola%20x%20nero.jpg">
+<img src="immagini_web/one piece fiamme viola x nero_ts.jpg" loading="lazy" alt="MNG-040" onclick="apriZoom('immagini_web/one piece fiamme viola x nero.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-040">MNG-040</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-041" data-nome="one piece gear 5 scritta gialla_nero.jpg" data-thumb="immagini_web/one piece gear 5 scritta gialla_nero_ts.jpg" data-zoom="immagini_web/one piece gear 5 scritta gialla_nero.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20gear%205%20scritta%20gialla_nero.jpg">
+<img src="immagini_web/one piece gear 5 scritta gialla_nero_ts.jpg" loading="lazy" alt="MNG-041" onclick="apriZoom('immagini_web/one piece gear 5 scritta gialla_nero.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-041">MNG-041</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-042" data-nome="One piece giornali.jpg" data-thumb="immagini_web/One piece giornali_ts.jpg" data-zoom="immagini_web/One piece giornali.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/One%20piece%20giornali.jpg">
+<img src="immagini_web/One piece giornali_ts.jpg" loading="lazy" alt="MNG-042" onclick="apriZoom('immagini_web/One piece giornali.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-042">MNG-042</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-043" data-nome="one piece logo piu scritta.jpg" data-thumb="immagini_web/one piece logo piu scritta_ts.jpg" data-zoom="immagini_web/one piece logo piu scritta.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20logo%20piu%20scritta.jpg">
+<img src="immagini_web/one piece logo piu scritta_ts.jpg" loading="lazy" alt="MNG-043" onclick="apriZoom('immagini_web/one piece logo piu scritta.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-043">MNG-043</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-044" data-nome="One piece luffy_nero.jpg" data-thumb="immagini_web/One piece luffy_nero_ts.jpg" data-zoom="immagini_web/One piece luffy_nero.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/One%20piece%20luffy_nero.jpg">
+<img src="immagini_web/One piece luffy_nero_ts.jpg" loading="lazy" alt="MNG-044" onclick="apriZoom('immagini_web/One piece luffy_nero.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-044">MNG-044</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-045" data-nome="one piece molti occhi.jpg" data-thumb="immagini_web/one piece molti occhi_ts.jpg" data-zoom="immagini_web/one piece molti occhi.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20molti%20occhi.jpg">
+<img src="immagini_web/one piece molti occhi_ts.jpg" loading="lazy" alt="MNG-045" onclick="apriZoom('immagini_web/one piece molti occhi.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-045">MNG-045</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-046" data-nome="one piece nave dietro.jpg" data-thumb="immagini_web/one piece nave dietro_ts.jpg" data-zoom="immagini_web/one piece nave dietro.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20nave%20dietro.jpg">
+<img src="immagini_web/one piece nave dietro_ts.jpg" loading="lazy" alt="MNG-046" onclick="apriZoom('immagini_web/one piece nave dietro.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-046">MNG-046</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-047" data-nome="One piece sagom teschio.jpg" data-thumb="immagini_web/One piece sagom teschio_ts.jpg" data-zoom="immagini_web/One piece sagom teschio.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/One%20piece%20sagom%20teschio.jpg">
+<img src="immagini_web/One piece sagom teschio_ts.jpg" loading="lazy" alt="MNG-047" onclick="apriZoom('immagini_web/One piece sagom teschio.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-047">MNG-047</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-048" data-nome="one piece sagona personaggio.jpg" data-thumb="immagini_web/one piece sagona personaggio_ts.jpg" data-zoom="immagini_web/one piece sagona personaggio.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20sagona%20personaggio.jpg">
+<img src="immagini_web/one piece sagona personaggio_ts.jpg" loading="lazy" alt="MNG-048" onclick="apriZoom('immagini_web/one piece sagona personaggio.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-048">MNG-048</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+</div>
+<div class="page">
+<div class="item" data-codice="MNG-049" data-nome="one piece sul grigio.jpg" data-thumb="immagini_web/one piece sul grigio_ts.jpg" data-zoom="immagini_web/one piece sul grigio.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20sul%20grigio.jpg">
+<img src="immagini_web/one piece sul grigio_ts.jpg" loading="lazy" alt="MNG-049" onclick="apriZoom('immagini_web/one piece sul grigio.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-049">MNG-049</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-050" data-nome="one piece tescio logo.jpg" data-thumb="immagini_web/one piece tescio logo_ts.jpg" data-zoom="immagini_web/one piece tescio logo.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20tescio%20logo.jpg">
+<img src="immagini_web/one piece tescio logo_ts.jpg" loading="lazy" alt="MNG-050" onclick="apriZoom('immagini_web/one piece tescio logo.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-050">MNG-050</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-051" data-nome="one piece wanted luffy.jpg" data-thumb="immagini_web/one piece wanted luffy_ts.jpg" data-zoom="immagini_web/one piece wanted luffy.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20wanted%20luffy.jpg">
+<img src="immagini_web/one piece wanted luffy_ts.jpg" loading="lazy" alt="MNG-051" onclick="apriZoom('immagini_web/one piece wanted luffy.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-051">MNG-051</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-052" data-nome="one piece zoro wanted.jpg" data-thumb="immagini_web/one piece zoro wanted_ts.jpg" data-zoom="immagini_web/one piece zoro wanted.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20zoro%20wanted.jpg">
+<img src="immagini_web/one piece zoro wanted_ts.jpg" loading="lazy" alt="MNG-052" onclick="apriZoom('immagini_web/one piece zoro wanted.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-052">MNG-052</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-053" data-nome="one piece zoro wnted x nero.jpg" data-thumb="immagini_web/one piece zoro wnted x nero_ts.jpg" data-zoom="immagini_web/one piece zoro wnted x nero.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/one%20piece%20zoro%20wnted%20x%20nero.jpg">
+<img src="immagini_web/one piece zoro wnted x nero_ts.jpg" loading="lazy" alt="MNG-053" onclick="apriZoom('immagini_web/one piece zoro wnted x nero.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-053">MNG-053</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-054" data-nome="slam dunk.jpg" data-thumb="immagini_web/slam dunk_ts.jpg" data-zoom="immagini_web/slam dunk.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/slam%20dunk.jpg">
+<img src="immagini_web/slam dunk_ts.jpg" loading="lazy" alt="MNG-054" onclick="apriZoom('immagini_web/slam dunk.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-054">MNG-054</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-055" data-nome="spy x family bianco.jpg" data-thumb="immagini_web/spy x family bianco_ts.jpg" data-zoom="immagini_web/spy x family bianco.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/spy%20x%20family%20bianco.jpg">
+<img src="immagini_web/spy x family bianco_ts.jpg" loading="lazy" alt="MNG-055" onclick="apriZoom('immagini_web/spy x family bianco.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-055">MNG-055</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-056" data-nome="YATTAMAN.jpg" data-thumb="immagini_web/YATTAMAN_ts.jpg" data-zoom="immagini_web/YATTAMAN.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/YATTAMAN.jpg">
+<img src="immagini_web/YATTAMAN_ts.jpg" loading="lazy" alt="MNG-056" onclick="apriZoom('immagini_web/YATTAMAN.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-056">MNG-056</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-057" data-nome="Zeniztu luce.jpg" data-thumb="immagini_web/Zeniztu luce_ts.jpg" data-zoom="immagini_web/Zeniztu luce.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshir/immagini_web/Zeniztu%20luce.jpg">
+<img src="immagini_web/Zeniztu luce_ts.jpg" loading="lazy" alt="MNG-057" onclick="apriZoom('immagini_web/Zeniztu luce.jpg')" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-057">MNG-057</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
 
-    </div>
-    <div class="floating-bar">
-        <div>🛒 Scelte: <span id="counter">0</span></div>
-        <button onclick="apriCarrello()">Vedi & Invia</button>
-    </div>
-    <div id="modalCarrello" class="modal-carrello" onclick="chiudiCarrelloFuori(event)">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>La tua Selezione</h3>
-                <button onclick="chiudiCarrello()" style="background:none;border:none;font-size:18px;cursor:pointer;">✕</button>
-            </div>
-            <div class="cart-items-list" id="cartList"></div>
-            <button onclick="inviaWhatsApp()" style="background:#25d366;color:white;border:none;padding:12px;border-radius:8px;font-weight:bold;font-size:14px;cursor:pointer;width:100%;">
-                💬 Invia Lista su WhatsApp
-            </button>
-        </div>
-    </div>
-    <div id="lightbox" class="lightbox-modal" onclick="chiudiZoom()">
-        <img id="lightbox-img" src="" alt="Zoom Grafica">
-    </div>
-    <script>
-        let selezione = [];
-        function toggleSeleziona(btn) {
-            const item = btn.closest('.item');
-            const codice = item.dataset.codice;
-            const nome = item.dataset.nome;
-            const thumb = item.dataset.thumb;
-            const urlPubblico = item.dataset.url;
-            const index = selezione.findIndex(i => i.codice === codice);
-            if (index > -1) {
-                selezione.splice(index, 1);
-                btn.classList.remove('selezionato');
-                btn.innerText = "⭐ Scegli";
-            } else {
-                selezione.push({ codice, nome, thumb, urlPubblico });
-                btn.classList.add('selezionato');
-                btn.innerText = "✓ Scelto";
-            }
-            document.getElementById('counter').innerText = selezione.length;
+</div>
+<div class="floating-bar">
+<div>Scelte: <span id="counter">0</span></div>
+<button onclick="apriCarrello()">Vedi & Invia</button>
+</div>
+<div id="modalCarrello" class="modal-carrello" onclick="chiudiCarrelloFuori(event)">
+<div class="modal-content">
+<div class="modal-header">
+<h3>La tua Selezione</h3>
+<button onclick="chiudiCarrello()" style="background:none;border:none;font-size:18px;cursor:pointer;">X</button>
+</div>
+<div class="cart-items-list" id="cartList"></div>
+<button onclick="inviaWhatsApp()" style="background:#25d366;color:white;border:none;padding:12px;border-radius:8px;font-weight:bold;font-size:14px;cursor:pointer;width:100%;">Invia Lista su WhatsApp</button>
+</div>
+</div>
+<div id="lightbox" class="lightbox-modal" onclick="chiudiZoom()">
+<img id="lightbox-img" src="" alt="Zoom Grafica">
+</div>
+<script>
+let selezione = [];
+function toggleSeleziona(btn) {
+    const item = btn.closest('.item');
+    const codice = item.dataset.codice;
+    const nome = item.dataset.nome;
+    const thumb = item.dataset.thumb;
+    const urlPubblico = item.dataset.url;
+    const index = selezione.findIndex(i => i.codice === codice);
+    if (index > -1) {
+        selezione.splice(index, 1);
+        btn.classList.remove('selezionato');
+        btn.innerText = "Scegli";
+    } else {
+        selezione.push({ codice, nome, thumb, urlPubblico });
+        btn.classList.add('selezionato');
+        btn.innerText = "Scelto";
+    }
+    document.getElementById('counter').innerText = selezione.length;
+}
+function apriCarrello() {
+    const listContainer = document.getElementById('cartList');
+    listContainer.innerHTML = '';
+    if (selezione.length === 0) {
+        listContainer.innerHTML = '<p style="text-align:center;color:#777;padding:20px;">Nessun articolo selezionato.</p>';
+    } else {
+        selezione.forEach(item => {
+            listContainer.innerHTML += '<div class="cart-item"><img src="' + item.thumb + '" alt="' + item.codice + '"><div class="cart-item-info"><div>' + item.codice + '</div><div style="font-size:9px;color:#666;">' + item.nome + '</div></div><button class="cart-item-remove" onclick="rimuoviElemento('' + item.codice + '')">Elimina</button></div>';
+        });
+    }
+    document.getElementById('modalCarrello').style.display = 'flex';
+}
+function chiudiCarrello() { document.getElementById('modalCarrello').style.display = 'none'; }
+function chiudiCarrelloFuori(e) { if (e.target.id === 'modalCarrello') chiudiCarrello(); }
+function rimuoviElemento(codice) {
+    selezione = selezione.filter(i => i.codice !== codice);
+    document.getElementById('counter').innerText = selezione.length;
+    document.querySelectorAll('.item').forEach(el => {
+        if (el.dataset.codice === codice) {
+            const btn = el.querySelector('.btn-seleziona');
+            btn.classList.remove('selezionato');
+            btn.innerText = "Scegli";
         }
-        function apriCarrello() {
-            const listContainer = document.getElementById('cartList');
-            listContainer.innerHTML = '';
-            if (selezione.length === 0) {
-                listContainer.innerHTML = '<p style="text-align:center;color:#777;padding:20px;">Nessun articolo selezionato.</p>';
-            } else {
-                selezione.forEach(item => {
-                    listContainer.innerHTML += `
-                        <div class="cart-item">
-                            <img src="${item.thumb}" alt="${item.codice}">
-                            <div class="cart-item-info">
-                                <div>${item.codice}</div>
-                                <div style="font-size:9px;color:#666;">${item.nome}</div>
-                            </div>
-                            <button class="cart-item-remove" onclick="rimuoviElemento('${item.codice}')">Elimina</button>
-                        </div>
-                    `;
-                });
-            }
-            document.getElementById('modalCarrello').style.display = 'flex';
-        }
-        function chiudiCarrello() { document.getElementById('modalCarrello').style.display = 'none'; }
-        function chiudiCarrelloFuori(e) { if (e.target.id === 'modalCarrello') chiudiCarrello(); }
-        function rimuoviElemento(codice) {
-            selezione = selezione.filter(i => i.codice !== codice);
-            document.getElementById('counter').innerText = selezione.length;
-            document.querySelectorAll('.item').forEach(el => {
-                if (el.dataset.codice === codice) {
-                    const btn = el.querySelector('.btn-seleziona');
-                    btn.classList.remove('selezionato');
-                    btn.innerText = "⭐ Scegli";
-                }
-            });
-            apriCarrello();
-        }
-        function inviaWhatsApp() {
-            if (selezione.length === 0) {
-                alert("Seleziona almeno un articolo prima di inviare!");
-                return;
-            }
-            let testo = "Ciao! Vorrei ordinare questi articoli:%0A";
-            selezione.forEach(item => {
-                testo += `%0A- ${item.codice} (${item.nome})%0A  👉 ${item.urlPubblico}%0A`;
-            });
-            const numero = "393331234567";
-            window.open(`https://wa.me/${numero}?text=${testo}`, '_blank');
-        }
-        function apriZoom(srcGrafica, nomeFile) {
-            const lightbox = document.getElementById("lightbox");
-            const imgZoom = document.getElementById("lightbox-img");
-            imgZoom.src = srcGrafica;
-            const nomeLower = nomeFile.toLowerCase();
-            if (nomeLower.includes("nero") || nomeLower.includes("nera") || nomeLower.includes("_n") || nomeLower.includes("-n")) {
-                lightbox.style.backgroundColor = "rgba(15, 15, 15, 0.95)";
-            } else {
-                lightbox.style.backgroundColor = "rgba(245, 245, 245, 0.95)";
-            }
-            lightbox.style.display = "flex";
-        }
-        function chiudiZoom() { document.getElementById("lightbox").style.display = "none"; }
-    </script>
+    });
+    apriCarrello();
+}
+function inviaWhatsApp() {
+    if (selezione.length === 0) {
+        alert("Seleziona almeno un articolo prima di inviare!");
+        return;
+    }
+    let testo = "Ciao! Vorrei ordinare questi articoli:%0A";
+    selezione.forEach(item => {
+        testo += "%0A- " + item.codice + " (" + item.nome + ")%0A  -> " + item.urlPubblico + "%0A";
+    });
+    const numero = "393331234567";
+    window.open("https://wa.me/" + numero + "?text=" + testo, "_blank");
+}
+function apriZoom(srcGrafica) {
+    document.getElementById("lightbox-img").src = srcGrafica;
+    document.getElementById("lightbox").style.display = "flex";
+}
+function chiudiZoom() { document.getElementById("lightbox").style.display = "none"; }
+</script>
 </body>
 </html>
