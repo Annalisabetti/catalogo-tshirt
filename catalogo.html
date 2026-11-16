@@ -10,9 +10,9 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 .item { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; background: #fff; box-sizing: border-box; }
 .imgbox { width: 100%; aspect-ratio: var(--ar, 1 / 1); max-height: 125px; border-radius: 4px; overflow: hidden; cursor: pointer; }
 .imgbox img { width: 100%; height: 100%; object-fit: contain; display: block; }
-.info-box { width: 100%; display: flex; align-items: center; justify-content: center; gap: 3px; margin-top: 4px; background: #f8f8f8; padding: 2px 4px; border-radius: 4px; box-sizing: border-box; }
-.code { font-size: 9px; font-weight: bold; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
-.taglia-sel { width: 100%; margin-top: 4px; min-height: 28px; padding: 2px; font-size: 12px; font-weight: bold; color: #333; background: #fff; border: 1px solid #bbb; border-radius: 4px; cursor: pointer; }
+.riga-info { width: 100%; display: flex; align-items: center; gap: 3px; margin-top: 4px; }
+.code { flex: 0 0 auto; font-size: 9px; font-weight: bold; color: #333; background: #f8f8f8; padding: 6px 4px; border-radius: 4px; white-space: nowrap; }
+.taglia-sel { flex: 1 1 0; min-width: 0; min-height: 28px; padding: 2px 0; font-size: 12px; font-weight: bold; color: #333; background: #fff; border: 1px solid #bbb; border-radius: 4px; cursor: pointer; }
 .riepilogo { width: 100%; margin-top: 3px; font-size: 9px; font-weight: bold; color: #1a8f4c; text-align: center; word-break: break-word; }
 .floating-bar { position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%); width: 92%; max-width: 450px; background: #1e1e1e; color: white; padding: 8px 14px; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); z-index: 1000; font-size: 13px; }
 .floating-bar button { background: #25d366; color: white; border: none; padding: 6px 14px; border-radius: 20px; font-weight: bold; font-size: 12px; cursor: pointer; }
@@ -33,582 +33,582 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 </head>
 <body>
 <div class="page">
-<div class="item" data-codice="MNG-001" data-nome="4 robot nero.jpg" data-thumb="immagini_web/4%20robot%20nero.jpg" data-zoom="immagini_web/4%20robot%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/4%20robot%20nero.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-001" data-nome="4 robot nero.jpg" data-thumb="immagini_web/4%20robot%20nero.jpg" data-zoom="immagini_web/4%20robot%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/4%20robot%20nero.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/4%20robot%20nero.jpg" loading="lazy" alt="MNG-001">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-001">MNG-001</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-002" data-nome="4 robot.jpg" data-thumb="immagini_web/4%20robot.jpg" data-zoom="immagini_web/4%20robot_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/4%20robot.jpg" data-sfondo="#ffffff">
+<div class="item" data-codice="MNG-002" data-nome="4 robot.jpg" data-thumb="immagini_web/4%20robot.jpg" data-zoom="immagini_web/4%20robot_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/4%20robot.jpg" data-sfondo="#ffffff">
 <div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/4%20robot.jpg" loading="lazy" alt="MNG-002">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-002">MNG-002</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-003" data-nome="Chainsaw Rosso.jpg" data-thumb="immagini_web/Chainsaw%20Rosso.jpg" data-zoom="immagini_web/Chainsaw%20Rosso_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Chainsaw%20Rosso.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-003" data-nome="Chainsaw Rosso.jpg" data-thumb="immagini_web/Chainsaw%20Rosso.jpg" data-zoom="immagini_web/Chainsaw%20Rosso_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Chainsaw%20Rosso.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/Chainsaw%20Rosso.jpg" loading="lazy" alt="MNG-003">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-003">MNG-003</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-004" data-nome="Chainsaw verde.jpg" data-thumb="immagini_web/Chainsaw%20verde.jpg" data-zoom="immagini_web/Chainsaw%20verde_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Chainsaw%20verde.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-004" data-nome="Chainsaw verde.jpg" data-thumb="immagini_web/Chainsaw%20verde.jpg" data-zoom="immagini_web/Chainsaw%20verde_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Chainsaw%20verde.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/Chainsaw%20verde.jpg" loading="lazy" alt="MNG-004">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-004">MNG-004</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-005" data-nome="death note.png" data-thumb="immagini_web/death%20note.jpg" data-zoom="immagini_web/death%20note_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/death%20note.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-005" data-nome="death note.png" data-thumb="immagini_web/death%20note.jpg" data-zoom="immagini_web/death%20note_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/death%20note.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/death%20note.jpg" loading="lazy" alt="MNG-005">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-005">MNG-005</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-006" data-nome="dragonball blt.jpg" data-thumb="immagini_web/dragonball%20blt.jpg" data-zoom="immagini_web/dragonball%20blt_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20blt.jpg" data-sfondo="#ffffff">
+<div class="item" data-codice="MNG-006" data-nome="dragonball blt.jpg" data-thumb="immagini_web/dragonball%20blt.jpg" data-zoom="immagini_web/dragonball%20blt_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/dragonball%20blt.jpg" data-sfondo="#ffffff">
 <div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/dragonball%20blt.jpg" loading="lazy" alt="MNG-006">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-006">MNG-006</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-007" data-nome="Dragonball Drago.jpg" data-thumb="immagini_web/Dragonball%20Drago.jpg" data-zoom="immagini_web/Dragonball%20Drago_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Dragonball%20Drago.jpg" data-sfondo="#ffffff">
+<div class="item" data-codice="MNG-007" data-nome="Dragonball Drago.jpg" data-thumb="immagini_web/Dragonball%20Drago.jpg" data-zoom="immagini_web/Dragonball%20Drago_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Dragonball%20Drago.jpg" data-sfondo="#ffffff">
 <div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/Dragonball%20Drago.jpg" loading="lazy" alt="MNG-007">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-007">MNG-007</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-008" data-nome="dragonball fiamme.png" data-thumb="immagini_web/dragonball%20fiamme.jpg" data-zoom="immagini_web/dragonball%20fiamme_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20fiamme.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-008" data-nome="dragonball fiamme.png" data-thumb="immagini_web/dragonball%20fiamme.jpg" data-zoom="immagini_web/dragonball%20fiamme_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/dragonball%20fiamme.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/dragonball%20fiamme.jpg" loading="lazy" alt="MNG-008">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-008">MNG-008</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-009" data-nome="Dragonball fumetti grigio.jpg" data-thumb="immagini_web/Dragonball%20fumetti%20grigio.jpg" data-zoom="immagini_web/Dragonball%20fumetti%20grigio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Dragonball%20fumetti%20grigio.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-009" data-nome="Dragonball fumetti grigio.jpg" data-thumb="immagini_web/Dragonball%20fumetti%20grigio.jpg" data-zoom="immagini_web/Dragonball%20fumetti%20grigio_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Dragonball%20fumetti%20grigio.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/Dragonball%20fumetti%20grigio.jpg" loading="lazy" alt="MNG-009">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-009">MNG-009</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-010" data-nome="dragonball genio.jpg" data-thumb="immagini_web/dragonball%20genio.jpg" data-zoom="immagini_web/dragonball%20genio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20genio.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-010" data-nome="dragonball genio.jpg" data-thumb="immagini_web/dragonball%20genio.jpg" data-zoom="immagini_web/dragonball%20genio_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/dragonball%20genio.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/dragonball%20genio.jpg" loading="lazy" alt="MNG-010">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-010">MNG-010</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-011" data-nome="dragonball goku sfera.jpg" data-thumb="immagini_web/dragonball%20goku%20sfera.jpg" data-zoom="immagini_web/dragonball%20goku%20sfera_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20goku%20sfera.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-011" data-nome="dragonball goku sfera.jpg" data-thumb="immagini_web/dragonball%20goku%20sfera.jpg" data-zoom="immagini_web/dragonball%20goku%20sfera_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/dragonball%20goku%20sfera.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/dragonball%20goku%20sfera.jpg" loading="lazy" alt="MNG-011">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-011">MNG-011</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-012" data-nome="dragonball scimmia.jpg" data-thumb="immagini_web/dragonball%20scimmia.jpg" data-zoom="immagini_web/dragonball%20scimmia_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20scimmia.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-012" data-nome="dragonball scimmia.jpg" data-thumb="immagini_web/dragonball%20scimmia.jpg" data-zoom="immagini_web/dragonball%20scimmia_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/dragonball%20scimmia.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/dragonball%20scimmia.jpg" loading="lazy" alt="MNG-012">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-012">MNG-012</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
 </div>
 <div class="page">
-<div class="item" data-codice="MNG-013" data-nome="Dragonball SonGoku Bianco.jpg" data-thumb="immagini_web/Dragonball%20SonGoku%20Bianco.jpg" data-zoom="immagini_web/Dragonball%20SonGoku%20Bianco_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Dragonball%20SonGoku%20Bianco.jpg" data-sfondo="#ffffff">
+<div class="item" data-codice="MNG-013" data-nome="Dragonball SonGoku Bianco.jpg" data-thumb="immagini_web/Dragonball%20SonGoku%20Bianco.jpg" data-zoom="immagini_web/Dragonball%20SonGoku%20Bianco_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Dragonball%20SonGoku%20Bianco.jpg" data-sfondo="#ffffff">
 <div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/Dragonball%20SonGoku%20Bianco.jpg" loading="lazy" alt="MNG-013">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-013">MNG-013</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-014" data-nome="dragonball vintage sfera.jpg" data-thumb="immagini_web/dragonball%20vintage%20sfera.jpg" data-zoom="immagini_web/dragonball%20vintage%20sfera_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20vintage%20sfera.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-014" data-nome="dragonball vintage sfera.jpg" data-thumb="immagini_web/dragonball%20vintage%20sfera.jpg" data-zoom="immagini_web/dragonball%20vintage%20sfera_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/dragonball%20vintage%20sfera.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/dragonball%20vintage%20sfera.jpg" loading="lazy" alt="MNG-014">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-014">MNG-014</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-015" data-nome="dragonball_nero.jpg" data-thumb="immagini_web/dragonball_nero.jpg" data-zoom="immagini_web/dragonball_nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball_nero.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-015" data-nome="dragonball_nero.jpg" data-thumb="immagini_web/dragonball_nero.jpg" data-zoom="immagini_web/dragonball_nero_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/dragonball_nero.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/dragonball_nero.jpg" loading="lazy" alt="MNG-015">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-015">MNG-015</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-016" data-nome="Drsgonball fumetto colorato.jpg" data-thumb="immagini_web/Drsgonball%20fumetto%20colorato.jpg" data-zoom="immagini_web/Drsgonball%20fumetto%20colorato_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Drsgonball%20fumetto%20colorato.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-016" data-nome="Drsgonball fumetto colorato.jpg" data-thumb="immagini_web/Drsgonball%20fumetto%20colorato.jpg" data-zoom="immagini_web/Drsgonball%20fumetto%20colorato_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Drsgonball%20fumetto%20colorato.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/Drsgonball%20fumetto%20colorato.jpg" loading="lazy" alt="MNG-016">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-016">MNG-016</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-017" data-nome="goku vintage di spalle.jpg" data-thumb="immagini_web/goku%20vintage%20di%20spalle.jpg" data-zoom="immagini_web/goku%20vintage%20di%20spalle_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/goku%20vintage%20di%20spalle.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-017" data-nome="goku vintage di spalle.jpg" data-thumb="immagini_web/goku%20vintage%20di%20spalle.jpg" data-zoom="immagini_web/goku%20vintage%20di%20spalle_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/goku%20vintage%20di%20spalle.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/goku%20vintage%20di%20spalle.jpg" loading="lazy" alt="MNG-017">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-017">MNG-017</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-018" data-nome="goldrake personaggio.png" data-thumb="immagini_web/goldrake%20personaggio.jpg" data-zoom="immagini_web/goldrake%20personaggio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/goldrake%20personaggio.jpg" data-sfondo="#ffffff">
+<div class="item" data-codice="MNG-018" data-nome="goldrake personaggio.png" data-thumb="immagini_web/goldrake%20personaggio.jpg" data-zoom="immagini_web/goldrake%20personaggio_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/goldrake%20personaggio.jpg" data-sfondo="#ffffff">
 <div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/goldrake%20personaggio.jpg" loading="lazy" alt="MNG-018">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-018">MNG-018</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-019" data-nome="hatsune.jpg" data-thumb="immagini_web/hatsune.jpg" data-zoom="immagini_web/hatsune_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/hatsune.jpg" data-sfondo="#ffffff">
+<div class="item" data-codice="MNG-019" data-nome="hatsune.jpg" data-thumb="immagini_web/hatsune.jpg" data-zoom="immagini_web/hatsune_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/hatsune.jpg" data-sfondo="#ffffff">
 <div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/hatsune.jpg" loading="lazy" alt="MNG-019">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-019">MNG-019</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-020" data-nome="inuhasha.jpg" data-thumb="immagini_web/inuhasha.jpg" data-zoom="immagini_web/inuhasha_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/inuhasha.jpg" data-sfondo="#ffffff">
+<div class="item" data-codice="MNG-020" data-nome="inuhasha.jpg" data-thumb="immagini_web/inuhasha.jpg" data-zoom="immagini_web/inuhasha_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/inuhasha.jpg" data-sfondo="#ffffff">
 <div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/inuhasha.jpg" loading="lazy" alt="MNG-020">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-020">MNG-020</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-021" data-nome="jojo.png" data-thumb="immagini_web/jojo.jpg" data-zoom="immagini_web/jojo_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/jojo.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-021" data-nome="jojo.png" data-thumb="immagini_web/jojo.jpg" data-zoom="immagini_web/jojo_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/jojo.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/jojo.jpg" loading="lazy" alt="MNG-021">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-021">MNG-021</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-022" data-nome="juju gruppo_bianco.png" data-thumb="immagini_web/juju%20gruppo_bianco.jpg" data-zoom="immagini_web/juju%20gruppo_bianco_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/juju%20gruppo_bianco.jpg" data-sfondo="#ffffff">
+<div class="item" data-codice="MNG-022" data-nome="juju gruppo_bianco.png" data-thumb="immagini_web/juju%20gruppo_bianco.jpg" data-zoom="immagini_web/juju%20gruppo_bianco_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/juju%20gruppo_bianco.jpg" data-sfondo="#ffffff">
 <div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/juju%20gruppo_bianco.jpg" loading="lazy" alt="MNG-022">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-022">MNG-022</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-023" data-nome="juju gruppo_nero.jpg" data-thumb="immagini_web/juju%20gruppo_nero.jpg" data-zoom="immagini_web/juju%20gruppo_nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/juju%20gruppo_nero.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-023" data-nome="juju gruppo_nero.jpg" data-thumb="immagini_web/juju%20gruppo_nero.jpg" data-zoom="immagini_web/juju%20gruppo_nero_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/juju%20gruppo_nero.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/juju%20gruppo_nero.jpg" loading="lazy" alt="MNG-023">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-023">MNG-023</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-024" data-nome="juju personaggio_nero.jpg" data-thumb="immagini_web/juju%20personaggio_nero.jpg" data-zoom="immagini_web/juju%20personaggio_nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/juju%20personaggio_nero.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-024" data-nome="juju personaggio_nero.jpg" data-thumb="immagini_web/juju%20personaggio_nero.jpg" data-zoom="immagini_web/juju%20personaggio_nero_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/juju%20personaggio_nero.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/juju%20personaggio_nero.jpg" loading="lazy" alt="MNG-024">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-024">MNG-024</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
 </div>
 <div class="page">
-<div class="item" data-codice="MNG-025" data-nome="Kakashi.jpg" data-thumb="immagini_web/Kakashi.jpg" data-zoom="immagini_web/Kakashi_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Kakashi.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-025" data-nome="Kakashi.jpg" data-thumb="immagini_web/Kakashi.jpg" data-zoom="immagini_web/Kakashi_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Kakashi.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/Kakashi.jpg" loading="lazy" alt="MNG-025">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-025">MNG-025</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-026" data-nome="Ken gruppo x nero.jpg" data-thumb="immagini_web/Ken%20gruppo%20x%20nero.jpg" data-zoom="immagini_web/Ken%20gruppo%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Ken%20gruppo%20x%20nero.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-026" data-nome="Ken gruppo x nero.jpg" data-thumb="immagini_web/Ken%20gruppo%20x%20nero.jpg" data-zoom="immagini_web/Ken%20gruppo%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Ken%20gruppo%20x%20nero.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/Ken%20gruppo%20x%20nero.jpg" loading="lazy" alt="MNG-026">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-026">MNG-026</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-027" data-nome="Ken rettangolo x nero.jpg" data-thumb="immagini_web/Ken%20rettangolo%20x%20nero.jpg" data-zoom="immagini_web/Ken%20rettangolo%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Ken%20rettangolo%20x%20nero.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-027" data-nome="Ken rettangolo x nero.jpg" data-thumb="immagini_web/Ken%20rettangolo%20x%20nero.jpg" data-zoom="immagini_web/Ken%20rettangolo%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Ken%20rettangolo%20x%20nero.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/Ken%20rettangolo%20x%20nero.jpg" loading="lazy" alt="MNG-027">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-027">MNG-027</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-028" data-nome="KEN SHIRO RETTANGOLO bia.jpg" data-thumb="immagini_web/KEN%20SHIRO%20RETTANGOLO%20bia.jpg" data-zoom="immagini_web/KEN%20SHIRO%20RETTANGOLO%20bia_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/KEN%20SHIRO%20RETTANGOLO%20bia.jpg" data-sfondo="#ffffff">
+<div class="item" data-codice="MNG-028" data-nome="KEN SHIRO RETTANGOLO bia.jpg" data-thumb="immagini_web/KEN%20SHIRO%20RETTANGOLO%20bia.jpg" data-zoom="immagini_web/KEN%20SHIRO%20RETTANGOLO%20bia_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/KEN%20SHIRO%20RETTANGOLO%20bia.jpg" data-sfondo="#ffffff">
 <div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/KEN%20SHIRO%20RETTANGOLO%20bia.jpg" loading="lazy" alt="MNG-028">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-028">MNG-028</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-029" data-nome="my hero academia gruppo x nero.jpg" data-thumb="immagini_web/my%20hero%20academia%20gruppo%20x%20nero.jpg" data-zoom="immagini_web/my%20hero%20academia%20gruppo%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/my%20hero%20academia%20gruppo%20x%20nero.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-029" data-nome="my hero academia gruppo x nero.jpg" data-thumb="immagini_web/my%20hero%20academia%20gruppo%20x%20nero.jpg" data-zoom="immagini_web/my%20hero%20academia%20gruppo%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/my%20hero%20academia%20gruppo%20x%20nero.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/my%20hero%20academia%20gruppo%20x%20nero.jpg" loading="lazy" alt="MNG-029">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-029">MNG-029</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-030" data-nome="naruto 3 occhi.jpg" data-thumb="immagini_web/naruto%203%20occhi.jpg" data-zoom="immagini_web/naruto%203%20occhi_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/naruto%203%20occhi.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-030" data-nome="naruto 3 occhi.jpg" data-thumb="immagini_web/naruto%203%20occhi.jpg" data-zoom="immagini_web/naruto%203%20occhi_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/naruto%203%20occhi.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/naruto%203%20occhi.jpg" loading="lazy" alt="MNG-030">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-030">MNG-030</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-031" data-nome="naruto gruppo rettangoli.jpg" data-thumb="immagini_web/naruto%20gruppo%20rettangoli.jpg" data-zoom="immagini_web/naruto%20gruppo%20rettangoli_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/naruto%20gruppo%20rettangoli.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-031" data-nome="naruto gruppo rettangoli.jpg" data-thumb="immagini_web/naruto%20gruppo%20rettangoli.jpg" data-zoom="immagini_web/naruto%20gruppo%20rettangoli_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/naruto%20gruppo%20rettangoli.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/naruto%20gruppo%20rettangoli.jpg" loading="lazy" alt="MNG-031">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-031">MNG-031</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-032" data-nome="Naruto rettangoli bianchi x nero.jpg" data-thumb="immagini_web/Naruto%20rettangoli%20bianchi%20x%20nero.jpg" data-zoom="immagini_web/Naruto%20rettangoli%20bianchi%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Naruto%20rettangoli%20bianchi%20x%20nero.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-032" data-nome="Naruto rettangoli bianchi x nero.jpg" data-thumb="immagini_web/Naruto%20rettangoli%20bianchi%20x%20nero.jpg" data-zoom="immagini_web/Naruto%20rettangoli%20bianchi%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Naruto%20rettangoli%20bianchi%20x%20nero.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/Naruto%20rettangoli%20bianchi%20x%20nero.jpg" loading="lazy" alt="MNG-032">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-032">MNG-032</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-033" data-nome="naruto scritta_bianco.jpg" data-thumb="immagini_web/naruto%20scritta_bianco.jpg" data-zoom="immagini_web/naruto%20scritta_bianco_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/naruto%20scritta_bianco.jpg" data-sfondo="#ffffff">
+<div class="item" data-codice="MNG-033" data-nome="naruto scritta_bianco.jpg" data-thumb="immagini_web/naruto%20scritta_bianco.jpg" data-zoom="immagini_web/naruto%20scritta_bianco_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/naruto%20scritta_bianco.jpg" data-sfondo="#ffffff">
 <div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/naruto%20scritta_bianco.jpg" loading="lazy" alt="MNG-033">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-033">MNG-033</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-034" data-nome="naruto scritta_nero.jpg" data-thumb="immagini_web/naruto%20scritta_nero.jpg" data-zoom="immagini_web/naruto%20scritta_nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/naruto%20scritta_nero.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-034" data-nome="naruto scritta_nero.jpg" data-thumb="immagini_web/naruto%20scritta_nero.jpg" data-zoom="immagini_web/naruto%20scritta_nero_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/naruto%20scritta_nero.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/naruto%20scritta_nero.jpg" loading="lazy" alt="MNG-034">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-034">MNG-034</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-035" data-nome="one piece 3 personaggi.jpg" data-thumb="immagini_web/one%20piece%203%20personaggi.jpg" data-zoom="immagini_web/one%20piece%203%20personaggi_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%203%20personaggi.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-035" data-nome="one piece 3 personaggi.jpg" data-thumb="immagini_web/one%20piece%203%20personaggi.jpg" data-zoom="immagini_web/one%20piece%203%20personaggi_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/one%20piece%203%20personaggi.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%203%20personaggi.jpg" loading="lazy" alt="MNG-035">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-035">MNG-035</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-036" data-nome="one piece braccio.jpg" data-thumb="immagini_web/one%20piece%20braccio.jpg" data-zoom="immagini_web/one%20piece%20braccio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20braccio.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-036" data-nome="one piece braccio.jpg" data-thumb="immagini_web/one%20piece%20braccio.jpg" data-zoom="immagini_web/one%20piece%20braccio_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/one%20piece%20braccio.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20braccio.jpg" loading="lazy" alt="MNG-036">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-036">MNG-036</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
 </div>
 <div class="page">
-<div class="item" data-codice="MNG-037" data-nome="one piece bussola.jpg" data-thumb="immagini_web/one%20piece%20bussola.jpg" data-zoom="immagini_web/one%20piece%20bussola_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20bussola.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-037" data-nome="one piece bussola.jpg" data-thumb="immagini_web/one%20piece%20bussola.jpg" data-zoom="immagini_web/one%20piece%20bussola_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/one%20piece%20bussola.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20bussola.jpg" loading="lazy" alt="MNG-037">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-037">MNG-037</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-038" data-nome="one piece colorato.jpg" data-thumb="immagini_web/one%20piece%20colorato.jpg" data-zoom="immagini_web/one%20piece%20colorato_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20colorato.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-038" data-nome="one piece colorato.jpg" data-thumb="immagini_web/one%20piece%20colorato.jpg" data-zoom="immagini_web/one%20piece%20colorato_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/one%20piece%20colorato.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20colorato.jpg" loading="lazy" alt="MNG-038">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-038">MNG-038</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-039" data-nome="one piece fiamme viola x bianco.jpg" data-thumb="immagini_web/one%20piece%20fiamme%20viola%20x%20bianco.jpg" data-zoom="immagini_web/one%20piece%20fiamme%20viola%20x%20bianco_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20fiamme%20viola%20x%20bianco.jpg" data-sfondo="#ffffff">
+<div class="item" data-codice="MNG-039" data-nome="one piece fiamme viola x bianco.jpg" data-thumb="immagini_web/one%20piece%20fiamme%20viola%20x%20bianco.jpg" data-zoom="immagini_web/one%20piece%20fiamme%20viola%20x%20bianco_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/one%20piece%20fiamme%20viola%20x%20bianco.jpg" data-sfondo="#ffffff">
 <div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20fiamme%20viola%20x%20bianco.jpg" loading="lazy" alt="MNG-039">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-039">MNG-039</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-040" data-nome="one piece fiamme viola x nero.jpg" data-thumb="immagini_web/one%20piece%20fiamme%20viola%20x%20nero.jpg" data-zoom="immagini_web/one%20piece%20fiamme%20viola%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20fiamme%20viola%20x%20nero.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-040" data-nome="one piece fiamme viola x nero.jpg" data-thumb="immagini_web/one%20piece%20fiamme%20viola%20x%20nero.jpg" data-zoom="immagini_web/one%20piece%20fiamme%20viola%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/one%20piece%20fiamme%20viola%20x%20nero.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20fiamme%20viola%20x%20nero.jpg" loading="lazy" alt="MNG-040">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-040">MNG-040</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-041" data-nome="one piece gear 5 scritta gialla_nero.jpg" data-thumb="immagini_web/one%20piece%20gear%205%20scritta%20gialla_nero.jpg" data-zoom="immagini_web/one%20piece%20gear%205%20scritta%20gialla_nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20gear%205%20scritta%20gialla_nero.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-041" data-nome="one piece gear 5 scritta gialla_nero.jpg" data-thumb="immagini_web/one%20piece%20gear%205%20scritta%20gialla_nero.jpg" data-zoom="immagini_web/one%20piece%20gear%205%20scritta%20gialla_nero_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/one%20piece%20gear%205%20scritta%20gialla_nero.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20gear%205%20scritta%20gialla_nero.jpg" loading="lazy" alt="MNG-041">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-041">MNG-041</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-042" data-nome="One piece giornali.jpg" data-thumb="immagini_web/One%20piece%20giornali.jpg" data-zoom="immagini_web/One%20piece%20giornali_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/One%20piece%20giornali.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-042" data-nome="One piece giornali.jpg" data-thumb="immagini_web/One%20piece%20giornali.jpg" data-zoom="immagini_web/One%20piece%20giornali_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/One%20piece%20giornali.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/One%20piece%20giornali.jpg" loading="lazy" alt="MNG-042">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-042">MNG-042</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-043" data-nome="one piece logo piu scritta.jpg" data-thumb="immagini_web/one%20piece%20logo%20piu%20scritta.jpg" data-zoom="immagini_web/one%20piece%20logo%20piu%20scritta_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20logo%20piu%20scritta.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-043" data-nome="one piece logo piu scritta.jpg" data-thumb="immagini_web/one%20piece%20logo%20piu%20scritta.jpg" data-zoom="immagini_web/one%20piece%20logo%20piu%20scritta_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/one%20piece%20logo%20piu%20scritta.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20logo%20piu%20scritta.jpg" loading="lazy" alt="MNG-043">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-043">MNG-043</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-044" data-nome="One piece luffy_nero.jpg" data-thumb="immagini_web/One%20piece%20luffy_nero.jpg" data-zoom="immagini_web/One%20piece%20luffy_nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/One%20piece%20luffy_nero.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-044" data-nome="One piece luffy_nero.jpg" data-thumb="immagini_web/One%20piece%20luffy_nero.jpg" data-zoom="immagini_web/One%20piece%20luffy_nero_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/One%20piece%20luffy_nero.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/One%20piece%20luffy_nero.jpg" loading="lazy" alt="MNG-044">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-044">MNG-044</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-045" data-nome="one piece molti occhi.jpg" data-thumb="immagini_web/one%20piece%20molti%20occhi.jpg" data-zoom="immagini_web/one%20piece%20molti%20occhi_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20molti%20occhi.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-045" data-nome="one piece molti occhi.jpg" data-thumb="immagini_web/one%20piece%20molti%20occhi.jpg" data-zoom="immagini_web/one%20piece%20molti%20occhi_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/one%20piece%20molti%20occhi.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20molti%20occhi.jpg" loading="lazy" alt="MNG-045">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-045">MNG-045</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-046" data-nome="one piece nave dietro.jpg" data-thumb="immagini_web/one%20piece%20nave%20dietro.jpg" data-zoom="immagini_web/one%20piece%20nave%20dietro_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20nave%20dietro.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-046" data-nome="one piece nave dietro.jpg" data-thumb="immagini_web/one%20piece%20nave%20dietro.jpg" data-zoom="immagini_web/one%20piece%20nave%20dietro_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/one%20piece%20nave%20dietro.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20nave%20dietro.jpg" loading="lazy" alt="MNG-046">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-046">MNG-046</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-047" data-nome="One piece sagom teschio.jpg" data-thumb="immagini_web/One%20piece%20sagom%20teschio.jpg" data-zoom="immagini_web/One%20piece%20sagom%20teschio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/One%20piece%20sagom%20teschio.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-047" data-nome="One piece sagom teschio.jpg" data-thumb="immagini_web/One%20piece%20sagom%20teschio.jpg" data-zoom="immagini_web/One%20piece%20sagom%20teschio_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/One%20piece%20sagom%20teschio.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/One%20piece%20sagom%20teschio.jpg" loading="lazy" alt="MNG-047">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-047">MNG-047</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-048" data-nome="one piece sagona personaggio.jpg" data-thumb="immagini_web/one%20piece%20sagona%20personaggio.jpg" data-zoom="immagini_web/one%20piece%20sagona%20personaggio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20sagona%20personaggio.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-048" data-nome="one piece sagona personaggio.jpg" data-thumb="immagini_web/one%20piece%20sagona%20personaggio.jpg" data-zoom="immagini_web/one%20piece%20sagona%20personaggio_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/one%20piece%20sagona%20personaggio.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20sagona%20personaggio.jpg" loading="lazy" alt="MNG-048">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-048">MNG-048</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
 </div>
 <div class="page">
-<div class="item" data-codice="MNG-049" data-nome="one piece sul grigio.jpg" data-thumb="immagini_web/one%20piece%20sul%20grigio.jpg" data-zoom="immagini_web/one%20piece%20sul%20grigio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20sul%20grigio.jpg" data-sfondo="#ffffff">
+<div class="item" data-codice="MNG-049" data-nome="one piece sul grigio.jpg" data-thumb="immagini_web/one%20piece%20sul%20grigio.jpg" data-zoom="immagini_web/one%20piece%20sul%20grigio_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/one%20piece%20sul%20grigio.jpg" data-sfondo="#ffffff">
 <div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20sul%20grigio.jpg" loading="lazy" alt="MNG-049">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-049">MNG-049</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-050" data-nome="one piece tescio logo.jpg" data-thumb="immagini_web/one%20piece%20tescio%20logo.jpg" data-zoom="immagini_web/one%20piece%20tescio%20logo_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20tescio%20logo.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-050" data-nome="one piece tescio logo.jpg" data-thumb="immagini_web/one%20piece%20tescio%20logo.jpg" data-zoom="immagini_web/one%20piece%20tescio%20logo_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/one%20piece%20tescio%20logo.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20tescio%20logo.jpg" loading="lazy" alt="MNG-050">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-050">MNG-050</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-051" data-nome="one piece wanted luffy.jpg" data-thumb="immagini_web/one%20piece%20wanted%20luffy.jpg" data-zoom="immagini_web/one%20piece%20wanted%20luffy_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20wanted%20luffy.jpg" data-sfondo="#ffffff">
+<div class="item" data-codice="MNG-051" data-nome="one piece wanted luffy.jpg" data-thumb="immagini_web/one%20piece%20wanted%20luffy.jpg" data-zoom="immagini_web/one%20piece%20wanted%20luffy_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/one%20piece%20wanted%20luffy.jpg" data-sfondo="#ffffff">
 <div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20wanted%20luffy.jpg" loading="lazy" alt="MNG-051">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-051">MNG-051</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-052" data-nome="one piece zoro wanted.jpg" data-thumb="immagini_web/one%20piece%20zoro%20wanted.jpg" data-zoom="immagini_web/one%20piece%20zoro%20wanted_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20zoro%20wanted.jpg" data-sfondo="#ffffff">
+<div class="item" data-codice="MNG-052" data-nome="one piece zoro wanted.jpg" data-thumb="immagini_web/one%20piece%20zoro%20wanted.jpg" data-zoom="immagini_web/one%20piece%20zoro%20wanted_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/one%20piece%20zoro%20wanted.jpg" data-sfondo="#ffffff">
 <div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20zoro%20wanted.jpg" loading="lazy" alt="MNG-052">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-052">MNG-052</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-053" data-nome="one piece zoro wnted x nero.jpg" data-thumb="immagini_web/one%20piece%20zoro%20wnted%20x%20nero.jpg" data-zoom="immagini_web/one%20piece%20zoro%20wnted%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20zoro%20wnted%20x%20nero.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-053" data-nome="one piece zoro wnted x nero.jpg" data-thumb="immagini_web/one%20piece%20zoro%20wnted%20x%20nero.jpg" data-zoom="immagini_web/one%20piece%20zoro%20wnted%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/one%20piece%20zoro%20wnted%20x%20nero.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20zoro%20wnted%20x%20nero.jpg" loading="lazy" alt="MNG-053">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-053">MNG-053</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-054" data-nome="slam dunk.jpg" data-thumb="immagini_web/slam%20dunk.jpg" data-zoom="immagini_web/slam%20dunk_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/slam%20dunk.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-054" data-nome="slam dunk.jpg" data-thumb="immagini_web/slam%20dunk.jpg" data-zoom="immagini_web/slam%20dunk_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/slam%20dunk.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/slam%20dunk.jpg" loading="lazy" alt="MNG-054">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-054">MNG-054</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-055" data-nome="spy x family bianco.jpg" data-thumb="immagini_web/spy%20x%20family%20bianco.jpg" data-zoom="immagini_web/spy%20x%20family%20bianco_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/spy%20x%20family%20bianco.jpg" data-sfondo="#ffffff">
+<div class="item" data-codice="MNG-055" data-nome="spy x family bianco.jpg" data-thumb="immagini_web/spy%20x%20family%20bianco.jpg" data-zoom="immagini_web/spy%20x%20family%20bianco_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/spy%20x%20family%20bianco.jpg" data-sfondo="#ffffff">
 <div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/spy%20x%20family%20bianco.jpg" loading="lazy" alt="MNG-055">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-055">MNG-055</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-056" data-nome="YATTAMAN.jpg" data-thumb="immagini_web/YATTAMAN.jpg" data-zoom="immagini_web/YATTAMAN_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/YATTAMAN.jpg" data-sfondo="#ffffff">
+<div class="item" data-codice="MNG-056" data-nome="YATTAMAN.jpg" data-thumb="immagini_web/YATTAMAN.jpg" data-zoom="immagini_web/YATTAMAN_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/YATTAMAN.jpg" data-sfondo="#ffffff">
 <div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/YATTAMAN.jpg" loading="lazy" alt="MNG-056">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-056">MNG-056</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-057" data-nome="Zeniztu luce.jpg" data-thumb="immagini_web/Zeniztu%20luce.jpg" data-zoom="immagini_web/Zeniztu%20luce_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Zeniztu%20luce.jpg" data-sfondo="#282828">
-<div class="imgbox" style="--ar:297 / 373;background:#282828" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-codice="MNG-057" data-nome="Zeniztu luce.jpg" data-thumb="immagini_web/Zeniztu%20luce.jpg" data-zoom="immagini_web/Zeniztu%20luce_ts.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Zeniztu%20luce.jpg" data-sfondo="#000000">
+<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/Zeniztu%20luce.jpg" loading="lazy" alt="MNG-057">
 </div>
-<div class="info-box">
+<div class="riga-info">
 <span class="code" title="MNG-057">MNG-057</span>
-</div>
 <select class="taglia-sel" aria-label="Taglia" onchange="scegliTaglia(this)"><option value="" selected>Taglia</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
+</div>
 <div class="riepilogo" hidden></div>
 </div>
 </div>
