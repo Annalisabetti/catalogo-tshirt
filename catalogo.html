@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Catalogo T-Shirt Express</title>
-<meta name="description" content="Magliette personalizzate stampate in DTF. Scegli la grafica e la taglia e invia l’ordine su WhatsApp.">
+<meta name="description" content="Magliette e accessori personalizzati stampati in DTF. Scegli il prodotto e la grafica e invia l’ordine su WhatsApp.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Catalogo T-Shirt Express">
-<meta property="og:description" content="Magliette personalizzate stampate in DTF. Scegli la grafica e la taglia e invia l’ordine su WhatsApp.">
+<meta property="og:description" content="Magliette e accessori personalizzati stampati in DTF. Scegli il prodotto e la grafica e invia l’ordine su WhatsApp.">
 <meta property="og:image" content="https://annalisabetti.github.io/catalogo-tshirt/immagini_web/copertina.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -16,23 +16,55 @@
 <style>
 [hidden] { display: none !important; }
 body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 85px; background-color: #f0f0f0; color: #333; }
-.intro { max-width: 800px; margin: 4px auto 2px auto; padding: 0 4px; font-size: 13px; line-height: 1.6; color: #444; }
-.intro .cond { font-weight: bold; color: #222; }
-.intro .nw { white-space: nowrap; }
-.intro a { color: #1a5fd0; }
-.ricerca { position: sticky; top: 0; z-index: 50; max-width: 800px; margin: 0 auto; padding: 6px 0 2px 0; background: #f0f0f0; }
+svg.ico-svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linejoin: round; stroke-linecap: round; display: block; }
+.testata { background: #1e1e1e; color: #fff; text-align: center; padding: 18px 12px 16px 12px; margin: -6px -6px 0 -6px; }
+.logo { display: inline-flex; align-items: center; gap: 10px; font-size: 26px; font-weight: 800; letter-spacing: 1.5px; }
+.logo .logo-ico { width: 34px; height: 34px; color: #ffcc00; }
+.logo b { color: #ffcc00; font-weight: 800; }
+.slogan { margin: 6px 0 0 0; font-size: 13px; color: #ccc; }
+.vista { max-width: 800px; margin: 0 auto; padding: 0 4px; }
+.presentazione { text-align: center; font-size: 14px; line-height: 1.6; color: #444; margin: 16px auto 4px auto; max-width: 560px; }
+.cond-home { text-align: center; font-weight: bold; font-size: 13px; color: #222; margin: 4px 0 0 0; }
+.titolo-sezione { text-align: center; font-size: 16px; margin: 18px 0 2px 0; }
+.tondi { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 14px; margin: 14px 0 24px 0; }
+.tondo { width: 92px; text-decoration: none; color: #222; text-align: center; }
+.tondo .ico { display: block; width: 84px; height: 84px; margin: 0 auto 6px auto; padding: 19px; box-sizing: border-box; border-radius: 50%; background: #fff; border: 2px solid #e2e2e2; box-shadow: 0 2px 5px rgba(0,0,0,0.08); }
+.tondo:hover .ico, .tondo:focus-visible .ico { border-color: #1e1e1e; }
+.tondo .etichetta { display: block; font-size: 13px; font-weight: bold; }
+.tondo .presto { display: block; font-size: 10px; color: #888; }
+.info { display: grid; gap: 10px; margin: 6px 0 20px 0; }
+.info-card { background: #fff; border-radius: 10px; padding: 12px 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); font-size: 13px; line-height: 1.55; }
+.info-card h3 { margin: 0 0 4px 0; font-size: 14px; }
+.info-card p { margin: 0; }
+.info-card ol { margin: 4px 0 0 0; padding-left: 18px; }
+.contatti { display: flex; flex-wrap: wrap; gap: 10px 16px; justify-content: center; align-items: center; margin: 14px 0 10px 0; }
+.btn-wa { background: #25d366; color: #fff; text-decoration: none; font-weight: bold; padding: 11px 18px; border-radius: 24px; font-size: 14px; }
+.link-sec { color: #1a5fd0; font-size: 13px; }
+.barra-cat { display: flex; align-items: center; gap: 10px; margin: 10px 0 4px 0; }
+.indietro-home { flex: 0 0 auto; background: #fff; border: 1px solid #ccc; border-radius: 18px; padding: 8px 14px; font-size: 13px; font-weight: bold; color: #222; cursor: pointer; }
+.tondi-mini { display: flex; gap: 8px; overflow-x: auto; padding: 2px; }
+.mini { flex: 0 0 auto; display: block; width: 44px; height: 44px; padding: 9px; box-sizing: border-box; border-radius: 50%; background: #fff; border: 2px solid #ddd; color: #444; }
+.mini.attivo { background: #1e1e1e; border-color: #1e1e1e; color: #ffcc00; }
+.cat-titolo { text-align: center; margin: 6px 0 4px 0; }
+.cat-titolo h2 { margin: 0; font-size: 20px; }
+#cat-prezzo { font-weight: bold; color: #1a8f4c; }
+#cat-nota { font-size: 12px; color: #666; }
+#link-taglie { font-size: 12px; color: #1a5fd0; }
+.prossimamente { text-align: center; background: #fff; border-radius: 10px; padding: 30px 16px; color: #555; margin: 12px 0; font-size: 14px; line-height: 1.6; }
+.ricerca { position: sticky; top: 0; z-index: 50; margin: 0 auto; padding: 6px 0 2px 0; background: #f0f0f0; }
 .ricerca-campo { position: relative; }
 #cerca { width: 100%; box-sizing: border-box; font-size: 16px; padding: 10px 40px 10px 12px; border: 1px solid #ccc; border-radius: 8px; background: #fff; color: #222; -webkit-appearance: none; appearance: none; }
 #cerca::-webkit-search-cancel-button { display: none; }
 #cerca-x { position: absolute; right: 4px; top: 50%; transform: translateY(-50%); width: 34px; height: 34px; border: none; background: none; font-size: 22px; color: #777; cursor: pointer; }
 .esito { font-size: 12px; color: #555; margin: 4px 4px 0 4px; min-height: 16px; }
-.page { width: 100%; max-width: 800px; margin: 0 auto 10px auto; padding: 6px; box-sizing: border-box; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px 6px; }
+.page { width: 100%; margin: 0 auto 10px auto; padding: 6px; box-sizing: border-box; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px 6px; }
 .item { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; border: 1px solid #e0e0e0; border-radius: 6px; padding: 6px; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.08); box-sizing: border-box; }
 .imgbox { width: 100%; height: 160px; border-radius: 4px; overflow: hidden; cursor: pointer; }
 .imgbox img { width: 100%; height: 100%; padding: 6px; box-sizing: border-box; object-fit: contain; display: block; }
 .riga-info { width: 100%; display: flex; align-items: center; gap: 3px; margin-top: 4px; }
 .code { flex: 0 0 auto; font-size: 9px; font-weight: bold; color: #333; background: #f8f8f8; padding: 6px 4px; border-radius: 4px; white-space: nowrap; }
 .taglia-sel { flex: 1 1 0; min-width: 0; min-height: 28px; padding: 2px 0; font-size: 12px; font-weight: bold; color: #333; background: #fff; border: 1px solid #bbb; border-radius: 4px; cursor: pointer; }
+.aggiungi { flex: 1 1 0; min-width: 0; min-height: 28px; padding: 2px 0; font-size: 12px; font-weight: bold; color: #fff; background: #1e1e1e; border: none; border-radius: 4px; cursor: pointer; }
 .riepilogo { width: 100%; margin-top: 3px; font-size: 9px; font-weight: bold; color: #1a8f4c; text-align: center; word-break: break-word; }
 .floating-bar { position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%); width: 92%; max-width: 450px; background: #1e1e1e; color: white; padding: 8px 14px; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); z-index: 1000; font-size: 13px; }
 .floating-bar button { background: #25d366; color: white; border: none; padding: 6px 14px; border-radius: 20px; font-weight: bold; font-size: 12px; cursor: pointer; }
@@ -40,14 +72,16 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 .modal-content { background: white; width: 100%; max-width: 500px; max-height: 80vh; border-radius: 16px 16px 0 0; padding: 15px; box-sizing: border-box; display: flex; flex-direction: column; overflow-y: auto; }
 .modal-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 8px; margin-bottom: 10px; }
 .modal-header button { background: none; border: none; font-size: 18px; cursor: pointer; }
-.cart-items-list { overflow-y: auto; flex-grow: 1; display: flex; flex-direction: column; gap: 8px; max-height: 50vh; margin-bottom: 12px; }
+.cart-items-list { overflow-y: auto; flex-grow: 1; display: flex; flex-direction: column; gap: 8px; max-height: 46vh; margin-bottom: 10px; }
 .cart-item { display: flex; align-items: center; gap: 8px; background: #f9f9f9; padding: 6px; border-radius: 6px; border: 1px solid #eee; }
 .cart-item img { width: 40px; height: 40px; object-fit: contain; background: white; border-radius: 4px; }
-.cart-item-info { flex-grow: 1; font-size: 11px; font-weight: bold; }
+.cart-item-info { flex-grow: 1; font-size: 11px; font-weight: bold; min-width: 0; }
 .cart-qty { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: bold; }
 .cart-qty button { width: 24px; height: 24px; border: 1px solid #ccc; background: #fff; border-radius: 4px; font-size: 14px; line-height: 1; cursor: pointer; padding: 0; }
 .cart-item-remove { background: #ff4757; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 10px; }
-.nota-minimo { font-size: 12px; color: #555; margin-bottom: 8px; }
+.cart-totale { display: flex; justify-content: space-between; align-items: baseline; font-size: 16px; font-weight: bold; border-top: 1px solid #eee; padding-top: 8px; }
+.cart-totale small { font-size: 11px; font-weight: normal; color: #777; }
+.nota-minimo { font-size: 12px; color: #555; margin: 6px 0 8px 0; }
 .nota-minimo.manca { color: #c0392b; font-weight: bold; }
 .linkbtn { align-self: flex-start; background: none; border: none; color: #777; text-decoration: underline; cursor: pointer; font-size: 12px; padding: 0; margin-bottom: 10px; }
 .btn-invia { background: #25d366; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 14px; cursor: pointer; width: 100%; }
@@ -63,16 +97,41 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 .zoom-freccia.sx { left: 8px; }
 .zoom-freccia.dx { right: 8px; }
 .zoom-chiudi { position: absolute; top: 10px; right: 10px; width: 40px; height: 40px; border: none; border-radius: 50%; background: rgba(0,0,0,0.55); color: #fff; font-size: 20px; cursor: pointer; }
-@media (max-width: 480px) { .page { grid-template-columns: repeat(3, 1fr); gap: 10px 4px; padding: 4px; } .item { padding: 4px; } .imgbox { height: 130px; } .imgbox img { padding: 4px; } .code { font-size: 8px; } .taglia-sel { font-size: 16px; } }
+@media (max-width: 480px) { .page { gap: 10px 4px; padding: 4px; } .item { padding: 4px; } .imgbox { height: 130px; } .imgbox img { padding: 4px; } .code { font-size: 8px; } .taglia-sel { font-size: 16px; } .aggiungi { font-size: 11px; } .logo { font-size: 22px; } .tondi { gap: 14px 8px; } .tondo { width: 78px; } .tondo .ico { width: 70px; height: 70px; padding: 16px; } }
 </style>
 </head>
 <body>
-<div class="intro">
-Magliette personalizzate stampate su richiesta.<br>
-<span class="cond"><span class="nw">10 € a maglia</span> &middot; <span class="nw">Ordine minimo 4 magliette</span> &middot; <span class="nw">Pronte in 2 giorni</span></span><br>
-<a href="#" onclick="apriTaglie(); return false;">Guida alle taglie</a> &middot; <a href="https://annalisabetti.github.io/preventivo/" target="_blank" rel="noopener">Vuoi una grafica tua? Chiedi un preventivo</a>
+<header class="testata">
+<div class="logo"><span class="logo-ico"><svg class="ico-svg" viewBox="0 0 32 32" aria-hidden="true"><path d="M11 5 L3.5 9 L6 14.5 L9.5 12.8 V27 H22.5 V12.8 L26 14.5 L28.5 9 L21 5 C19.5 7.6 12.5 7.6 11 5 Z"/></svg></span><span>T-SHIRT <b>EXPRESS</b></span></div>
+<p class="slogan">Stampa personalizzata su richiesta</p>
+</header>
+
+<main id="vista-home" class="vista">
+<p class="presentazione">Magliette e accessori con le tue grafiche preferite, stampati su richiesta con la tecnica DTF. Scegli un prodotto, aggiungilo al carrello e invia l’ordine su WhatsApp: ti rispondiamo per confermare.</p>
+<p class="cond-home">Ordine minimo 4 articoli · Pronte in 2 giorni</p>
+<h2 class="titolo-sezione">Scegli il prodotto</h2>
+<nav class="tondi" aria-label="Prodotti"><a class="tondo" href="#maglia" data-id="maglia" onclick="navInterna=true"><span class="ico"><svg class="ico-svg" viewBox="0 0 32 32" aria-hidden="true"><path d="M11 5 L3.5 9 L6 14.5 L9.5 12.8 V27 H22.5 V12.8 L26 14.5 L28.5 9 L21 5 C19.5 7.6 12.5 7.6 11 5 Z"/></svg></span><span class="etichetta">T-shirt</span></a><a class="tondo" href="#shopping" data-id="shopping" onclick="navInterna=true"><span class="ico"><svg class="ico-svg" viewBox="0 0 32 32" aria-hidden="true"><path d="M6.5 11 H25.5 L26.8 27 H5.2 Z"/><path d="M11.5 11 V9.5 A4.5 4.5 0 0 1 20.5 9.5 V11"/></svg></span><span class="etichetta">Shopping bag</span></a><a class="tondo" href="#tazza" data-id="tazza" onclick="navInterna=true"><span class="ico"><svg class="ico-svg" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 10 H22 V21 A5 5 0 0 1 17 26 H11 A5 5 0 0 1 6 21 Z"/><path d="M22 12.5 H24.5 A3.5 3.5 0 0 1 24.5 19.5 H22"/><path d="M11 5.5 V7 M15 4.5 V7 M19 5.5 V7"/></svg></span><span class="etichetta">Tazze</span><span class="presto">in arrivo</span></a><a class="tondo" href="#mousepad" data-id="mousepad" onclick="navInterna=true"><span class="ico"><svg class="ico-svg" viewBox="0 0 32 32" aria-hidden="true"><rect x="3.5" y="8.5" width="25" height="15" rx="3"/><rect x="13" y="12" width="6" height="8.5" rx="3"/><path d="M16 12 V15.5"/></svg></span><span class="etichetta">Mouse pad</span><span class="presto">in arrivo</span></a></nav>
+<section class="info"><div class="info-card"><h3>Come ordinare</h3><ol><li>Scegli il prodotto e la grafica che ti piace.</li><li>Aggiungi al carrello taglia e quantità.</li><li>Invia l’ordine su WhatsApp: ti confermiamo totale e tempi.</li></ol></div><div class="info-card"><h3>Pagamento</h3><p>Si paga alla conferma dell’ordine o al ritiro: contanti, bonifico, PayPal o Satispay.</p></div><div class="info-card"><h3>Ritiro e consegna</h3><p>Ritiro ai nostri banchi nei mercati della Romagna o su appuntamento. Spedizione su richiesta.</p></div></section>
+<div class="contatti">
+<a class="btn-wa" href="https://wa.me/393331234567" target="_blank" rel="noopener">Scrivici su WhatsApp</a>
+<a class="link-sec" href="#" onclick="apriTaglie(); return false;">Guida alle taglie</a>
+<a class="link-sec" href="https://annalisabetti.github.io/preventivo/" target="_blank" rel="noopener">Vuoi una grafica tua? Chiedi un preventivo</a>
 </div>
-<div class="ricerca">
+</main>
+
+<main id="vista-catalogo" class="vista" hidden>
+<div class="barra-cat">
+<button type="button" class="indietro-home" onclick="vaiHome()">&larr; Home</button>
+<nav class="tondi-mini" id="tondi-mini" aria-label="Prodotti"><a class="mini" href="#maglia" data-id="maglia" title="T-shirt" aria-label="T-shirt" onclick="return vaiCategoria('maglia')"><svg class="ico-svg" viewBox="0 0 32 32" aria-hidden="true"><path d="M11 5 L3.5 9 L6 14.5 L9.5 12.8 V27 H22.5 V12.8 L26 14.5 L28.5 9 L21 5 C19.5 7.6 12.5 7.6 11 5 Z"/></svg></a><a class="mini" href="#shopping" data-id="shopping" title="Shopping bag" aria-label="Shopping bag" onclick="return vaiCategoria('shopping')"><svg class="ico-svg" viewBox="0 0 32 32" aria-hidden="true"><path d="M6.5 11 H25.5 L26.8 27 H5.2 Z"/><path d="M11.5 11 V9.5 A4.5 4.5 0 0 1 20.5 9.5 V11"/></svg></a><a class="mini" href="#tazza" data-id="tazza" title="Tazze" aria-label="Tazze" onclick="return vaiCategoria('tazza')"><svg class="ico-svg" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 10 H22 V21 A5 5 0 0 1 17 26 H11 A5 5 0 0 1 6 21 Z"/><path d="M22 12.5 H24.5 A3.5 3.5 0 0 1 24.5 19.5 H22"/><path d="M11 5.5 V7 M15 4.5 V7 M19 5.5 V7"/></svg></a><a class="mini" href="#mousepad" data-id="mousepad" title="Mouse pad" aria-label="Mouse pad" onclick="return vaiCategoria('mousepad')"><svg class="ico-svg" viewBox="0 0 32 32" aria-hidden="true"><rect x="3.5" y="8.5" width="25" height="15" rx="3"/><rect x="13" y="12" width="6" height="8.5" rx="3"/><path d="M16 12 V15.5"/></svg></a></nav>
+</div>
+<div class="cat-titolo">
+<h2 id="cat-nome"></h2>
+<div id="cat-prezzo"></div>
+<div id="cat-nota"></div>
+<a href="#" id="link-taglie" onclick="apriTaglie(); return false;" hidden>Guida alle taglie</a>
+</div>
+<div id="cat-prossimamente" class="prossimamente" hidden>Prossimamente: stiamo preparando le grafiche per questo prodotto.</div>
+<div class="ricerca" id="area-ricerca">
 <div class="ricerca-campo">
 <input type="search" id="cerca" placeholder="Cerca per codice o parola" aria-label="Cerca nel catalogo" autocomplete="off" oninput="filtra()">
 <button type="button" id="cerca-x" onclick="pulisciRicerca()" aria-label="Cancella la ricerca" hidden>&times;</button>
@@ -80,8 +139,8 @@ Magliette personalizzate stampate su richiesta.<br>
 <div class="esito" id="esito-ricerca" aria-live="polite"></div>
 </div>
 <div class="page">
-<div class="item" data-codice="MNG-001" data-nome="4 robot nero.jpg" data-thumb="immagini_web/4%20robot%20nero.jpg" data-zoom="immagini_web/4%20robot%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/4%20robot%20nero.jpg" data-sfondo="#000000" data-cerca="mng 001 4 robot nero">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-001" data-nome="4 robot nero.jpg" data-thumb="immagini_web/4%20robot%20nero.jpg" data-zoom="immagini_web/4%20robot%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/4%20robot%20nero.jpg" data-sfondo="#000000" data-cerca="mng 001 4 robot nero">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/4%20robot%20nero.jpg" loading="lazy" alt="MNG-001">
 </div>
 <div class="riga-info">
@@ -90,8 +149,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-002" data-nome="4 robot.jpg" data-thumb="immagini_web/4%20robot.jpg" data-zoom="immagini_web/4%20robot_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/4%20robot.jpg" data-sfondo="#ffffff" data-cerca="mng 002 4 robot">
-<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-002" data-nome="4 robot.jpg" data-thumb="immagini_web/4%20robot.jpg" data-zoom="immagini_web/4%20robot_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/4%20robot.jpg" data-sfondo="#ffffff" data-cerca="mng 002 4 robot">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/4%20robot.jpg" loading="lazy" alt="MNG-002">
 </div>
 <div class="riga-info">
@@ -100,8 +159,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-003" data-nome="Chainsaw Rosso.jpg" data-thumb="immagini_web/Chainsaw%20Rosso.jpg" data-zoom="immagini_web/Chainsaw%20Rosso_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Chainsaw%20Rosso.jpg" data-sfondo="#000000" data-cerca="mng 003 chainsaw rosso">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-003" data-nome="Chainsaw Rosso.jpg" data-thumb="immagini_web/Chainsaw%20Rosso.jpg" data-zoom="immagini_web/Chainsaw%20Rosso_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Chainsaw%20Rosso.jpg" data-sfondo="#000000" data-cerca="mng 003 chainsaw rosso">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/Chainsaw%20Rosso.jpg" loading="lazy" alt="MNG-003">
 </div>
 <div class="riga-info">
@@ -110,8 +169,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-004" data-nome="Chainsaw verde.jpg" data-thumb="immagini_web/Chainsaw%20verde.jpg" data-zoom="immagini_web/Chainsaw%20verde_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Chainsaw%20verde.jpg" data-sfondo="#000000" data-cerca="mng 004 chainsaw verde">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-004" data-nome="Chainsaw verde.jpg" data-thumb="immagini_web/Chainsaw%20verde.jpg" data-zoom="immagini_web/Chainsaw%20verde_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Chainsaw%20verde.jpg" data-sfondo="#000000" data-cerca="mng 004 chainsaw verde">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/Chainsaw%20verde.jpg" loading="lazy" alt="MNG-004">
 </div>
 <div class="riga-info">
@@ -120,8 +179,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-005" data-nome="death note.png" data-thumb="immagini_web/death%20note.jpg" data-zoom="immagini_web/death%20note_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/death%20note.jpg" data-sfondo="#000000" data-cerca="mng 005 death note">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-005" data-nome="death note.png" data-thumb="immagini_web/death%20note.jpg" data-zoom="immagini_web/death%20note_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/death%20note.jpg" data-sfondo="#000000" data-cerca="mng 005 death note">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/death%20note.jpg" loading="lazy" alt="MNG-005">
 </div>
 <div class="riga-info">
@@ -130,8 +189,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-006" data-nome="dragonball blt.jpg" data-thumb="immagini_web/dragonball%20blt.jpg" data-zoom="immagini_web/dragonball%20blt_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20blt.jpg" data-sfondo="#ffffff" data-cerca="mng 006 dragonball blt">
-<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-006" data-nome="dragonball blt.jpg" data-thumb="immagini_web/dragonball%20blt.jpg" data-zoom="immagini_web/dragonball%20blt_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20blt.jpg" data-sfondo="#ffffff" data-cerca="mng 006 dragonball blt">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/dragonball%20blt.jpg" loading="lazy" alt="MNG-006">
 </div>
 <div class="riga-info">
@@ -140,8 +199,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-007" data-nome="Dragonball Drago.jpg" data-thumb="immagini_web/Dragonball%20Drago.jpg" data-zoom="immagini_web/Dragonball%20Drago_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Dragonball%20Drago.jpg" data-sfondo="#ffffff" data-cerca="mng 007 dragonball drago">
-<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-007" data-nome="Dragonball Drago.jpg" data-thumb="immagini_web/Dragonball%20Drago.jpg" data-zoom="immagini_web/Dragonball%20Drago_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Dragonball%20Drago.jpg" data-sfondo="#ffffff" data-cerca="mng 007 dragonball drago">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/Dragonball%20Drago.jpg" loading="lazy" alt="MNG-007">
 </div>
 <div class="riga-info">
@@ -150,8 +209,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-008" data-nome="dragonball fiamme.png" data-thumb="immagini_web/dragonball%20fiamme.jpg" data-zoom="immagini_web/dragonball%20fiamme_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20fiamme.jpg" data-sfondo="#000000" data-cerca="mng 008 dragonball fiamme">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-008" data-nome="dragonball fiamme.png" data-thumb="immagini_web/dragonball%20fiamme.jpg" data-zoom="immagini_web/dragonball%20fiamme_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20fiamme.jpg" data-sfondo="#000000" data-cerca="mng 008 dragonball fiamme">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/dragonball%20fiamme.jpg" loading="lazy" alt="MNG-008">
 </div>
 <div class="riga-info">
@@ -160,8 +219,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-009" data-nome="Dragonball fumetti grigio.jpg" data-thumb="immagini_web/Dragonball%20fumetti%20grigio.jpg" data-zoom="immagini_web/Dragonball%20fumetti%20grigio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Dragonball%20fumetti%20grigio.jpg" data-sfondo="#000000" data-cerca="mng 009 dragonball fumetti grigio">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-009" data-nome="Dragonball fumetti grigio.jpg" data-thumb="immagini_web/Dragonball%20fumetti%20grigio.jpg" data-zoom="immagini_web/Dragonball%20fumetti%20grigio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Dragonball%20fumetti%20grigio.jpg" data-sfondo="#000000" data-cerca="mng 009 dragonball fumetti grigio">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/Dragonball%20fumetti%20grigio.jpg" loading="lazy" alt="MNG-009">
 </div>
 <div class="riga-info">
@@ -170,8 +229,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-010" data-nome="dragonball genio.jpg" data-thumb="immagini_web/dragonball%20genio.jpg" data-zoom="immagini_web/dragonball%20genio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20genio.jpg" data-sfondo="#000000" data-cerca="mng 010 dragonball genio">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-010" data-nome="dragonball genio.jpg" data-thumb="immagini_web/dragonball%20genio.jpg" data-zoom="immagini_web/dragonball%20genio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20genio.jpg" data-sfondo="#000000" data-cerca="mng 010 dragonball genio">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/dragonball%20genio.jpg" loading="lazy" alt="MNG-010">
 </div>
 <div class="riga-info">
@@ -180,8 +239,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-011" data-nome="dragonball goku sfera.jpg" data-thumb="immagini_web/dragonball%20goku%20sfera.jpg" data-zoom="immagini_web/dragonball%20goku%20sfera_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20goku%20sfera.jpg" data-sfondo="#000000" data-cerca="mng 011 dragonball goku sfera">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-011" data-nome="dragonball goku sfera.jpg" data-thumb="immagini_web/dragonball%20goku%20sfera.jpg" data-zoom="immagini_web/dragonball%20goku%20sfera_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20goku%20sfera.jpg" data-sfondo="#000000" data-cerca="mng 011 dragonball goku sfera">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/dragonball%20goku%20sfera.jpg" loading="lazy" alt="MNG-011">
 </div>
 <div class="riga-info">
@@ -190,8 +249,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-012" data-nome="dragonball scimmia.jpg" data-thumb="immagini_web/dragonball%20scimmia.jpg" data-zoom="immagini_web/dragonball%20scimmia_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20scimmia.jpg" data-sfondo="#000000" data-cerca="mng 012 dragonball scimmia">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-012" data-nome="dragonball scimmia.jpg" data-thumb="immagini_web/dragonball%20scimmia.jpg" data-zoom="immagini_web/dragonball%20scimmia_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20scimmia.jpg" data-sfondo="#000000" data-cerca="mng 012 dragonball scimmia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/dragonball%20scimmia.jpg" loading="lazy" alt="MNG-012">
 </div>
 <div class="riga-info">
@@ -200,8 +259,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-013" data-nome="Dragonball SonGoku Bianco.jpg" data-thumb="immagini_web/Dragonball%20SonGoku%20Bianco.jpg" data-zoom="immagini_web/Dragonball%20SonGoku%20Bianco_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Dragonball%20SonGoku%20Bianco.jpg" data-sfondo="#ffffff" data-cerca="mng 013 dragonball songoku bianco">
-<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-013" data-nome="Dragonball SonGoku Bianco.jpg" data-thumb="immagini_web/Dragonball%20SonGoku%20Bianco.jpg" data-zoom="immagini_web/Dragonball%20SonGoku%20Bianco_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Dragonball%20SonGoku%20Bianco.jpg" data-sfondo="#ffffff" data-cerca="mng 013 dragonball songoku bianco">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/Dragonball%20SonGoku%20Bianco.jpg" loading="lazy" alt="MNG-013">
 </div>
 <div class="riga-info">
@@ -210,8 +269,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-014" data-nome="dragonball vintage sfera.jpg" data-thumb="immagini_web/dragonball%20vintage%20sfera.jpg" data-zoom="immagini_web/dragonball%20vintage%20sfera_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20vintage%20sfera.jpg" data-sfondo="#000000" data-cerca="mng 014 dragonball vintage sfera">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-014" data-nome="dragonball vintage sfera.jpg" data-thumb="immagini_web/dragonball%20vintage%20sfera.jpg" data-zoom="immagini_web/dragonball%20vintage%20sfera_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20vintage%20sfera.jpg" data-sfondo="#000000" data-cerca="mng 014 dragonball vintage sfera">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/dragonball%20vintage%20sfera.jpg" loading="lazy" alt="MNG-014">
 </div>
 <div class="riga-info">
@@ -220,8 +279,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-015" data-nome="dragonball_nero.jpg" data-thumb="immagini_web/dragonball_nero.jpg" data-zoom="immagini_web/dragonball_nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball_nero.jpg" data-sfondo="#000000" data-cerca="mng 015 dragonball nero">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-015" data-nome="dragonball_nero.jpg" data-thumb="immagini_web/dragonball_nero.jpg" data-zoom="immagini_web/dragonball_nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball_nero.jpg" data-sfondo="#000000" data-cerca="mng 015 dragonball nero">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/dragonball_nero.jpg" loading="lazy" alt="MNG-015">
 </div>
 <div class="riga-info">
@@ -230,8 +289,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-016" data-nome="Drsgonball fumetto colorato.jpg" data-thumb="immagini_web/Drsgonball%20fumetto%20colorato.jpg" data-zoom="immagini_web/Drsgonball%20fumetto%20colorato_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Drsgonball%20fumetto%20colorato.jpg" data-sfondo="#000000" data-cerca="mng 016 drsgonball fumetto colorato">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-016" data-nome="Drsgonball fumetto colorato.jpg" data-thumb="immagini_web/Drsgonball%20fumetto%20colorato.jpg" data-zoom="immagini_web/Drsgonball%20fumetto%20colorato_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Drsgonball%20fumetto%20colorato.jpg" data-sfondo="#000000" data-cerca="mng 016 drsgonball fumetto colorato">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/Drsgonball%20fumetto%20colorato.jpg" loading="lazy" alt="MNG-016">
 </div>
 <div class="riga-info">
@@ -240,8 +299,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-017" data-nome="goku vintage di spalle.jpg" data-thumb="immagini_web/goku%20vintage%20di%20spalle.jpg" data-zoom="immagini_web/goku%20vintage%20di%20spalle_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/goku%20vintage%20di%20spalle.jpg" data-sfondo="#000000" data-cerca="mng 017 goku vintage di spalle">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-017" data-nome="goku vintage di spalle.jpg" data-thumb="immagini_web/goku%20vintage%20di%20spalle.jpg" data-zoom="immagini_web/goku%20vintage%20di%20spalle_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/goku%20vintage%20di%20spalle.jpg" data-sfondo="#000000" data-cerca="mng 017 goku vintage di spalle">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/goku%20vintage%20di%20spalle.jpg" loading="lazy" alt="MNG-017">
 </div>
 <div class="riga-info">
@@ -250,8 +309,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-018" data-nome="goldrake personaggio.png" data-thumb="immagini_web/goldrake%20personaggio.jpg" data-zoom="immagini_web/goldrake%20personaggio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/goldrake%20personaggio.jpg" data-sfondo="#ffffff" data-cerca="mng 018 goldrake personaggio">
-<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-018" data-nome="goldrake personaggio.png" data-thumb="immagini_web/goldrake%20personaggio.jpg" data-zoom="immagini_web/goldrake%20personaggio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/goldrake%20personaggio.jpg" data-sfondo="#ffffff" data-cerca="mng 018 goldrake personaggio">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/goldrake%20personaggio.jpg" loading="lazy" alt="MNG-018">
 </div>
 <div class="riga-info">
@@ -260,8 +319,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-019" data-nome="hatsune.jpg" data-thumb="immagini_web/hatsune.jpg" data-zoom="immagini_web/hatsune_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/hatsune.jpg" data-sfondo="#ffffff" data-cerca="mng 019 hatsune">
-<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-019" data-nome="hatsune.jpg" data-thumb="immagini_web/hatsune.jpg" data-zoom="immagini_web/hatsune_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/hatsune.jpg" data-sfondo="#ffffff" data-cerca="mng 019 hatsune">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/hatsune.jpg" loading="lazy" alt="MNG-019">
 </div>
 <div class="riga-info">
@@ -270,8 +329,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-020" data-nome="inuhasha.jpg" data-thumb="immagini_web/inuhasha.jpg" data-zoom="immagini_web/inuhasha_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/inuhasha.jpg" data-sfondo="#ffffff" data-cerca="mng 020 inuhasha">
-<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-020" data-nome="inuhasha.jpg" data-thumb="immagini_web/inuhasha.jpg" data-zoom="immagini_web/inuhasha_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/inuhasha.jpg" data-sfondo="#ffffff" data-cerca="mng 020 inuhasha">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/inuhasha.jpg" loading="lazy" alt="MNG-020">
 </div>
 <div class="riga-info">
@@ -280,8 +339,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-021" data-nome="jojo.png" data-thumb="immagini_web/jojo.jpg" data-zoom="immagini_web/jojo_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/jojo.jpg" data-sfondo="#000000" data-cerca="mng 021 jojo">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-021" data-nome="jojo.png" data-thumb="immagini_web/jojo.jpg" data-zoom="immagini_web/jojo_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/jojo.jpg" data-sfondo="#000000" data-cerca="mng 021 jojo">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/jojo.jpg" loading="lazy" alt="MNG-021">
 </div>
 <div class="riga-info">
@@ -290,8 +349,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-022" data-nome="juju gruppo_bianco.png" data-thumb="immagini_web/juju%20gruppo_bianco.jpg" data-zoom="immagini_web/juju%20gruppo_bianco_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/juju%20gruppo_bianco.jpg" data-sfondo="#ffffff" data-cerca="mng 022 juju gruppo bianco">
-<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-022" data-nome="juju gruppo_bianco.png" data-thumb="immagini_web/juju%20gruppo_bianco.jpg" data-zoom="immagini_web/juju%20gruppo_bianco_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/juju%20gruppo_bianco.jpg" data-sfondo="#ffffff" data-cerca="mng 022 juju gruppo bianco">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/juju%20gruppo_bianco.jpg" loading="lazy" alt="MNG-022">
 </div>
 <div class="riga-info">
@@ -300,8 +359,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-023" data-nome="juju gruppo_nero.jpg" data-thumb="immagini_web/juju%20gruppo_nero.jpg" data-zoom="immagini_web/juju%20gruppo_nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/juju%20gruppo_nero.jpg" data-sfondo="#000000" data-cerca="mng 023 juju gruppo nero">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-023" data-nome="juju gruppo_nero.jpg" data-thumb="immagini_web/juju%20gruppo_nero.jpg" data-zoom="immagini_web/juju%20gruppo_nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/juju%20gruppo_nero.jpg" data-sfondo="#000000" data-cerca="mng 023 juju gruppo nero">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/juju%20gruppo_nero.jpg" loading="lazy" alt="MNG-023">
 </div>
 <div class="riga-info">
@@ -310,8 +369,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-024" data-nome="juju personaggio_nero.jpg" data-thumb="immagini_web/juju%20personaggio_nero.jpg" data-zoom="immagini_web/juju%20personaggio_nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/juju%20personaggio_nero.jpg" data-sfondo="#000000" data-cerca="mng 024 juju personaggio nero">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-024" data-nome="juju personaggio_nero.jpg" data-thumb="immagini_web/juju%20personaggio_nero.jpg" data-zoom="immagini_web/juju%20personaggio_nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/juju%20personaggio_nero.jpg" data-sfondo="#000000" data-cerca="mng 024 juju personaggio nero">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/juju%20personaggio_nero.jpg" loading="lazy" alt="MNG-024">
 </div>
 <div class="riga-info">
@@ -320,8 +379,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-025" data-nome="Kakashi.jpg" data-thumb="immagini_web/Kakashi.jpg" data-zoom="immagini_web/Kakashi_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Kakashi.jpg" data-sfondo="#000000" data-cerca="mng 025 kakashi">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-025" data-nome="Kakashi.jpg" data-thumb="immagini_web/Kakashi.jpg" data-zoom="immagini_web/Kakashi_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Kakashi.jpg" data-sfondo="#000000" data-cerca="mng 025 kakashi">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/Kakashi.jpg" loading="lazy" alt="MNG-025">
 </div>
 <div class="riga-info">
@@ -330,8 +389,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-026" data-nome="Ken gruppo x nero.jpg" data-thumb="immagini_web/Ken%20gruppo%20x%20nero.jpg" data-zoom="immagini_web/Ken%20gruppo%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Ken%20gruppo%20x%20nero.jpg" data-sfondo="#000000" data-cerca="mng 026 ken gruppo x nero">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-026" data-nome="Ken gruppo x nero.jpg" data-thumb="immagini_web/Ken%20gruppo%20x%20nero.jpg" data-zoom="immagini_web/Ken%20gruppo%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Ken%20gruppo%20x%20nero.jpg" data-sfondo="#000000" data-cerca="mng 026 ken gruppo x nero">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/Ken%20gruppo%20x%20nero.jpg" loading="lazy" alt="MNG-026">
 </div>
 <div class="riga-info">
@@ -340,8 +399,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-027" data-nome="Ken rettangolo x nero.jpg" data-thumb="immagini_web/Ken%20rettangolo%20x%20nero.jpg" data-zoom="immagini_web/Ken%20rettangolo%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Ken%20rettangolo%20x%20nero.jpg" data-sfondo="#000000" data-cerca="mng 027 ken rettangolo x nero">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-027" data-nome="Ken rettangolo x nero.jpg" data-thumb="immagini_web/Ken%20rettangolo%20x%20nero.jpg" data-zoom="immagini_web/Ken%20rettangolo%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Ken%20rettangolo%20x%20nero.jpg" data-sfondo="#000000" data-cerca="mng 027 ken rettangolo x nero">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/Ken%20rettangolo%20x%20nero.jpg" loading="lazy" alt="MNG-027">
 </div>
 <div class="riga-info">
@@ -350,8 +409,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-028" data-nome="KEN SHIRO RETTANGOLO bia.jpg" data-thumb="immagini_web/KEN%20SHIRO%20RETTANGOLO%20bia.jpg" data-zoom="immagini_web/KEN%20SHIRO%20RETTANGOLO%20bia_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/KEN%20SHIRO%20RETTANGOLO%20bia.jpg" data-sfondo="#ffffff" data-cerca="mng 028 ken shiro rettangolo bia">
-<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-028" data-nome="KEN SHIRO RETTANGOLO bia.jpg" data-thumb="immagini_web/KEN%20SHIRO%20RETTANGOLO%20bia.jpg" data-zoom="immagini_web/KEN%20SHIRO%20RETTANGOLO%20bia_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/KEN%20SHIRO%20RETTANGOLO%20bia.jpg" data-sfondo="#ffffff" data-cerca="mng 028 ken shiro rettangolo bia">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/KEN%20SHIRO%20RETTANGOLO%20bia.jpg" loading="lazy" alt="MNG-028">
 </div>
 <div class="riga-info">
@@ -360,8 +419,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-029" data-nome="my hero academia gruppo x nero.jpg" data-thumb="immagini_web/my%20hero%20academia%20gruppo%20x%20nero.jpg" data-zoom="immagini_web/my%20hero%20academia%20gruppo%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/my%20hero%20academia%20gruppo%20x%20nero.jpg" data-sfondo="#000000" data-cerca="mng 029 my hero academia gruppo x nero">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-029" data-nome="my hero academia gruppo x nero.jpg" data-thumb="immagini_web/my%20hero%20academia%20gruppo%20x%20nero.jpg" data-zoom="immagini_web/my%20hero%20academia%20gruppo%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/my%20hero%20academia%20gruppo%20x%20nero.jpg" data-sfondo="#000000" data-cerca="mng 029 my hero academia gruppo x nero">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/my%20hero%20academia%20gruppo%20x%20nero.jpg" loading="lazy" alt="MNG-029">
 </div>
 <div class="riga-info">
@@ -370,8 +429,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-030" data-nome="naruto 3 occhi.jpg" data-thumb="immagini_web/naruto%203%20occhi.jpg" data-zoom="immagini_web/naruto%203%20occhi_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/naruto%203%20occhi.jpg" data-sfondo="#000000" data-cerca="mng 030 naruto 3 occhi">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-030" data-nome="naruto 3 occhi.jpg" data-thumb="immagini_web/naruto%203%20occhi.jpg" data-zoom="immagini_web/naruto%203%20occhi_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/naruto%203%20occhi.jpg" data-sfondo="#000000" data-cerca="mng 030 naruto 3 occhi">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/naruto%203%20occhi.jpg" loading="lazy" alt="MNG-030">
 </div>
 <div class="riga-info">
@@ -380,8 +439,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-031" data-nome="naruto gruppo rettangoli.jpg" data-thumb="immagini_web/naruto%20gruppo%20rettangoli.jpg" data-zoom="immagini_web/naruto%20gruppo%20rettangoli_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/naruto%20gruppo%20rettangoli.jpg" data-sfondo="#000000" data-cerca="mng 031 naruto gruppo rettangoli">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-031" data-nome="naruto gruppo rettangoli.jpg" data-thumb="immagini_web/naruto%20gruppo%20rettangoli.jpg" data-zoom="immagini_web/naruto%20gruppo%20rettangoli_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/naruto%20gruppo%20rettangoli.jpg" data-sfondo="#000000" data-cerca="mng 031 naruto gruppo rettangoli">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/naruto%20gruppo%20rettangoli.jpg" loading="lazy" alt="MNG-031">
 </div>
 <div class="riga-info">
@@ -390,8 +449,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-032" data-nome="Naruto rettangoli bianchi x nero.jpg" data-thumb="immagini_web/Naruto%20rettangoli%20bianchi%20x%20nero.jpg" data-zoom="immagini_web/Naruto%20rettangoli%20bianchi%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Naruto%20rettangoli%20bianchi%20x%20nero.jpg" data-sfondo="#000000" data-cerca="mng 032 naruto rettangoli bianchi x nero">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-032" data-nome="Naruto rettangoli bianchi x nero.jpg" data-thumb="immagini_web/Naruto%20rettangoli%20bianchi%20x%20nero.jpg" data-zoom="immagini_web/Naruto%20rettangoli%20bianchi%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Naruto%20rettangoli%20bianchi%20x%20nero.jpg" data-sfondo="#000000" data-cerca="mng 032 naruto rettangoli bianchi x nero">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/Naruto%20rettangoli%20bianchi%20x%20nero.jpg" loading="lazy" alt="MNG-032">
 </div>
 <div class="riga-info">
@@ -400,8 +459,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-033" data-nome="naruto scritta_bianco.jpg" data-thumb="immagini_web/naruto%20scritta_bianco.jpg" data-zoom="immagini_web/naruto%20scritta_bianco_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/naruto%20scritta_bianco.jpg" data-sfondo="#ffffff" data-cerca="mng 033 naruto scritta bianco">
-<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-033" data-nome="naruto scritta_bianco.jpg" data-thumb="immagini_web/naruto%20scritta_bianco.jpg" data-zoom="immagini_web/naruto%20scritta_bianco_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/naruto%20scritta_bianco.jpg" data-sfondo="#ffffff" data-cerca="mng 033 naruto scritta bianco">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/naruto%20scritta_bianco.jpg" loading="lazy" alt="MNG-033">
 </div>
 <div class="riga-info">
@@ -410,8 +469,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-034" data-nome="naruto scritta_nero.jpg" data-thumb="immagini_web/naruto%20scritta_nero.jpg" data-zoom="immagini_web/naruto%20scritta_nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/naruto%20scritta_nero.jpg" data-sfondo="#000000" data-cerca="mng 034 naruto scritta nero">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-034" data-nome="naruto scritta_nero.jpg" data-thumb="immagini_web/naruto%20scritta_nero.jpg" data-zoom="immagini_web/naruto%20scritta_nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/naruto%20scritta_nero.jpg" data-sfondo="#000000" data-cerca="mng 034 naruto scritta nero">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/naruto%20scritta_nero.jpg" loading="lazy" alt="MNG-034">
 </div>
 <div class="riga-info">
@@ -420,8 +479,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-035" data-nome="one piece 3 personaggi.jpg" data-thumb="immagini_web/one%20piece%203%20personaggi.jpg" data-zoom="immagini_web/one%20piece%203%20personaggi_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%203%20personaggi.jpg" data-sfondo="#000000" data-cerca="mng 035 one piece 3 personaggi">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-035" data-nome="one piece 3 personaggi.jpg" data-thumb="immagini_web/one%20piece%203%20personaggi.jpg" data-zoom="immagini_web/one%20piece%203%20personaggi_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%203%20personaggi.jpg" data-sfondo="#000000" data-cerca="mng 035 one piece 3 personaggi">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/one%20piece%203%20personaggi.jpg" loading="lazy" alt="MNG-035">
 </div>
 <div class="riga-info">
@@ -430,8 +489,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-036" data-nome="one piece braccio.jpg" data-thumb="immagini_web/one%20piece%20braccio.jpg" data-zoom="immagini_web/one%20piece%20braccio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20braccio.jpg" data-sfondo="#000000" data-cerca="mng 036 one piece braccio">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-036" data-nome="one piece braccio.jpg" data-thumb="immagini_web/one%20piece%20braccio.jpg" data-zoom="immagini_web/one%20piece%20braccio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20braccio.jpg" data-sfondo="#000000" data-cerca="mng 036 one piece braccio">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/one%20piece%20braccio.jpg" loading="lazy" alt="MNG-036">
 </div>
 <div class="riga-info">
@@ -440,8 +499,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-037" data-nome="one piece bussola.jpg" data-thumb="immagini_web/one%20piece%20bussola.jpg" data-zoom="immagini_web/one%20piece%20bussola_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20bussola.jpg" data-sfondo="#000000" data-cerca="mng 037 one piece bussola">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-037" data-nome="one piece bussola.jpg" data-thumb="immagini_web/one%20piece%20bussola.jpg" data-zoom="immagini_web/one%20piece%20bussola_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20bussola.jpg" data-sfondo="#000000" data-cerca="mng 037 one piece bussola">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/one%20piece%20bussola.jpg" loading="lazy" alt="MNG-037">
 </div>
 <div class="riga-info">
@@ -450,8 +509,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-038" data-nome="one piece colorato.jpg" data-thumb="immagini_web/one%20piece%20colorato.jpg" data-zoom="immagini_web/one%20piece%20colorato_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20colorato.jpg" data-sfondo="#000000" data-cerca="mng 038 one piece colorato">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-038" data-nome="one piece colorato.jpg" data-thumb="immagini_web/one%20piece%20colorato.jpg" data-zoom="immagini_web/one%20piece%20colorato_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20colorato.jpg" data-sfondo="#000000" data-cerca="mng 038 one piece colorato">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/one%20piece%20colorato.jpg" loading="lazy" alt="MNG-038">
 </div>
 <div class="riga-info">
@@ -460,8 +519,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-039" data-nome="one piece fiamme viola x bianco.jpg" data-thumb="immagini_web/one%20piece%20fiamme%20viola%20x%20bianco.jpg" data-zoom="immagini_web/one%20piece%20fiamme%20viola%20x%20bianco_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20fiamme%20viola%20x%20bianco.jpg" data-sfondo="#ffffff" data-cerca="mng 039 one piece fiamme viola x bianco">
-<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-039" data-nome="one piece fiamme viola x bianco.jpg" data-thumb="immagini_web/one%20piece%20fiamme%20viola%20x%20bianco.jpg" data-zoom="immagini_web/one%20piece%20fiamme%20viola%20x%20bianco_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20fiamme%20viola%20x%20bianco.jpg" data-sfondo="#ffffff" data-cerca="mng 039 one piece fiamme viola x bianco">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/one%20piece%20fiamme%20viola%20x%20bianco.jpg" loading="lazy" alt="MNG-039">
 </div>
 <div class="riga-info">
@@ -470,8 +529,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-040" data-nome="one piece fiamme viola x nero.jpg" data-thumb="immagini_web/one%20piece%20fiamme%20viola%20x%20nero.jpg" data-zoom="immagini_web/one%20piece%20fiamme%20viola%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20fiamme%20viola%20x%20nero.jpg" data-sfondo="#000000" data-cerca="mng 040 one piece fiamme viola x nero">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-040" data-nome="one piece fiamme viola x nero.jpg" data-thumb="immagini_web/one%20piece%20fiamme%20viola%20x%20nero.jpg" data-zoom="immagini_web/one%20piece%20fiamme%20viola%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20fiamme%20viola%20x%20nero.jpg" data-sfondo="#000000" data-cerca="mng 040 one piece fiamme viola x nero">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/one%20piece%20fiamme%20viola%20x%20nero.jpg" loading="lazy" alt="MNG-040">
 </div>
 <div class="riga-info">
@@ -480,8 +539,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-041" data-nome="one piece gear 5 scritta gialla_nero.jpg" data-thumb="immagini_web/one%20piece%20gear%205%20scritta%20gialla_nero.jpg" data-zoom="immagini_web/one%20piece%20gear%205%20scritta%20gialla_nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20gear%205%20scritta%20gialla_nero.jpg" data-sfondo="#000000" data-cerca="mng 041 one piece gear 5 scritta gialla nero">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-041" data-nome="one piece gear 5 scritta gialla_nero.jpg" data-thumb="immagini_web/one%20piece%20gear%205%20scritta%20gialla_nero.jpg" data-zoom="immagini_web/one%20piece%20gear%205%20scritta%20gialla_nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20gear%205%20scritta%20gialla_nero.jpg" data-sfondo="#000000" data-cerca="mng 041 one piece gear 5 scritta gialla nero">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/one%20piece%20gear%205%20scritta%20gialla_nero.jpg" loading="lazy" alt="MNG-041">
 </div>
 <div class="riga-info">
@@ -490,8 +549,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-042" data-nome="One piece giornali.jpg" data-thumb="immagini_web/One%20piece%20giornali.jpg" data-zoom="immagini_web/One%20piece%20giornali_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/One%20piece%20giornali.jpg" data-sfondo="#000000" data-cerca="mng 042 one piece giornali">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-042" data-nome="One piece giornali.jpg" data-thumb="immagini_web/One%20piece%20giornali.jpg" data-zoom="immagini_web/One%20piece%20giornali_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/One%20piece%20giornali.jpg" data-sfondo="#000000" data-cerca="mng 042 one piece giornali">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/One%20piece%20giornali.jpg" loading="lazy" alt="MNG-042">
 </div>
 <div class="riga-info">
@@ -500,8 +559,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-043" data-nome="one piece logo piu scritta.jpg" data-thumb="immagini_web/one%20piece%20logo%20piu%20scritta.jpg" data-zoom="immagini_web/one%20piece%20logo%20piu%20scritta_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20logo%20piu%20scritta.jpg" data-sfondo="#000000" data-cerca="mng 043 one piece logo piu scritta">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-043" data-nome="one piece logo piu scritta.jpg" data-thumb="immagini_web/one%20piece%20logo%20piu%20scritta.jpg" data-zoom="immagini_web/one%20piece%20logo%20piu%20scritta_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20logo%20piu%20scritta.jpg" data-sfondo="#000000" data-cerca="mng 043 one piece logo piu scritta">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/one%20piece%20logo%20piu%20scritta.jpg" loading="lazy" alt="MNG-043">
 </div>
 <div class="riga-info">
@@ -510,8 +569,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-044" data-nome="One piece luffy_nero.jpg" data-thumb="immagini_web/One%20piece%20luffy_nero.jpg" data-zoom="immagini_web/One%20piece%20luffy_nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/One%20piece%20luffy_nero.jpg" data-sfondo="#000000" data-cerca="mng 044 one piece luffy nero">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-044" data-nome="One piece luffy_nero.jpg" data-thumb="immagini_web/One%20piece%20luffy_nero.jpg" data-zoom="immagini_web/One%20piece%20luffy_nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/One%20piece%20luffy_nero.jpg" data-sfondo="#000000" data-cerca="mng 044 one piece luffy nero">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/One%20piece%20luffy_nero.jpg" loading="lazy" alt="MNG-044">
 </div>
 <div class="riga-info">
@@ -520,8 +579,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-045" data-nome="one piece molti occhi.jpg" data-thumb="immagini_web/one%20piece%20molti%20occhi.jpg" data-zoom="immagini_web/one%20piece%20molti%20occhi_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20molti%20occhi.jpg" data-sfondo="#000000" data-cerca="mng 045 one piece molti occhi">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-045" data-nome="one piece molti occhi.jpg" data-thumb="immagini_web/one%20piece%20molti%20occhi.jpg" data-zoom="immagini_web/one%20piece%20molti%20occhi_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20molti%20occhi.jpg" data-sfondo="#000000" data-cerca="mng 045 one piece molti occhi">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/one%20piece%20molti%20occhi.jpg" loading="lazy" alt="MNG-045">
 </div>
 <div class="riga-info">
@@ -530,8 +589,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-046" data-nome="one piece nave dietro.jpg" data-thumb="immagini_web/one%20piece%20nave%20dietro.jpg" data-zoom="immagini_web/one%20piece%20nave%20dietro_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20nave%20dietro.jpg" data-sfondo="#000000" data-cerca="mng 046 one piece nave dietro">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-046" data-nome="one piece nave dietro.jpg" data-thumb="immagini_web/one%20piece%20nave%20dietro.jpg" data-zoom="immagini_web/one%20piece%20nave%20dietro_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20nave%20dietro.jpg" data-sfondo="#000000" data-cerca="mng 046 one piece nave dietro">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/one%20piece%20nave%20dietro.jpg" loading="lazy" alt="MNG-046">
 </div>
 <div class="riga-info">
@@ -540,8 +599,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-047" data-nome="One piece sagom teschio.jpg" data-thumb="immagini_web/One%20piece%20sagom%20teschio.jpg" data-zoom="immagini_web/One%20piece%20sagom%20teschio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/One%20piece%20sagom%20teschio.jpg" data-sfondo="#000000" data-cerca="mng 047 one piece sagom teschio">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-047" data-nome="One piece sagom teschio.jpg" data-thumb="immagini_web/One%20piece%20sagom%20teschio.jpg" data-zoom="immagini_web/One%20piece%20sagom%20teschio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/One%20piece%20sagom%20teschio.jpg" data-sfondo="#000000" data-cerca="mng 047 one piece sagom teschio">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/One%20piece%20sagom%20teschio.jpg" loading="lazy" alt="MNG-047">
 </div>
 <div class="riga-info">
@@ -550,8 +609,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-048" data-nome="one piece sagona personaggio.jpg" data-thumb="immagini_web/one%20piece%20sagona%20personaggio.jpg" data-zoom="immagini_web/one%20piece%20sagona%20personaggio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20sagona%20personaggio.jpg" data-sfondo="#000000" data-cerca="mng 048 one piece sagona personaggio">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-048" data-nome="one piece sagona personaggio.jpg" data-thumb="immagini_web/one%20piece%20sagona%20personaggio.jpg" data-zoom="immagini_web/one%20piece%20sagona%20personaggio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20sagona%20personaggio.jpg" data-sfondo="#000000" data-cerca="mng 048 one piece sagona personaggio">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/one%20piece%20sagona%20personaggio.jpg" loading="lazy" alt="MNG-048">
 </div>
 <div class="riga-info">
@@ -560,8 +619,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-049" data-nome="one piece sul grigio.jpg" data-thumb="immagini_web/one%20piece%20sul%20grigio.jpg" data-zoom="immagini_web/one%20piece%20sul%20grigio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20sul%20grigio.jpg" data-sfondo="#ffffff" data-cerca="mng 049 one piece sul grigio">
-<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-049" data-nome="one piece sul grigio.jpg" data-thumb="immagini_web/one%20piece%20sul%20grigio.jpg" data-zoom="immagini_web/one%20piece%20sul%20grigio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20sul%20grigio.jpg" data-sfondo="#ffffff" data-cerca="mng 049 one piece sul grigio">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/one%20piece%20sul%20grigio.jpg" loading="lazy" alt="MNG-049">
 </div>
 <div class="riga-info">
@@ -570,8 +629,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-050" data-nome="one piece tescio logo.jpg" data-thumb="immagini_web/one%20piece%20tescio%20logo.jpg" data-zoom="immagini_web/one%20piece%20tescio%20logo_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20tescio%20logo.jpg" data-sfondo="#000000" data-cerca="mng 050 one piece tescio logo">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-050" data-nome="one piece tescio logo.jpg" data-thumb="immagini_web/one%20piece%20tescio%20logo.jpg" data-zoom="immagini_web/one%20piece%20tescio%20logo_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20tescio%20logo.jpg" data-sfondo="#000000" data-cerca="mng 050 one piece tescio logo">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/one%20piece%20tescio%20logo.jpg" loading="lazy" alt="MNG-050">
 </div>
 <div class="riga-info">
@@ -580,8 +639,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-051" data-nome="one piece wanted luffy.jpg" data-thumb="immagini_web/one%20piece%20wanted%20luffy.jpg" data-zoom="immagini_web/one%20piece%20wanted%20luffy_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20wanted%20luffy.jpg" data-sfondo="#ffffff" data-cerca="mng 051 one piece wanted luffy">
-<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-051" data-nome="one piece wanted luffy.jpg" data-thumb="immagini_web/one%20piece%20wanted%20luffy.jpg" data-zoom="immagini_web/one%20piece%20wanted%20luffy_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20wanted%20luffy.jpg" data-sfondo="#ffffff" data-cerca="mng 051 one piece wanted luffy">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/one%20piece%20wanted%20luffy.jpg" loading="lazy" alt="MNG-051">
 </div>
 <div class="riga-info">
@@ -590,8 +649,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-052" data-nome="one piece zoro wanted.jpg" data-thumb="immagini_web/one%20piece%20zoro%20wanted.jpg" data-zoom="immagini_web/one%20piece%20zoro%20wanted_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20zoro%20wanted.jpg" data-sfondo="#ffffff" data-cerca="mng 052 one piece zoro wanted">
-<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-052" data-nome="one piece zoro wanted.jpg" data-thumb="immagini_web/one%20piece%20zoro%20wanted.jpg" data-zoom="immagini_web/one%20piece%20zoro%20wanted_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20zoro%20wanted.jpg" data-sfondo="#ffffff" data-cerca="mng 052 one piece zoro wanted">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/one%20piece%20zoro%20wanted.jpg" loading="lazy" alt="MNG-052">
 </div>
 <div class="riga-info">
@@ -600,8 +659,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-053" data-nome="one piece zoro wnted x nero.jpg" data-thumb="immagini_web/one%20piece%20zoro%20wnted%20x%20nero.jpg" data-zoom="immagini_web/one%20piece%20zoro%20wnted%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20zoro%20wnted%20x%20nero.jpg" data-sfondo="#000000" data-cerca="mng 053 one piece zoro wnted x nero">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-053" data-nome="one piece zoro wnted x nero.jpg" data-thumb="immagini_web/one%20piece%20zoro%20wnted%20x%20nero.jpg" data-zoom="immagini_web/one%20piece%20zoro%20wnted%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20zoro%20wnted%20x%20nero.jpg" data-sfondo="#000000" data-cerca="mng 053 one piece zoro wnted x nero">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/one%20piece%20zoro%20wnted%20x%20nero.jpg" loading="lazy" alt="MNG-053">
 </div>
 <div class="riga-info">
@@ -610,8 +669,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-054" data-nome="slam dunk.jpg" data-thumb="immagini_web/slam%20dunk.jpg" data-zoom="immagini_web/slam%20dunk_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/slam%20dunk.jpg" data-sfondo="#000000" data-cerca="mng 054 slam dunk">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-054" data-nome="slam dunk.jpg" data-thumb="immagini_web/slam%20dunk.jpg" data-zoom="immagini_web/slam%20dunk_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/slam%20dunk.jpg" data-sfondo="#000000" data-cerca="mng 054 slam dunk">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/slam%20dunk.jpg" loading="lazy" alt="MNG-054">
 </div>
 <div class="riga-info">
@@ -620,8 +679,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-055" data-nome="spy x family bianco.jpg" data-thumb="immagini_web/spy%20x%20family%20bianco.jpg" data-zoom="immagini_web/spy%20x%20family%20bianco_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/spy%20x%20family%20bianco.jpg" data-sfondo="#ffffff" data-cerca="mng 055 spy x family bianco">
-<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-055" data-nome="spy x family bianco.jpg" data-thumb="immagini_web/spy%20x%20family%20bianco.jpg" data-zoom="immagini_web/spy%20x%20family%20bianco_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/spy%20x%20family%20bianco.jpg" data-sfondo="#ffffff" data-cerca="mng 055 spy x family bianco">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/spy%20x%20family%20bianco.jpg" loading="lazy" alt="MNG-055">
 </div>
 <div class="riga-info">
@@ -630,8 +689,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-056" data-nome="YATTAMAN.jpg" data-thumb="immagini_web/YATTAMAN.jpg" data-zoom="immagini_web/YATTAMAN_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/YATTAMAN.jpg" data-sfondo="#ffffff" data-cerca="mng 056 yattaman">
-<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-056" data-nome="YATTAMAN.jpg" data-thumb="immagini_web/YATTAMAN.jpg" data-zoom="immagini_web/YATTAMAN_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/YATTAMAN.jpg" data-sfondo="#ffffff" data-cerca="mng 056 yattaman">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/YATTAMAN.jpg" loading="lazy" alt="MNG-056">
 </div>
 <div class="riga-info">
@@ -640,8 +699,8 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-<div class="item" data-codice="MNG-057" data-nome="Zeniztu luce.jpg" data-thumb="immagini_web/Zeniztu%20luce.jpg" data-zoom="immagini_web/Zeniztu%20luce_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Zeniztu%20luce.jpg" data-sfondo="#000000" data-cerca="mng 057 zeniztu luce">
-<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="item" data-prod="maglia" data-codice="MNG-057" data-nome="Zeniztu luce.jpg" data-thumb="immagini_web/Zeniztu%20luce.jpg" data-zoom="immagini_web/Zeniztu%20luce_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Zeniztu%20luce.jpg" data-sfondo="#000000" data-cerca="mng 057 zeniztu luce">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
 <img src="immagini_web/Zeniztu%20luce.jpg" loading="lazy" alt="MNG-057">
 </div>
 <div class="riga-info">
@@ -650,9 +709,581 @@ Magliette personalizzate stampate su richiesta.<br>
 </div>
 <div class="riepilogo" hidden></div>
 </div>
+<div class="item" data-prod="shopping" data-codice="MNG-001" data-nome="4 robot nero.jpg" data-thumb="immagini_web/4%20robot%20nero.jpg" data-zoom="immagini_web/4%20robot%20nero_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/4%20robot%20nero.jpg" data-sfondo="#000000" data-cerca="mng 001 4 robot nero">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/4%20robot%20nero.jpg" loading="lazy" alt="MNG-001">
 </div>
-<div class="floating-bar">
-<div>Magliette: <span id="counter">0</span></div>
+<div class="riga-info">
+<span class="code" title="MNG-001">MNG-001</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-002" data-nome="4 robot.jpg" data-thumb="immagini_web/4%20robot.jpg" data-zoom="immagini_web/4%20robot_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/4%20robot.jpg" data-sfondo="#ffffff" data-cerca="mng 002 4 robot">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/4%20robot.jpg" loading="lazy" alt="MNG-002">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-002">MNG-002</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-003" data-nome="Chainsaw Rosso.jpg" data-thumb="immagini_web/Chainsaw%20Rosso.jpg" data-zoom="immagini_web/Chainsaw%20Rosso_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Chainsaw%20Rosso.jpg" data-sfondo="#000000" data-cerca="mng 003 chainsaw rosso">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/Chainsaw%20Rosso.jpg" loading="lazy" alt="MNG-003">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-003">MNG-003</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-004" data-nome="Chainsaw verde.jpg" data-thumb="immagini_web/Chainsaw%20verde.jpg" data-zoom="immagini_web/Chainsaw%20verde_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Chainsaw%20verde.jpg" data-sfondo="#000000" data-cerca="mng 004 chainsaw verde">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/Chainsaw%20verde.jpg" loading="lazy" alt="MNG-004">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-004">MNG-004</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-005" data-nome="death note.png" data-thumb="immagini_web/death%20note.jpg" data-zoom="immagini_web/death%20note_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/death%20note.jpg" data-sfondo="#000000" data-cerca="mng 005 death note">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/death%20note.jpg" loading="lazy" alt="MNG-005">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-005">MNG-005</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-006" data-nome="dragonball blt.jpg" data-thumb="immagini_web/dragonball%20blt.jpg" data-zoom="immagini_web/dragonball%20blt_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20blt.jpg" data-sfondo="#ffffff" data-cerca="mng 006 dragonball blt">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/dragonball%20blt.jpg" loading="lazy" alt="MNG-006">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-006">MNG-006</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-007" data-nome="Dragonball Drago.jpg" data-thumb="immagini_web/Dragonball%20Drago.jpg" data-zoom="immagini_web/Dragonball%20Drago_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Dragonball%20Drago.jpg" data-sfondo="#ffffff" data-cerca="mng 007 dragonball drago">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/Dragonball%20Drago.jpg" loading="lazy" alt="MNG-007">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-007">MNG-007</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-008" data-nome="dragonball fiamme.png" data-thumb="immagini_web/dragonball%20fiamme.jpg" data-zoom="immagini_web/dragonball%20fiamme_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20fiamme.jpg" data-sfondo="#000000" data-cerca="mng 008 dragonball fiamme">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/dragonball%20fiamme.jpg" loading="lazy" alt="MNG-008">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-008">MNG-008</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-009" data-nome="Dragonball fumetti grigio.jpg" data-thumb="immagini_web/Dragonball%20fumetti%20grigio.jpg" data-zoom="immagini_web/Dragonball%20fumetti%20grigio_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Dragonball%20fumetti%20grigio.jpg" data-sfondo="#000000" data-cerca="mng 009 dragonball fumetti grigio">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/Dragonball%20fumetti%20grigio.jpg" loading="lazy" alt="MNG-009">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-009">MNG-009</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-010" data-nome="dragonball genio.jpg" data-thumb="immagini_web/dragonball%20genio.jpg" data-zoom="immagini_web/dragonball%20genio_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20genio.jpg" data-sfondo="#000000" data-cerca="mng 010 dragonball genio">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/dragonball%20genio.jpg" loading="lazy" alt="MNG-010">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-010">MNG-010</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-011" data-nome="dragonball goku sfera.jpg" data-thumb="immagini_web/dragonball%20goku%20sfera.jpg" data-zoom="immagini_web/dragonball%20goku%20sfera_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20goku%20sfera.jpg" data-sfondo="#000000" data-cerca="mng 011 dragonball goku sfera">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/dragonball%20goku%20sfera.jpg" loading="lazy" alt="MNG-011">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-011">MNG-011</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-012" data-nome="dragonball scimmia.jpg" data-thumb="immagini_web/dragonball%20scimmia.jpg" data-zoom="immagini_web/dragonball%20scimmia_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20scimmia.jpg" data-sfondo="#000000" data-cerca="mng 012 dragonball scimmia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/dragonball%20scimmia.jpg" loading="lazy" alt="MNG-012">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-012">MNG-012</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-013" data-nome="Dragonball SonGoku Bianco.jpg" data-thumb="immagini_web/Dragonball%20SonGoku%20Bianco.jpg" data-zoom="immagini_web/Dragonball%20SonGoku%20Bianco_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Dragonball%20SonGoku%20Bianco.jpg" data-sfondo="#ffffff" data-cerca="mng 013 dragonball songoku bianco">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/Dragonball%20SonGoku%20Bianco.jpg" loading="lazy" alt="MNG-013">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-013">MNG-013</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-014" data-nome="dragonball vintage sfera.jpg" data-thumb="immagini_web/dragonball%20vintage%20sfera.jpg" data-zoom="immagini_web/dragonball%20vintage%20sfera_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20vintage%20sfera.jpg" data-sfondo="#000000" data-cerca="mng 014 dragonball vintage sfera">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/dragonball%20vintage%20sfera.jpg" loading="lazy" alt="MNG-014">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-014">MNG-014</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-015" data-nome="dragonball_nero.jpg" data-thumb="immagini_web/dragonball_nero.jpg" data-zoom="immagini_web/dragonball_nero_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball_nero.jpg" data-sfondo="#000000" data-cerca="mng 015 dragonball nero">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/dragonball_nero.jpg" loading="lazy" alt="MNG-015">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-015">MNG-015</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-016" data-nome="Drsgonball fumetto colorato.jpg" data-thumb="immagini_web/Drsgonball%20fumetto%20colorato.jpg" data-zoom="immagini_web/Drsgonball%20fumetto%20colorato_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Drsgonball%20fumetto%20colorato.jpg" data-sfondo="#000000" data-cerca="mng 016 drsgonball fumetto colorato">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/Drsgonball%20fumetto%20colorato.jpg" loading="lazy" alt="MNG-016">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-016">MNG-016</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-017" data-nome="goku vintage di spalle.jpg" data-thumb="immagini_web/goku%20vintage%20di%20spalle.jpg" data-zoom="immagini_web/goku%20vintage%20di%20spalle_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/goku%20vintage%20di%20spalle.jpg" data-sfondo="#000000" data-cerca="mng 017 goku vintage di spalle">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/goku%20vintage%20di%20spalle.jpg" loading="lazy" alt="MNG-017">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-017">MNG-017</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-018" data-nome="goldrake personaggio.png" data-thumb="immagini_web/goldrake%20personaggio.jpg" data-zoom="immagini_web/goldrake%20personaggio_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/goldrake%20personaggio.jpg" data-sfondo="#ffffff" data-cerca="mng 018 goldrake personaggio">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/goldrake%20personaggio.jpg" loading="lazy" alt="MNG-018">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-018">MNG-018</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-019" data-nome="hatsune.jpg" data-thumb="immagini_web/hatsune.jpg" data-zoom="immagini_web/hatsune_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/hatsune.jpg" data-sfondo="#ffffff" data-cerca="mng 019 hatsune">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/hatsune.jpg" loading="lazy" alt="MNG-019">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-019">MNG-019</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-020" data-nome="inuhasha.jpg" data-thumb="immagini_web/inuhasha.jpg" data-zoom="immagini_web/inuhasha_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/inuhasha.jpg" data-sfondo="#ffffff" data-cerca="mng 020 inuhasha">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/inuhasha.jpg" loading="lazy" alt="MNG-020">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-020">MNG-020</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-021" data-nome="jojo.png" data-thumb="immagini_web/jojo.jpg" data-zoom="immagini_web/jojo_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/jojo.jpg" data-sfondo="#000000" data-cerca="mng 021 jojo">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/jojo.jpg" loading="lazy" alt="MNG-021">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-021">MNG-021</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-022" data-nome="juju gruppo_bianco.png" data-thumb="immagini_web/juju%20gruppo_bianco.jpg" data-zoom="immagini_web/juju%20gruppo_bianco_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/juju%20gruppo_bianco.jpg" data-sfondo="#ffffff" data-cerca="mng 022 juju gruppo bianco">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/juju%20gruppo_bianco.jpg" loading="lazy" alt="MNG-022">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-022">MNG-022</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-023" data-nome="juju gruppo_nero.jpg" data-thumb="immagini_web/juju%20gruppo_nero.jpg" data-zoom="immagini_web/juju%20gruppo_nero_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/juju%20gruppo_nero.jpg" data-sfondo="#000000" data-cerca="mng 023 juju gruppo nero">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/juju%20gruppo_nero.jpg" loading="lazy" alt="MNG-023">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-023">MNG-023</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-024" data-nome="juju personaggio_nero.jpg" data-thumb="immagini_web/juju%20personaggio_nero.jpg" data-zoom="immagini_web/juju%20personaggio_nero_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/juju%20personaggio_nero.jpg" data-sfondo="#000000" data-cerca="mng 024 juju personaggio nero">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/juju%20personaggio_nero.jpg" loading="lazy" alt="MNG-024">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-024">MNG-024</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-025" data-nome="Kakashi.jpg" data-thumb="immagini_web/Kakashi.jpg" data-zoom="immagini_web/Kakashi_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Kakashi.jpg" data-sfondo="#000000" data-cerca="mng 025 kakashi">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/Kakashi.jpg" loading="lazy" alt="MNG-025">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-025">MNG-025</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-026" data-nome="Ken gruppo x nero.jpg" data-thumb="immagini_web/Ken%20gruppo%20x%20nero.jpg" data-zoom="immagini_web/Ken%20gruppo%20x%20nero_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Ken%20gruppo%20x%20nero.jpg" data-sfondo="#000000" data-cerca="mng 026 ken gruppo x nero">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/Ken%20gruppo%20x%20nero.jpg" loading="lazy" alt="MNG-026">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-026">MNG-026</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-027" data-nome="Ken rettangolo x nero.jpg" data-thumb="immagini_web/Ken%20rettangolo%20x%20nero.jpg" data-zoom="immagini_web/Ken%20rettangolo%20x%20nero_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Ken%20rettangolo%20x%20nero.jpg" data-sfondo="#000000" data-cerca="mng 027 ken rettangolo x nero">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/Ken%20rettangolo%20x%20nero.jpg" loading="lazy" alt="MNG-027">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-027">MNG-027</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-028" data-nome="KEN SHIRO RETTANGOLO bia.jpg" data-thumb="immagini_web/KEN%20SHIRO%20RETTANGOLO%20bia.jpg" data-zoom="immagini_web/KEN%20SHIRO%20RETTANGOLO%20bia_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/KEN%20SHIRO%20RETTANGOLO%20bia.jpg" data-sfondo="#ffffff" data-cerca="mng 028 ken shiro rettangolo bia">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/KEN%20SHIRO%20RETTANGOLO%20bia.jpg" loading="lazy" alt="MNG-028">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-028">MNG-028</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-029" data-nome="my hero academia gruppo x nero.jpg" data-thumb="immagini_web/my%20hero%20academia%20gruppo%20x%20nero.jpg" data-zoom="immagini_web/my%20hero%20academia%20gruppo%20x%20nero_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/my%20hero%20academia%20gruppo%20x%20nero.jpg" data-sfondo="#000000" data-cerca="mng 029 my hero academia gruppo x nero">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/my%20hero%20academia%20gruppo%20x%20nero.jpg" loading="lazy" alt="MNG-029">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-029">MNG-029</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-030" data-nome="naruto 3 occhi.jpg" data-thumb="immagini_web/naruto%203%20occhi.jpg" data-zoom="immagini_web/naruto%203%20occhi_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/naruto%203%20occhi.jpg" data-sfondo="#000000" data-cerca="mng 030 naruto 3 occhi">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/naruto%203%20occhi.jpg" loading="lazy" alt="MNG-030">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-030">MNG-030</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-031" data-nome="naruto gruppo rettangoli.jpg" data-thumb="immagini_web/naruto%20gruppo%20rettangoli.jpg" data-zoom="immagini_web/naruto%20gruppo%20rettangoli_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/naruto%20gruppo%20rettangoli.jpg" data-sfondo="#000000" data-cerca="mng 031 naruto gruppo rettangoli">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/naruto%20gruppo%20rettangoli.jpg" loading="lazy" alt="MNG-031">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-031">MNG-031</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-032" data-nome="Naruto rettangoli bianchi x nero.jpg" data-thumb="immagini_web/Naruto%20rettangoli%20bianchi%20x%20nero.jpg" data-zoom="immagini_web/Naruto%20rettangoli%20bianchi%20x%20nero_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Naruto%20rettangoli%20bianchi%20x%20nero.jpg" data-sfondo="#000000" data-cerca="mng 032 naruto rettangoli bianchi x nero">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/Naruto%20rettangoli%20bianchi%20x%20nero.jpg" loading="lazy" alt="MNG-032">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-032">MNG-032</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-033" data-nome="naruto scritta_bianco.jpg" data-thumb="immagini_web/naruto%20scritta_bianco.jpg" data-zoom="immagini_web/naruto%20scritta_bianco_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/naruto%20scritta_bianco.jpg" data-sfondo="#ffffff" data-cerca="mng 033 naruto scritta bianco">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/naruto%20scritta_bianco.jpg" loading="lazy" alt="MNG-033">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-033">MNG-033</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-034" data-nome="naruto scritta_nero.jpg" data-thumb="immagini_web/naruto%20scritta_nero.jpg" data-zoom="immagini_web/naruto%20scritta_nero_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/naruto%20scritta_nero.jpg" data-sfondo="#000000" data-cerca="mng 034 naruto scritta nero">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/naruto%20scritta_nero.jpg" loading="lazy" alt="MNG-034">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-034">MNG-034</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-035" data-nome="one piece 3 personaggi.jpg" data-thumb="immagini_web/one%20piece%203%20personaggi.jpg" data-zoom="immagini_web/one%20piece%203%20personaggi_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%203%20personaggi.jpg" data-sfondo="#000000" data-cerca="mng 035 one piece 3 personaggi">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/one%20piece%203%20personaggi.jpg" loading="lazy" alt="MNG-035">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-035">MNG-035</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-036" data-nome="one piece braccio.jpg" data-thumb="immagini_web/one%20piece%20braccio.jpg" data-zoom="immagini_web/one%20piece%20braccio_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20braccio.jpg" data-sfondo="#000000" data-cerca="mng 036 one piece braccio">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/one%20piece%20braccio.jpg" loading="lazy" alt="MNG-036">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-036">MNG-036</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-037" data-nome="one piece bussola.jpg" data-thumb="immagini_web/one%20piece%20bussola.jpg" data-zoom="immagini_web/one%20piece%20bussola_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20bussola.jpg" data-sfondo="#000000" data-cerca="mng 037 one piece bussola">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/one%20piece%20bussola.jpg" loading="lazy" alt="MNG-037">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-037">MNG-037</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-038" data-nome="one piece colorato.jpg" data-thumb="immagini_web/one%20piece%20colorato.jpg" data-zoom="immagini_web/one%20piece%20colorato_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20colorato.jpg" data-sfondo="#000000" data-cerca="mng 038 one piece colorato">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/one%20piece%20colorato.jpg" loading="lazy" alt="MNG-038">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-038">MNG-038</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-039" data-nome="one piece fiamme viola x bianco.jpg" data-thumb="immagini_web/one%20piece%20fiamme%20viola%20x%20bianco.jpg" data-zoom="immagini_web/one%20piece%20fiamme%20viola%20x%20bianco_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20fiamme%20viola%20x%20bianco.jpg" data-sfondo="#ffffff" data-cerca="mng 039 one piece fiamme viola x bianco">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/one%20piece%20fiamme%20viola%20x%20bianco.jpg" loading="lazy" alt="MNG-039">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-039">MNG-039</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-040" data-nome="one piece fiamme viola x nero.jpg" data-thumb="immagini_web/one%20piece%20fiamme%20viola%20x%20nero.jpg" data-zoom="immagini_web/one%20piece%20fiamme%20viola%20x%20nero_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20fiamme%20viola%20x%20nero.jpg" data-sfondo="#000000" data-cerca="mng 040 one piece fiamme viola x nero">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/one%20piece%20fiamme%20viola%20x%20nero.jpg" loading="lazy" alt="MNG-040">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-040">MNG-040</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-041" data-nome="one piece gear 5 scritta gialla_nero.jpg" data-thumb="immagini_web/one%20piece%20gear%205%20scritta%20gialla_nero.jpg" data-zoom="immagini_web/one%20piece%20gear%205%20scritta%20gialla_nero_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20gear%205%20scritta%20gialla_nero.jpg" data-sfondo="#000000" data-cerca="mng 041 one piece gear 5 scritta gialla nero">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/one%20piece%20gear%205%20scritta%20gialla_nero.jpg" loading="lazy" alt="MNG-041">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-041">MNG-041</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-042" data-nome="One piece giornali.jpg" data-thumb="immagini_web/One%20piece%20giornali.jpg" data-zoom="immagini_web/One%20piece%20giornali_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/One%20piece%20giornali.jpg" data-sfondo="#000000" data-cerca="mng 042 one piece giornali">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/One%20piece%20giornali.jpg" loading="lazy" alt="MNG-042">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-042">MNG-042</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-043" data-nome="one piece logo piu scritta.jpg" data-thumb="immagini_web/one%20piece%20logo%20piu%20scritta.jpg" data-zoom="immagini_web/one%20piece%20logo%20piu%20scritta_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20logo%20piu%20scritta.jpg" data-sfondo="#000000" data-cerca="mng 043 one piece logo piu scritta">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/one%20piece%20logo%20piu%20scritta.jpg" loading="lazy" alt="MNG-043">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-043">MNG-043</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-044" data-nome="One piece luffy_nero.jpg" data-thumb="immagini_web/One%20piece%20luffy_nero.jpg" data-zoom="immagini_web/One%20piece%20luffy_nero_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/One%20piece%20luffy_nero.jpg" data-sfondo="#000000" data-cerca="mng 044 one piece luffy nero">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/One%20piece%20luffy_nero.jpg" loading="lazy" alt="MNG-044">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-044">MNG-044</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-045" data-nome="one piece molti occhi.jpg" data-thumb="immagini_web/one%20piece%20molti%20occhi.jpg" data-zoom="immagini_web/one%20piece%20molti%20occhi_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20molti%20occhi.jpg" data-sfondo="#000000" data-cerca="mng 045 one piece molti occhi">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/one%20piece%20molti%20occhi.jpg" loading="lazy" alt="MNG-045">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-045">MNG-045</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-046" data-nome="one piece nave dietro.jpg" data-thumb="immagini_web/one%20piece%20nave%20dietro.jpg" data-zoom="immagini_web/one%20piece%20nave%20dietro_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20nave%20dietro.jpg" data-sfondo="#000000" data-cerca="mng 046 one piece nave dietro">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/one%20piece%20nave%20dietro.jpg" loading="lazy" alt="MNG-046">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-046">MNG-046</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-047" data-nome="One piece sagom teschio.jpg" data-thumb="immagini_web/One%20piece%20sagom%20teschio.jpg" data-zoom="immagini_web/One%20piece%20sagom%20teschio_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/One%20piece%20sagom%20teschio.jpg" data-sfondo="#000000" data-cerca="mng 047 one piece sagom teschio">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/One%20piece%20sagom%20teschio.jpg" loading="lazy" alt="MNG-047">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-047">MNG-047</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-048" data-nome="one piece sagona personaggio.jpg" data-thumb="immagini_web/one%20piece%20sagona%20personaggio.jpg" data-zoom="immagini_web/one%20piece%20sagona%20personaggio_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20sagona%20personaggio.jpg" data-sfondo="#000000" data-cerca="mng 048 one piece sagona personaggio">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/one%20piece%20sagona%20personaggio.jpg" loading="lazy" alt="MNG-048">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-048">MNG-048</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-049" data-nome="one piece sul grigio.jpg" data-thumb="immagini_web/one%20piece%20sul%20grigio.jpg" data-zoom="immagini_web/one%20piece%20sul%20grigio_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20sul%20grigio.jpg" data-sfondo="#ffffff" data-cerca="mng 049 one piece sul grigio">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/one%20piece%20sul%20grigio.jpg" loading="lazy" alt="MNG-049">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-049">MNG-049</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-050" data-nome="one piece tescio logo.jpg" data-thumb="immagini_web/one%20piece%20tescio%20logo.jpg" data-zoom="immagini_web/one%20piece%20tescio%20logo_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20tescio%20logo.jpg" data-sfondo="#000000" data-cerca="mng 050 one piece tescio logo">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/one%20piece%20tescio%20logo.jpg" loading="lazy" alt="MNG-050">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-050">MNG-050</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-051" data-nome="one piece wanted luffy.jpg" data-thumb="immagini_web/one%20piece%20wanted%20luffy.jpg" data-zoom="immagini_web/one%20piece%20wanted%20luffy_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20wanted%20luffy.jpg" data-sfondo="#ffffff" data-cerca="mng 051 one piece wanted luffy">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/one%20piece%20wanted%20luffy.jpg" loading="lazy" alt="MNG-051">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-051">MNG-051</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-052" data-nome="one piece zoro wanted.jpg" data-thumb="immagini_web/one%20piece%20zoro%20wanted.jpg" data-zoom="immagini_web/one%20piece%20zoro%20wanted_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20zoro%20wanted.jpg" data-sfondo="#ffffff" data-cerca="mng 052 one piece zoro wanted">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/one%20piece%20zoro%20wanted.jpg" loading="lazy" alt="MNG-052">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-052">MNG-052</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-053" data-nome="one piece zoro wnted x nero.jpg" data-thumb="immagini_web/one%20piece%20zoro%20wnted%20x%20nero.jpg" data-zoom="immagini_web/one%20piece%20zoro%20wnted%20x%20nero_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20zoro%20wnted%20x%20nero.jpg" data-sfondo="#000000" data-cerca="mng 053 one piece zoro wnted x nero">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/one%20piece%20zoro%20wnted%20x%20nero.jpg" loading="lazy" alt="MNG-053">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-053">MNG-053</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-054" data-nome="slam dunk.jpg" data-thumb="immagini_web/slam%20dunk.jpg" data-zoom="immagini_web/slam%20dunk_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/slam%20dunk.jpg" data-sfondo="#000000" data-cerca="mng 054 slam dunk">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/slam%20dunk.jpg" loading="lazy" alt="MNG-054">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-054">MNG-054</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-055" data-nome="spy x family bianco.jpg" data-thumb="immagini_web/spy%20x%20family%20bianco.jpg" data-zoom="immagini_web/spy%20x%20family%20bianco_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/spy%20x%20family%20bianco.jpg" data-sfondo="#ffffff" data-cerca="mng 055 spy x family bianco">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/spy%20x%20family%20bianco.jpg" loading="lazy" alt="MNG-055">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-055">MNG-055</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-056" data-nome="YATTAMAN.jpg" data-thumb="immagini_web/YATTAMAN.jpg" data-zoom="immagini_web/YATTAMAN_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/YATTAMAN.jpg" data-sfondo="#ffffff" data-cerca="mng 056 yattaman">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/YATTAMAN.jpg" loading="lazy" alt="MNG-056">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-056">MNG-056</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+<div class="item" data-prod="shopping" data-codice="MNG-057" data-nome="Zeniztu luce.jpg" data-thumb="immagini_web/Zeniztu%20luce.jpg" data-zoom="immagini_web/Zeniztu%20luce_bag.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Zeniztu%20luce.jpg" data-sfondo="#000000" data-cerca="mng 057 zeniztu luce">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere l'anteprima">
+<img src="immagini_web/Zeniztu%20luce.jpg" loading="lazy" alt="MNG-057">
+</div>
+<div class="riga-info">
+<span class="code" title="MNG-057">MNG-057</span>
+<button type="button" class="aggiungi" onclick="aggiungiSenzaOpzioni(this)">Aggiungi</button>
+</div>
+<div class="riepilogo" hidden></div>
+</div>
+</div>
+</main>
+
+<div class="floating-bar" hidden>
+<div><span id="counter">0</span> articoli &middot; <strong id="totale-bar">0 &euro;</strong></div>
 <button onclick="apriCarrello()">Vedi &amp; Invia</button>
 </div>
 <div id="modalCarrello" class="modal-carrello" onclick="chiudiFuori(event)">
@@ -662,6 +1293,7 @@ Magliette personalizzate stampate su richiesta.<br>
 <button onclick="chiudiOverlay()" aria-label="Chiudi">X</button>
 </div>
 <div class="cart-items-list" id="cartList"></div>
+<div class="cart-totale"><span>Totale</span><span id="totale-carrello">0 &euro;</span></div>
 <div class="nota-minimo" id="notaMinimo"></div>
 <button class="linkbtn" id="btnSvuota" onclick="svuotaSelezione()" hidden>Svuota selezione</button>
 <button class="btn-invia" onclick="inviaWhatsApp()">Invia Lista su WhatsApp</button>
@@ -690,6 +1322,7 @@ Magliette personalizzate stampate su richiesta.<br>
 <button class="zoom-freccia dx" onclick="vaiZoom(1, event)" aria-label="Grafica successiva">&#8250;</button>
 </div>
 <script>
+const PRODOTTI = [{"id": "maglia", "nome": "T-shirt", "articolo": "T-shirt", "prezzo": 10, "unita": "a maglia", "opzioni": ["XS", "S", "M", "L", "XL", "XXL"], "attivo": true, "nota": "Scegli la grafica e la taglia.", "guida": true}, {"id": "shopping", "nome": "Shopping bag", "articolo": "Shopping bag", "prezzo": 8, "unita": "cad.", "opzioni": [], "attivo": true, "nota": "Borsa in cotone con la grafica che scegli.", "guida": false}, {"id": "tazza", "nome": "Tazze", "articolo": "Tazza", "prezzo": 0, "unita": "", "opzioni": [], "attivo": false, "nota": "", "guida": false}, {"id": "mousepad", "nome": "Mouse pad", "articolo": "Mouse pad", "prezzo": 0, "unita": "", "opzioni": [], "attivo": false, "nota": "", "guida": false}];
 const ORDINE_MINIMO = 4;
 const CHIAVE_SALVATAGGIO = 'catalogo_selezione:' + location.pathname;
 let selezione = [];
@@ -697,18 +1330,35 @@ let overlayAperto = null;
 let cronologiaOk = true;
 let zoomLista = [];
 let zoomPos = 0;
+let catCorrente = null;
+let navInterna = false;
 
+function prodotto(id) { return PRODOTTI.find(p => p.id === id) || null; }
+function euro(n) {
+    return n.toLocaleString('it-IT', { style: 'currency', currency: 'EUR', minimumFractionDigits: Number.isInteger(n) ? 0 : 2 });
+}
 function totale() { return selezione.reduce((t, i) => t + i.qta, 0); }
+function totaleEuro() {
+    return selezione.reduce((t, i) => { const p = prodotto(i.prod); return t + (p ? p.prezzo * i.qta : 0); }, 0);
+}
+function cardDi(prod, codice) {
+    return document.querySelector('.item[data-prod="' + prod + '"][data-codice="' + codice + '"]');
+}
 
 function aggiornaContatore() {
     document.getElementById('counter').innerText = totale();
+    document.getElementById('totale-bar').textContent = euro(totaleEuro());
+    aggiornaBarra();
+}
+function aggiornaBarra() {
+    document.querySelector('.floating-bar').hidden = (catCorrente === null && totale() === 0);
 }
 
 /* ---------- salvataggio della selezione sul telefono ---------- */
 function salva() {
     try {
         localStorage.setItem(CHIAVE_SALVATAGGIO, JSON.stringify(
-            selezione.map(i => ({ codice: i.codice, taglia: i.taglia, qta: i.qta }))
+            selezione.map(i => ({ prod: i.prod, codice: i.codice, taglia: i.taglia, qta: i.qta }))
         ));
     } catch (e) { /* navigazione privata o archivio bloccato: si continua senza salvare */ }
 }
@@ -717,56 +1367,60 @@ function ripristina() {
     let salvati = [];
     try { salvati = JSON.parse(localStorage.getItem(CHIAVE_SALVATAGGIO) || '[]'); } catch (e) { salvati = []; }
     if (!Array.isArray(salvati)) salvati = [];
-    const primo = document.querySelector('.taglia-sel');
-    const taglieValide = primo ? Array.from(primo.options).map(o => o.value).filter(Boolean) : [];
     salvati.forEach(s => {
-        const el = document.querySelector('.item[data-codice="' + s.codice + '"]');
+        const prod = s.prod || 'maglia';   // selezioni salvate prima dell'arrivo dei prodotti
+        const p = prodotto(prod);
+        const el = cardDi(prod, s.codice);
         const qta = parseInt(s.qta, 10);
-        if (!el || taglieValide.indexOf(s.taglia) < 0 || !(qta >= 1)) return;  // grafica tolta dal catalogo o dato non valido
-        if (selezione.some(i => i.codice === s.codice && i.taglia === s.taglia)) return;
+        if (!p || !p.attivo || !el || !(qta >= 1)) return;   // grafica o prodotto tolti dal catalogo
+        const taglia = p.opzioni.length ? s.taglia : '';
+        if (p.opzioni.length && p.opzioni.indexOf(taglia) < 0) return;
+        if (selezione.some(i => i.prod === prod && i.codice === s.codice && i.taglia === taglia)) return;
         selezione.push({
-            codice: s.codice, taglia: s.taglia, qta: Math.min(99, qta),
+            prod: prod, codice: s.codice, taglia: taglia, qta: Math.min(99, qta),
             nome: el.dataset.nome, thumb: el.dataset.thumb,
             sfondo: el.dataset.sfondo, urlPubblico: el.dataset.url
         });
     });
-    new Set(selezione.map(i => i.codice)).forEach(aggiornaRiepilogo);
+    const visti = new Set();
+    selezione.forEach(i => { const k = i.prod + '|' + i.codice; if (!visti.has(k)) { visti.add(k); aggiornaRiepilogo(i.prod, i.codice); } });
     aggiornaContatore();
     salva();
 }
 
-/* ---------- scelta taglia ---------- */
-function scegliTaglia(sel) {
-    const taglia = sel.value;
-    if (!taglia) return;
-    const item = sel.closest('.item');
-    const codice = item.dataset.codice;
-    const voce = selezione.find(i => i.codice === codice && i.taglia === taglia);
+/* ---------- aggiunta al carrello ---------- */
+function aggiungi(item, taglia) {
+    const prod = item.dataset.prod, codice = item.dataset.codice;
+    const voce = selezione.find(i => i.prod === prod && i.codice === codice && i.taglia === taglia);
     if (voce) {
         voce.qta = Math.min(99, voce.qta + 1);
     } else {
         selezione.push({
-            codice: codice,
-            taglia: taglia,
-            qta: 1,
-            nome: item.dataset.nome,
-            thumb: item.dataset.thumb,
-            sfondo: item.dataset.sfondo,
-            urlPubblico: item.dataset.url
+            prod: prod, codice: codice, taglia: taglia, qta: 1,
+            nome: item.dataset.nome, thumb: item.dataset.thumb,
+            sfondo: item.dataset.sfondo, urlPubblico: item.dataset.url
         });
     }
-    sel.value = '';
-    aggiornaRiepilogo(codice);
+    aggiornaRiepilogo(prod, codice);
     aggiornaContatore();
     salva();
 }
 
-function aggiornaRiepilogo(codice) {
-    const el = document.querySelector('.item[data-codice="' + codice + '"]');
+function scegliTaglia(sel) {
+    const taglia = sel.value;
+    if (!taglia) return;
+    aggiungi(sel.closest('.item'), taglia);
+    sel.value = '';
+}
+
+function aggiungiSenzaOpzioni(btn) { aggiungi(btn.closest('.item'), ''); }
+
+function aggiornaRiepilogo(prod, codice) {
+    const el = cardDi(prod, codice);
     if (!el) return;
     const box = el.querySelector('.riepilogo');
-    const voci = selezione.filter(i => i.codice === codice);
-    box.textContent = voci.map(i => i.taglia + ' x' + i.qta).join(', ');
+    const voci = selezione.filter(i => i.prod === prod && i.codice === codice);
+    box.textContent = voci.map(i => (i.taglia ? i.taglia + ' ' : 'nel carrello: ') + (i.taglia ? 'x' : '') + i.qta).join(', ');
     box.hidden = voci.length === 0;
 }
 
@@ -815,6 +1469,43 @@ document.addEventListener('keydown', function (ev) {
     else if (overlayAperto === 'zoom' && ev.key === 'ArrowRight') { vaiZoom(1); }
 });
 
+/* ---------- home e categorie (indirizzo: #maglia, #shopping, ...) ---------- */
+function mostraVista() {
+    const id = decodeURIComponent((location.hash || '').replace(/^#/, ''));
+    const p = prodotto(id);
+    catCorrente = p ? p.id : null;
+    document.getElementById('vista-home').hidden = !!p;
+    document.getElementById('vista-catalogo').hidden = !p;
+    if (p) preparaCategoria(p);
+    else filtra();
+    aggiornaBarra();
+    window.scrollTo(0, 0);
+}
+
+function preparaCategoria(p) {
+    document.getElementById('cat-nome').textContent = p.nome;
+    document.getElementById('cat-prezzo').textContent = p.attivo ? euro(p.prezzo) + ' ' + p.unita : '';
+    document.getElementById('cat-nota').textContent = p.attivo ? (p.nota || '') : '';
+    document.getElementById('link-taglie').hidden = !(p.attivo && p.guida);
+    document.querySelectorAll('.mini').forEach(a => a.classList.toggle('attivo', a.dataset.id === p.id));
+    document.getElementById('cat-prossimamente').hidden = p.attivo;
+    document.getElementById('area-ricerca').hidden = !p.attivo;
+    document.getElementById('cerca').value = '';
+    filtra();
+}
+
+function vaiHome() {
+    if (navInterna) { navInterna = false; history.back(); }
+    else { location.hash = ''; }
+}
+
+function vaiCategoria(id) {
+    if (id !== catCorrente) location.replace('#' + id);   // sostituisce la voce: "indietro" torna alla home
+    return false;
+}
+
+window.addEventListener('hashchange', mostraVista);
+
 /* ---------- carrello ---------- */
 function renderCarrello() {
     const lista = document.getElementById('cartList');
@@ -826,6 +1517,7 @@ function renderCarrello() {
         lista.appendChild(vuoto);
     } else {
         selezione.forEach(item => {
+            const p = prodotto(item.prod);
             // Costruito con il DOM: nomi file con apici, & o < non rompono la pagina.
             const riga = document.createElement('div');
             riga.className = 'cart-item';
@@ -836,40 +1528,44 @@ function renderCarrello() {
             const info = document.createElement('div');
             info.className = 'cart-item-info';
             const c = document.createElement('div');
-            c.textContent = item.codice + ' - taglia ' + item.taglia;
+            c.textContent = item.codice + ' - ' + p.articolo + (item.taglia ? ', taglia ' + item.taglia : '');
             const n = document.createElement('div');
-            n.style.cssText = 'font-size:9px;color:#666;';
+            n.style.cssText = 'font-size:9px;color:#666;font-weight:normal;';
             n.textContent = item.nome;
-            info.append(c, n);
+            const pr = document.createElement('div');
+            pr.style.cssText = 'font-size:11px;color:#1a8f4c;';
+            pr.textContent = euro(p.prezzo) + ' x ' + item.qta + ' = ' + euro(p.prezzo * item.qta);
+            info.append(c, n, pr);
             const qta = document.createElement('div');
             qta.className = 'cart-qty';
             const meno = document.createElement('button');
             meno.textContent = '-';
             meno.setAttribute('aria-label', 'Diminuisci');
-            meno.onclick = () => cambiaQta(item.codice, item.taglia, -1);
+            meno.onclick = () => cambiaQta(item.prod, item.codice, item.taglia, -1);
             const num = document.createElement('span');
             num.textContent = item.qta;
             const piu = document.createElement('button');
             piu.textContent = '+';
             piu.setAttribute('aria-label', 'Aumenta');
-            piu.onclick = () => cambiaQta(item.codice, item.taglia, 1);
+            piu.onclick = () => cambiaQta(item.prod, item.codice, item.taglia, 1);
             qta.append(meno, num, piu);
             const del = document.createElement('button');
             del.className = 'cart-item-remove';
             del.textContent = 'Elimina';
-            del.onclick = () => rimuoviElemento(item.codice, item.taglia);
+            del.onclick = () => rimuoviElemento(item.prod, item.codice, item.taglia);
             riga.append(img, info, qta, del);
             lista.appendChild(riga);
         });
     }
+    document.getElementById('totale-carrello').textContent = euro(totaleEuro());
     const tot = totale();
     const nota = document.getElementById('notaMinimo');
     if (tot >= ORDINE_MINIMO) {
-        nota.textContent = 'Ordine minimo di ' + ORDINE_MINIMO + ' magliette raggiunto.';
+        nota.textContent = 'Totale indicativo, da confermare su WhatsApp. Ordine minimo di ' + ORDINE_MINIMO + ' articoli raggiunto.';
         nota.className = 'nota-minimo';
     } else {
         const manca = ORDINE_MINIMO - tot;
-        nota.textContent = 'Ordine minimo: ' + ORDINE_MINIMO + ' magliette. ' + (manca === 1 ? 'Ne manca 1.' : 'Ne mancano ' + manca + '.');
+        nota.textContent = 'Ordine minimo: ' + ORDINE_MINIMO + ' articoli. ' + (manca === 1 ? 'Ne manca 1.' : 'Ne mancano ' + manca + '.');
         nota.className = 'nota-minimo manca';
     }
     document.getElementById('btnSvuota').hidden = selezione.length === 0;
@@ -877,19 +1573,19 @@ function renderCarrello() {
 
 function apriCarrello() { renderCarrello(); apriOverlay('carrello'); }
 
-function rimuoviElemento(codice, taglia) {
-    selezione = selezione.filter(i => !(i.codice === codice && i.taglia === taglia));
-    aggiornaRiepilogo(codice);
+function rimuoviElemento(prod, codice, taglia) {
+    selezione = selezione.filter(i => !(i.prod === prod && i.codice === codice && i.taglia === taglia));
+    aggiornaRiepilogo(prod, codice);
     aggiornaContatore();
     salva();
     renderCarrello();
 }
 
-function cambiaQta(codice, taglia, delta) {
-    const voce = selezione.find(i => i.codice === codice && i.taglia === taglia);
+function cambiaQta(prod, codice, taglia, delta) {
+    const voce = selezione.find(i => i.prod === prod && i.codice === codice && i.taglia === taglia);
     if (!voce) return;
     voce.qta = Math.max(1, Math.min(99, voce.qta + delta));
-    aggiornaRiepilogo(codice);
+    aggiornaRiepilogo(prod, codice);
     aggiornaContatore();
     salva();
     renderCarrello();
@@ -897,9 +1593,9 @@ function cambiaQta(codice, taglia, delta) {
 
 function svuotaSelezione() {
     if (!confirm('Vuoi svuotare tutta la selezione?')) return;
-    const codici = Array.from(new Set(selezione.map(i => i.codice)));
+    const vecchie = selezione;
     selezione = [];
-    codici.forEach(aggiornaRiepilogo);
+    vecchie.forEach(i => aggiornaRiepilogo(i.prod, i.codice));
     aggiornaContatore();
     salva();
     renderCarrello();
@@ -911,14 +1607,16 @@ function inviaWhatsApp() {
         return;
     }
     if (totale() < ORDINE_MINIMO) {
-        alert("L’ordine minimo è di " + ORDINE_MINIMO + " magliette. Ne hai scelte " + totale() + ".");
+        alert("L’ordine minimo è di " + ORDINE_MINIMO + " articoli. Ne hai scelti " + totale() + ".");
         return;
     }
     let testo = "Ciao! Vorrei ordinare questi articoli:\n";
     selezione.forEach(item => {
-        testo += "\n- " + item.codice + " (" + item.nome + ") taglia " + item.taglia + " x" + item.qta + "\n  -> " + item.urlPubblico + "\n";
+        const p = prodotto(item.prod);
+        testo += "\n- " + item.codice + " (" + item.nome + ") " + p.articolo + (item.taglia ? " taglia " + item.taglia : "") +
+            " x" + item.qta + " = " + euro(p.prezzo * item.qta) + "\n  -> " + item.urlPubblico + "\n";
     });
-    testo += "\nTotale: " + totale() + " magliette\n";
+    testo += "\nTotale: " + totale() + " articoli, " + euro(totaleEuro()) + " (indicativo)\n";
     const numero = "393331234567";
     // encodeURIComponent: nomi con &, #, % o accenti non troncano piu' il messaggio.
     window.open("https://wa.me/" + numero + "?text=" + encodeURIComponent(testo), "_blank");
@@ -939,11 +1637,12 @@ function apriZoom(el) {
 function mostraZoom() {
     const n = zoomLista.length;
     const item = zoomLista[zoomPos];
+    const p = prodotto(item.dataset.prod);
     document.getElementById('lightbox-img').src = item.dataset.zoom;
-    document.getElementById('zoom-codice').textContent = item.dataset.codice + '  (' + (zoomPos + 1) + ' di ' + n + ')';
+    document.getElementById('zoom-codice').textContent = item.dataset.codice + ' - ' + p.articolo + '  (' + (zoomPos + 1) + ' di ' + n + ')';
     document.querySelectorAll('.zoom-freccia').forEach(b => { b.hidden = n < 2; });
-    [1, -1].forEach(p => {   // carica in anticipo le grafiche vicine
-        const vicino = zoomLista[(zoomPos + p + n) % n];
+    [1, -1].forEach(d => {   // carica in anticipo le grafiche vicine
+        const vicino = zoomLista[(zoomPos + d + n) % n];
         if (vicino) new Image().src = vicino.dataset.zoom;
     });
 }
@@ -979,7 +1678,7 @@ function filtra() {
     const parole = q ? q.split(' ') : [];
     let visibili = 0;
     document.querySelectorAll('.item').forEach(el => {
-        const ok = parole.every(p => el.dataset.cerca.indexOf(p) >= 0);
+        const ok = el.dataset.prod === catCorrente && parole.every(p => el.dataset.cerca.indexOf(p) >= 0);
         el.hidden = !ok;
         if (ok) visibili++;
     });
@@ -1000,7 +1699,7 @@ function pulisciRicerca() {
 /* ---------- avvio ---------- */
 try { if (history.state && history.state.overlay) history.replaceState(null, ''); } catch (e) {}
 ripristina();
-filtra();
+mostraVista();
 </script>
 </body>
 </html>
