@@ -6,9 +6,9 @@
 <title>Catalogo T-Shirt Express</title>
 <style>
 body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 85px; background-color: #f0f0f0; color: #333; }
-.page { width: 100%; max-width: 800px; margin: 0 auto 10px auto; padding: 6px; box-sizing: border-box; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.page { width: 100%; max-width: 800px; margin: 0 auto 10px auto; padding: 6px; box-sizing: border-box; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px 6px; }
 .item { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; background: #fff; box-sizing: border-box; }
-.imgbox { width: 100%; aspect-ratio: var(--ar, 1 / 1); max-height: 125px; border-radius: 4px; overflow: hidden; cursor: pointer; }
+.imgbox { width: 100%; height: 160px; border-radius: 4px; overflow: hidden; cursor: pointer; }
 .imgbox img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .riga-info { width: 100%; display: flex; align-items: center; gap: 3px; margin-top: 4px; }
 .code { flex: 0 0 auto; font-size: 9px; font-weight: bold; color: #333; background: #f8f8f8; padding: 6px 4px; border-radius: 4px; white-space: nowrap; }
@@ -28,13 +28,13 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 .cart-item-remove { background: #ff4757; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 10px; }
 .lightbox-modal { display: none; position: fixed; z-index: 3000; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(245, 245, 245, 0.95); justify-content: center; align-items: center; padding: 15px; box-sizing: border-box; cursor: pointer; }
 .lightbox-modal img { max-width: 95%; max-height: 90vh; border-radius: 8px; object-fit: contain; display: block; margin: auto; }
-@media (max-width: 480px) { .page { grid-template-columns: repeat(3, 1fr); gap: 4px; padding: 4px; } .imgbox { max-height: 105px; } .code { font-size: 8px; } .taglia-sel { font-size: 16px; } }
+@media (max-width: 480px) { .page { grid-template-columns: repeat(3, 1fr); gap: 10px 4px; padding: 4px; } .imgbox { height: 130px; } .code { font-size: 8px; } .taglia-sel { font-size: 16px; } }
 </style>
 </head>
 <body>
 <div class="page">
 <div class="item" data-codice="MNG-001" data-nome="4 robot nero.jpg" data-thumb="immagini_web/4%20robot%20nero.jpg" data-zoom="immagini_web/4%20robot%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/4%20robot%20nero.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/4%20robot%20nero.jpg" loading="lazy" alt="MNG-001">
 </div>
 <div class="riga-info">
@@ -44,7 +44,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-002" data-nome="4 robot.jpg" data-thumb="immagini_web/4%20robot.jpg" data-zoom="immagini_web/4%20robot_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/4%20robot.jpg" data-sfondo="#ffffff">
-<div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/4%20robot.jpg" loading="lazy" alt="MNG-002">
 </div>
 <div class="riga-info">
@@ -54,7 +54,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-003" data-nome="Chainsaw Rosso.jpg" data-thumb="immagini_web/Chainsaw%20Rosso.jpg" data-zoom="immagini_web/Chainsaw%20Rosso_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Chainsaw%20Rosso.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/Chainsaw%20Rosso.jpg" loading="lazy" alt="MNG-003">
 </div>
 <div class="riga-info">
@@ -64,7 +64,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-004" data-nome="Chainsaw verde.jpg" data-thumb="immagini_web/Chainsaw%20verde.jpg" data-zoom="immagini_web/Chainsaw%20verde_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Chainsaw%20verde.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/Chainsaw%20verde.jpg" loading="lazy" alt="MNG-004">
 </div>
 <div class="riga-info">
@@ -74,7 +74,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-005" data-nome="death note.png" data-thumb="immagini_web/death%20note.jpg" data-zoom="immagini_web/death%20note_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/death%20note.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/death%20note.jpg" loading="lazy" alt="MNG-005">
 </div>
 <div class="riga-info">
@@ -84,7 +84,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-006" data-nome="dragonball blt.jpg" data-thumb="immagini_web/dragonball%20blt.jpg" data-zoom="immagini_web/dragonball%20blt_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20blt.jpg" data-sfondo="#ffffff">
-<div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/dragonball%20blt.jpg" loading="lazy" alt="MNG-006">
 </div>
 <div class="riga-info">
@@ -94,7 +94,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-007" data-nome="Dragonball Drago.jpg" data-thumb="immagini_web/Dragonball%20Drago.jpg" data-zoom="immagini_web/Dragonball%20Drago_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Dragonball%20Drago.jpg" data-sfondo="#ffffff">
-<div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/Dragonball%20Drago.jpg" loading="lazy" alt="MNG-007">
 </div>
 <div class="riga-info">
@@ -104,7 +104,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-008" data-nome="dragonball fiamme.png" data-thumb="immagini_web/dragonball%20fiamme.jpg" data-zoom="immagini_web/dragonball%20fiamme_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20fiamme.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/dragonball%20fiamme.jpg" loading="lazy" alt="MNG-008">
 </div>
 <div class="riga-info">
@@ -114,7 +114,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-009" data-nome="Dragonball fumetti grigio.jpg" data-thumb="immagini_web/Dragonball%20fumetti%20grigio.jpg" data-zoom="immagini_web/Dragonball%20fumetti%20grigio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Dragonball%20fumetti%20grigio.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/Dragonball%20fumetti%20grigio.jpg" loading="lazy" alt="MNG-009">
 </div>
 <div class="riga-info">
@@ -124,7 +124,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-010" data-nome="dragonball genio.jpg" data-thumb="immagini_web/dragonball%20genio.jpg" data-zoom="immagini_web/dragonball%20genio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20genio.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/dragonball%20genio.jpg" loading="lazy" alt="MNG-010">
 </div>
 <div class="riga-info">
@@ -134,7 +134,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-011" data-nome="dragonball goku sfera.jpg" data-thumb="immagini_web/dragonball%20goku%20sfera.jpg" data-zoom="immagini_web/dragonball%20goku%20sfera_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20goku%20sfera.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/dragonball%20goku%20sfera.jpg" loading="lazy" alt="MNG-011">
 </div>
 <div class="riga-info">
@@ -144,7 +144,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-012" data-nome="dragonball scimmia.jpg" data-thumb="immagini_web/dragonball%20scimmia.jpg" data-zoom="immagini_web/dragonball%20scimmia_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20scimmia.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/dragonball%20scimmia.jpg" loading="lazy" alt="MNG-012">
 </div>
 <div class="riga-info">
@@ -153,10 +153,8 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-</div>
-<div class="page">
 <div class="item" data-codice="MNG-013" data-nome="Dragonball SonGoku Bianco.jpg" data-thumb="immagini_web/Dragonball%20SonGoku%20Bianco.jpg" data-zoom="immagini_web/Dragonball%20SonGoku%20Bianco_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Dragonball%20SonGoku%20Bianco.jpg" data-sfondo="#ffffff">
-<div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/Dragonball%20SonGoku%20Bianco.jpg" loading="lazy" alt="MNG-013">
 </div>
 <div class="riga-info">
@@ -166,7 +164,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-014" data-nome="dragonball vintage sfera.jpg" data-thumb="immagini_web/dragonball%20vintage%20sfera.jpg" data-zoom="immagini_web/dragonball%20vintage%20sfera_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball%20vintage%20sfera.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/dragonball%20vintage%20sfera.jpg" loading="lazy" alt="MNG-014">
 </div>
 <div class="riga-info">
@@ -176,7 +174,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-015" data-nome="dragonball_nero.jpg" data-thumb="immagini_web/dragonball_nero.jpg" data-zoom="immagini_web/dragonball_nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/dragonball_nero.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/dragonball_nero.jpg" loading="lazy" alt="MNG-015">
 </div>
 <div class="riga-info">
@@ -186,7 +184,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-016" data-nome="Drsgonball fumetto colorato.jpg" data-thumb="immagini_web/Drsgonball%20fumetto%20colorato.jpg" data-zoom="immagini_web/Drsgonball%20fumetto%20colorato_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Drsgonball%20fumetto%20colorato.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/Drsgonball%20fumetto%20colorato.jpg" loading="lazy" alt="MNG-016">
 </div>
 <div class="riga-info">
@@ -196,7 +194,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-017" data-nome="goku vintage di spalle.jpg" data-thumb="immagini_web/goku%20vintage%20di%20spalle.jpg" data-zoom="immagini_web/goku%20vintage%20di%20spalle_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/goku%20vintage%20di%20spalle.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/goku%20vintage%20di%20spalle.jpg" loading="lazy" alt="MNG-017">
 </div>
 <div class="riga-info">
@@ -206,7 +204,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-018" data-nome="goldrake personaggio.png" data-thumb="immagini_web/goldrake%20personaggio.jpg" data-zoom="immagini_web/goldrake%20personaggio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/goldrake%20personaggio.jpg" data-sfondo="#ffffff">
-<div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/goldrake%20personaggio.jpg" loading="lazy" alt="MNG-018">
 </div>
 <div class="riga-info">
@@ -216,7 +214,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-019" data-nome="hatsune.jpg" data-thumb="immagini_web/hatsune.jpg" data-zoom="immagini_web/hatsune_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/hatsune.jpg" data-sfondo="#ffffff">
-<div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/hatsune.jpg" loading="lazy" alt="MNG-019">
 </div>
 <div class="riga-info">
@@ -226,7 +224,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-020" data-nome="inuhasha.jpg" data-thumb="immagini_web/inuhasha.jpg" data-zoom="immagini_web/inuhasha_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/inuhasha.jpg" data-sfondo="#ffffff">
-<div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/inuhasha.jpg" loading="lazy" alt="MNG-020">
 </div>
 <div class="riga-info">
@@ -236,7 +234,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-021" data-nome="jojo.png" data-thumb="immagini_web/jojo.jpg" data-zoom="immagini_web/jojo_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/jojo.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/jojo.jpg" loading="lazy" alt="MNG-021">
 </div>
 <div class="riga-info">
@@ -246,7 +244,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-022" data-nome="juju gruppo_bianco.png" data-thumb="immagini_web/juju%20gruppo_bianco.jpg" data-zoom="immagini_web/juju%20gruppo_bianco_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/juju%20gruppo_bianco.jpg" data-sfondo="#ffffff">
-<div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/juju%20gruppo_bianco.jpg" loading="lazy" alt="MNG-022">
 </div>
 <div class="riga-info">
@@ -256,7 +254,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-023" data-nome="juju gruppo_nero.jpg" data-thumb="immagini_web/juju%20gruppo_nero.jpg" data-zoom="immagini_web/juju%20gruppo_nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/juju%20gruppo_nero.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/juju%20gruppo_nero.jpg" loading="lazy" alt="MNG-023">
 </div>
 <div class="riga-info">
@@ -266,7 +264,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-024" data-nome="juju personaggio_nero.jpg" data-thumb="immagini_web/juju%20personaggio_nero.jpg" data-zoom="immagini_web/juju%20personaggio_nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/juju%20personaggio_nero.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/juju%20personaggio_nero.jpg" loading="lazy" alt="MNG-024">
 </div>
 <div class="riga-info">
@@ -275,10 +273,8 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-</div>
-<div class="page">
 <div class="item" data-codice="MNG-025" data-nome="Kakashi.jpg" data-thumb="immagini_web/Kakashi.jpg" data-zoom="immagini_web/Kakashi_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Kakashi.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/Kakashi.jpg" loading="lazy" alt="MNG-025">
 </div>
 <div class="riga-info">
@@ -288,7 +284,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-026" data-nome="Ken gruppo x nero.jpg" data-thumb="immagini_web/Ken%20gruppo%20x%20nero.jpg" data-zoom="immagini_web/Ken%20gruppo%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Ken%20gruppo%20x%20nero.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/Ken%20gruppo%20x%20nero.jpg" loading="lazy" alt="MNG-026">
 </div>
 <div class="riga-info">
@@ -298,7 +294,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-027" data-nome="Ken rettangolo x nero.jpg" data-thumb="immagini_web/Ken%20rettangolo%20x%20nero.jpg" data-zoom="immagini_web/Ken%20rettangolo%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Ken%20rettangolo%20x%20nero.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/Ken%20rettangolo%20x%20nero.jpg" loading="lazy" alt="MNG-027">
 </div>
 <div class="riga-info">
@@ -308,7 +304,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-028" data-nome="KEN SHIRO RETTANGOLO bia.jpg" data-thumb="immagini_web/KEN%20SHIRO%20RETTANGOLO%20bia.jpg" data-zoom="immagini_web/KEN%20SHIRO%20RETTANGOLO%20bia_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/KEN%20SHIRO%20RETTANGOLO%20bia.jpg" data-sfondo="#ffffff">
-<div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/KEN%20SHIRO%20RETTANGOLO%20bia.jpg" loading="lazy" alt="MNG-028">
 </div>
 <div class="riga-info">
@@ -318,7 +314,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-029" data-nome="my hero academia gruppo x nero.jpg" data-thumb="immagini_web/my%20hero%20academia%20gruppo%20x%20nero.jpg" data-zoom="immagini_web/my%20hero%20academia%20gruppo%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/my%20hero%20academia%20gruppo%20x%20nero.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/my%20hero%20academia%20gruppo%20x%20nero.jpg" loading="lazy" alt="MNG-029">
 </div>
 <div class="riga-info">
@@ -328,7 +324,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-030" data-nome="naruto 3 occhi.jpg" data-thumb="immagini_web/naruto%203%20occhi.jpg" data-zoom="immagini_web/naruto%203%20occhi_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/naruto%203%20occhi.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/naruto%203%20occhi.jpg" loading="lazy" alt="MNG-030">
 </div>
 <div class="riga-info">
@@ -338,7 +334,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-031" data-nome="naruto gruppo rettangoli.jpg" data-thumb="immagini_web/naruto%20gruppo%20rettangoli.jpg" data-zoom="immagini_web/naruto%20gruppo%20rettangoli_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/naruto%20gruppo%20rettangoli.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/naruto%20gruppo%20rettangoli.jpg" loading="lazy" alt="MNG-031">
 </div>
 <div class="riga-info">
@@ -348,7 +344,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-032" data-nome="Naruto rettangoli bianchi x nero.jpg" data-thumb="immagini_web/Naruto%20rettangoli%20bianchi%20x%20nero.jpg" data-zoom="immagini_web/Naruto%20rettangoli%20bianchi%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Naruto%20rettangoli%20bianchi%20x%20nero.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/Naruto%20rettangoli%20bianchi%20x%20nero.jpg" loading="lazy" alt="MNG-032">
 </div>
 <div class="riga-info">
@@ -358,7 +354,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-033" data-nome="naruto scritta_bianco.jpg" data-thumb="immagini_web/naruto%20scritta_bianco.jpg" data-zoom="immagini_web/naruto%20scritta_bianco_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/naruto%20scritta_bianco.jpg" data-sfondo="#ffffff">
-<div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/naruto%20scritta_bianco.jpg" loading="lazy" alt="MNG-033">
 </div>
 <div class="riga-info">
@@ -368,7 +364,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-034" data-nome="naruto scritta_nero.jpg" data-thumb="immagini_web/naruto%20scritta_nero.jpg" data-zoom="immagini_web/naruto%20scritta_nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/naruto%20scritta_nero.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/naruto%20scritta_nero.jpg" loading="lazy" alt="MNG-034">
 </div>
 <div class="riga-info">
@@ -378,7 +374,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-035" data-nome="one piece 3 personaggi.jpg" data-thumb="immagini_web/one%20piece%203%20personaggi.jpg" data-zoom="immagini_web/one%20piece%203%20personaggi_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%203%20personaggi.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%203%20personaggi.jpg" loading="lazy" alt="MNG-035">
 </div>
 <div class="riga-info">
@@ -388,7 +384,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-036" data-nome="one piece braccio.jpg" data-thumb="immagini_web/one%20piece%20braccio.jpg" data-zoom="immagini_web/one%20piece%20braccio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20braccio.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20braccio.jpg" loading="lazy" alt="MNG-036">
 </div>
 <div class="riga-info">
@@ -397,10 +393,8 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-</div>
-<div class="page">
 <div class="item" data-codice="MNG-037" data-nome="one piece bussola.jpg" data-thumb="immagini_web/one%20piece%20bussola.jpg" data-zoom="immagini_web/one%20piece%20bussola_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20bussola.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20bussola.jpg" loading="lazy" alt="MNG-037">
 </div>
 <div class="riga-info">
@@ -410,7 +404,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-038" data-nome="one piece colorato.jpg" data-thumb="immagini_web/one%20piece%20colorato.jpg" data-zoom="immagini_web/one%20piece%20colorato_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20colorato.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20colorato.jpg" loading="lazy" alt="MNG-038">
 </div>
 <div class="riga-info">
@@ -420,7 +414,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-039" data-nome="one piece fiamme viola x bianco.jpg" data-thumb="immagini_web/one%20piece%20fiamme%20viola%20x%20bianco.jpg" data-zoom="immagini_web/one%20piece%20fiamme%20viola%20x%20bianco_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20fiamme%20viola%20x%20bianco.jpg" data-sfondo="#ffffff">
-<div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20fiamme%20viola%20x%20bianco.jpg" loading="lazy" alt="MNG-039">
 </div>
 <div class="riga-info">
@@ -430,7 +424,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-040" data-nome="one piece fiamme viola x nero.jpg" data-thumb="immagini_web/one%20piece%20fiamme%20viola%20x%20nero.jpg" data-zoom="immagini_web/one%20piece%20fiamme%20viola%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20fiamme%20viola%20x%20nero.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20fiamme%20viola%20x%20nero.jpg" loading="lazy" alt="MNG-040">
 </div>
 <div class="riga-info">
@@ -440,7 +434,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-041" data-nome="one piece gear 5 scritta gialla_nero.jpg" data-thumb="immagini_web/one%20piece%20gear%205%20scritta%20gialla_nero.jpg" data-zoom="immagini_web/one%20piece%20gear%205%20scritta%20gialla_nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20gear%205%20scritta%20gialla_nero.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20gear%205%20scritta%20gialla_nero.jpg" loading="lazy" alt="MNG-041">
 </div>
 <div class="riga-info">
@@ -450,7 +444,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-042" data-nome="One piece giornali.jpg" data-thumb="immagini_web/One%20piece%20giornali.jpg" data-zoom="immagini_web/One%20piece%20giornali_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/One%20piece%20giornali.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/One%20piece%20giornali.jpg" loading="lazy" alt="MNG-042">
 </div>
 <div class="riga-info">
@@ -460,7 +454,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-043" data-nome="one piece logo piu scritta.jpg" data-thumb="immagini_web/one%20piece%20logo%20piu%20scritta.jpg" data-zoom="immagini_web/one%20piece%20logo%20piu%20scritta_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20logo%20piu%20scritta.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20logo%20piu%20scritta.jpg" loading="lazy" alt="MNG-043">
 </div>
 <div class="riga-info">
@@ -470,7 +464,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-044" data-nome="One piece luffy_nero.jpg" data-thumb="immagini_web/One%20piece%20luffy_nero.jpg" data-zoom="immagini_web/One%20piece%20luffy_nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/One%20piece%20luffy_nero.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/One%20piece%20luffy_nero.jpg" loading="lazy" alt="MNG-044">
 </div>
 <div class="riga-info">
@@ -480,7 +474,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-045" data-nome="one piece molti occhi.jpg" data-thumb="immagini_web/one%20piece%20molti%20occhi.jpg" data-zoom="immagini_web/one%20piece%20molti%20occhi_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20molti%20occhi.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20molti%20occhi.jpg" loading="lazy" alt="MNG-045">
 </div>
 <div class="riga-info">
@@ -490,7 +484,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-046" data-nome="one piece nave dietro.jpg" data-thumb="immagini_web/one%20piece%20nave%20dietro.jpg" data-zoom="immagini_web/one%20piece%20nave%20dietro_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20nave%20dietro.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20nave%20dietro.jpg" loading="lazy" alt="MNG-046">
 </div>
 <div class="riga-info">
@@ -500,7 +494,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-047" data-nome="One piece sagom teschio.jpg" data-thumb="immagini_web/One%20piece%20sagom%20teschio.jpg" data-zoom="immagini_web/One%20piece%20sagom%20teschio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/One%20piece%20sagom%20teschio.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/One%20piece%20sagom%20teschio.jpg" loading="lazy" alt="MNG-047">
 </div>
 <div class="riga-info">
@@ -510,7 +504,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-048" data-nome="one piece sagona personaggio.jpg" data-thumb="immagini_web/one%20piece%20sagona%20personaggio.jpg" data-zoom="immagini_web/one%20piece%20sagona%20personaggio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20sagona%20personaggio.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20sagona%20personaggio.jpg" loading="lazy" alt="MNG-048">
 </div>
 <div class="riga-info">
@@ -519,10 +513,8 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 </div>
 <div class="riepilogo" hidden></div>
 </div>
-</div>
-<div class="page">
 <div class="item" data-codice="MNG-049" data-nome="one piece sul grigio.jpg" data-thumb="immagini_web/one%20piece%20sul%20grigio.jpg" data-zoom="immagini_web/one%20piece%20sul%20grigio_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20sul%20grigio.jpg" data-sfondo="#ffffff">
-<div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20sul%20grigio.jpg" loading="lazy" alt="MNG-049">
 </div>
 <div class="riga-info">
@@ -532,7 +524,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-050" data-nome="one piece tescio logo.jpg" data-thumb="immagini_web/one%20piece%20tescio%20logo.jpg" data-zoom="immagini_web/one%20piece%20tescio%20logo_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20tescio%20logo.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20tescio%20logo.jpg" loading="lazy" alt="MNG-050">
 </div>
 <div class="riga-info">
@@ -542,7 +534,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-051" data-nome="one piece wanted luffy.jpg" data-thumb="immagini_web/one%20piece%20wanted%20luffy.jpg" data-zoom="immagini_web/one%20piece%20wanted%20luffy_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20wanted%20luffy.jpg" data-sfondo="#ffffff">
-<div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20wanted%20luffy.jpg" loading="lazy" alt="MNG-051">
 </div>
 <div class="riga-info">
@@ -552,7 +544,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-052" data-nome="one piece zoro wanted.jpg" data-thumb="immagini_web/one%20piece%20zoro%20wanted.jpg" data-zoom="immagini_web/one%20piece%20zoro%20wanted_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20zoro%20wanted.jpg" data-sfondo="#ffffff">
-<div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20zoro%20wanted.jpg" loading="lazy" alt="MNG-052">
 </div>
 <div class="riga-info">
@@ -562,7 +554,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-053" data-nome="one piece zoro wnted x nero.jpg" data-thumb="immagini_web/one%20piece%20zoro%20wnted%20x%20nero.jpg" data-zoom="immagini_web/one%20piece%20zoro%20wnted%20x%20nero_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/one%20piece%20zoro%20wnted%20x%20nero.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/one%20piece%20zoro%20wnted%20x%20nero.jpg" loading="lazy" alt="MNG-053">
 </div>
 <div class="riga-info">
@@ -572,7 +564,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-054" data-nome="slam dunk.jpg" data-thumb="immagini_web/slam%20dunk.jpg" data-zoom="immagini_web/slam%20dunk_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/slam%20dunk.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/slam%20dunk.jpg" loading="lazy" alt="MNG-054">
 </div>
 <div class="riga-info">
@@ -582,7 +574,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-055" data-nome="spy x family bianco.jpg" data-thumb="immagini_web/spy%20x%20family%20bianco.jpg" data-zoom="immagini_web/spy%20x%20family%20bianco_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/spy%20x%20family%20bianco.jpg" data-sfondo="#ffffff">
-<div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/spy%20x%20family%20bianco.jpg" loading="lazy" alt="MNG-055">
 </div>
 <div class="riga-info">
@@ -592,7 +584,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-056" data-nome="YATTAMAN.jpg" data-thumb="immagini_web/YATTAMAN.jpg" data-zoom="immagini_web/YATTAMAN_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/YATTAMAN.jpg" data-sfondo="#ffffff">
-<div class="imgbox" style="--ar:297 / 373;background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#ffffff" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/YATTAMAN.jpg" loading="lazy" alt="MNG-056">
 </div>
 <div class="riga-info">
@@ -602,7 +594,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 
 <div class="riepilogo" hidden></div>
 </div>
 <div class="item" data-codice="MNG-057" data-nome="Zeniztu luce.jpg" data-thumb="immagini_web/Zeniztu%20luce.jpg" data-zoom="immagini_web/Zeniztu%20luce_ts.jpg" data-url="https://Annalisabetti.github.io/catalogo-tshirt/immagini_web/Zeniztu%20luce.jpg" data-sfondo="#000000">
-<div class="imgbox" style="--ar:297 / 373;background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
+<div class="imgbox" style="background:#000000" onclick="apriZoom(this)" title="Clicca per vedere la maglia">
 <img src="immagini_web/Zeniztu%20luce.jpg" loading="lazy" alt="MNG-057">
 </div>
 <div class="riga-info">
